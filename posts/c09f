@@ -1454,30 +1454,30 @@ menu:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/5851">
+                <a href="/posts/345d">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="网站SEO优化">
+                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200802152444.jpg" class="responsive-img" alt="2020.08.02日一标现场记录">
                         
-                        <span class="card-title">网站SEO优化</span>
+                        <span class="card-title">2020.08.02日一标现场记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            借助谷歌及百度两大搜索引擎进行收录详解，分别介绍两种不同的方式收录网站的方法。
+                            参观金义东轨道工程01标现场记录
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    土木工程
                                 </a>
                             
                             
@@ -1487,8 +1487,12 @@ menu:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E5%9F%BA%E5%9C%B0/">
+                        <span class="chip bg-color">基地</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9C%B0%E4%B8%8B%E7%BA%BF/">
+                        <span class="chip bg-color">地下线</span>
                     </a>
                     
                 </div>
