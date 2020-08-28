@@ -1454,18 +1454,18 @@ menu:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/345d">
+                <a href="/posts/7c77">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200802152444.jpg" class="responsive-img" alt="2020.08.02日一标现场记录">
+                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200828230808.jpg" class="responsive-img" alt="地下线整体道床轨道施工">
                         
-                        <span class="card-title">2020.08.02日一标现场记录</span>
+                        <span class="card-title">地下线整体道床轨道施工</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参观金义东轨道工程01标现场记录
+                            地下线整体道床施工工艺学习记录
                         
                     </div>
                     <div class="publish-info">
@@ -1487,12 +1487,12 @@ menu:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E5%9C%B0/">
-                        <span class="chip bg-color">基地</span>
-                    </a>
-                    
                     <a href="/tags/%E5%9C%B0%E4%B8%8B%E7%BA%BF/">
                         <span class="chip bg-color">地下线</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B4%E4%BD%93%E9%81%93%E5%BA%8A/">
+                        <span class="chip bg-color">整体道床</span>
                     </a>
                     
                 </div>
