@@ -1207,18 +1207,18 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9e33">
+                <a href="/posts/8812">
                     <div class="card-image">
                         
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598633600930&di=6f1599f35c3ac5a7e951da38b1c4c9ee&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180919%2F829aa14145a34d7eb80cefc6161fe71e.jpeg" class="responsive-img" alt="高等减振道床技术培训会议记录">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="搭建Hexo theme metery主题博客记录">
                         
-                        <span class="card-title">高等减振道床技术培训会议记录</span>
+                        <span class="card-title">搭建Hexo theme metery主题博客记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            高等减振道床设计说明及施工工艺流程记录
+                            Hexo Bolg搭建记录
                         
                     </div>
                     <div class="publish-info">
@@ -1229,8 +1229,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
-                                    土木工程
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
                                 </a>
                             
                             
@@ -1240,8 +1240,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%AB%98%E7%AD%89%E5%87%8F%E6%8C%AF%E9%81%93%E5%BA%8A/">
-                        <span class="chip bg-color">高等减振道床</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
