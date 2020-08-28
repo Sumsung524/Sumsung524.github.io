@@ -104,11 +104,11 @@
       </li>
       
       <li>
-        <a href="/categories/%E5%85%B6%E4%BB%96/">
+        <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/">
           
           <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>其他</span>
+          <span>方法技能</span>
         </a>
       </li>
       
@@ -272,11 +272,11 @@
               
                 <li>
 
-                  <a href="/categories/%E5%85%B6%E4%BB%96/ " style="margin-left:75px">
+                  <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/ " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
 			      
-		          <span>其他</span>
+		          <span>方法技能</span>
                   </a>
                 </li>
               
@@ -1106,8 +1106,8 @@ hexo<span class="token punctuation">.</span><span class="token function">on</spa
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                                    其他
+                            <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" class="post-category">
+                                    方法技能
                                 </a>
                             
                             
