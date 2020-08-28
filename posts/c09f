@@ -1454,7 +1454,7 @@ menu:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/12/SEO/">
+                <a href="/posts/5851">
                     <div class="card-image">
                         
                         <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="网站SEO优化">
@@ -1502,7 +1502,7 @@ menu:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/12/shellscriptsforbackup/">
+                <a href="/posts/10fa">
                     <div class="card-image">
                         
                         <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="使用shell脚本做文件备份">

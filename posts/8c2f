@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="虚拟机安装Linux系统记录, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="HTML 基础知识总结, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>虚拟机安装Linux系统记录 | 肆零肆</title>
+    <title>HTML 基础知识总结 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">虚拟机安装Linux系统记录</h1>
+                    <h1 class="description center-align post-title">HTML 基础知识总结</h1>
                 </div>
             </div>
         </div>
@@ -501,8 +501,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
                             </a>
                         
                     </div>
@@ -526,7 +530,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-07-09
                 </div>
                 
 
@@ -542,113 +546,105 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="虚拟机安装系统学习记录"><a href="#虚拟机安装系统学习记录" class="headerlink" title="虚拟机安装系统学习记录"></a>虚拟机安装系统学习记录</h1><p><strong>安装前准备：</strong></p>
+                <h1 id="HTML-基础知识总结"><a href="#HTML-基础知识总结" class="headerlink" title="HTML 基础知识总结"></a>HTML 基础知识总结</h1><p>在搭建Hexo个人博客过程中，尤其是自定义Hexo主题时，不可避免的会接触到Html语法。对于修改Hexo主题来说，所需要的Html其实不需要很多。因为绝大多数都是写好了的，只需要我们看懂，然后依葫芦画瓢，好好修改一下就好了。所以只需要有个基础知识，认识一些常用标签，稍微入个门就足够我们使用了。</p>
+<h2 id="一、HTML-的简述"><a href="#一、HTML-的简述" class="headerlink" title="一、HTML 的简述"></a>一、HTML 的简述</h2><p>&emsp;&emsp;HTML, 超文本标记语言，英文全称是Hyper Text Markup Language，由 Tim Berners-Lee 在 1982 年提出，它是互联网上应用最广泛的标记语言。</p>
+<h3 id="1-HTML4-01-和-XHTML"><a href="#1-HTML4-01-和-XHTML" class="headerlink" title="1. HTML4.01 和 XHTML"></a>1. HTML4.01 和 XHTML</h3><p>&emsp;&emsp;XHTML的全称是 (eXtensible Hyper Text Markup Language，扩展的超文本标记语言)，XHTML和HTML4.01（先前的HTML） 具有很好的兼容性，而且XHTML是更严格、更纯净的HTML代码。W3C组织制定XHTML，目标是逐步取代原有的HTML。简单地说，XHTML就是最新版本的HTML规范。</p>
+<p>&emsp;&emsp;XHTML要求HTML文档首先必须是一份<code>XML</code>文档。<code>XML</code>文档是一种结构化文档，它有如下4条基本规则：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1RKLHnYrLgMpHpvQFelfung">VMware</a>  (提取码：1234)</li>
+<li>整个文档有且有一个根元素。</li>
+<li>每个元素都由开始标签和结束标签组成，例如<code>&lt;a&gt;&lt;/a&gt;</code>，就是一对标签。除非使用空元素语法，例如 <code>&lt;br/&gt;</code> 就是空元素语法。</li>
+<li>元素与元素之间应该合理嵌套。例如<code>&lt;div&gt;&lt;span&gt;内容&lt;/span&gt;&lt;/div&gt;</code>，这可以明确的看出<code>&lt;/span&gt;</code>元素是<code>&lt;/div&gt;</code>的子元素，这就是合理嵌套。但<code>&lt;div&gt;&lt;span&gt;内容&lt;/div&gt;&lt;/span&gt;</code>这种写法就比较混乱，也就是所谓的不合理嵌套。</li>
+<li>元素的属性必须有属性值，而且属性值应该用引号（单引号和双引号都可以）引起来。</li>
 </ul>
-<blockquote>
-<p>软件来源：公众号（软件管家）</p>
-</blockquote>
+<h3 id="2-HTML5-的诞生"><a href="#2-HTML5-的诞生" class="headerlink" title="2. HTML5 的诞生"></a>2. HTML5 的诞生</h3><p>&emsp;&emsp;HTML5 是指万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言的第五次重大修改。HTML5 的设计目的是为了在移动设备上支持多媒体。新的语法特征被引进以支持这一点，如<code>video</code>、<code>audio</code>和<code>canvas</code>标记。还引进了新的功能，可以真正改变用户与文档的交互方式。</p>
+<p>&emsp;&emsp;HTML5 的第一份正式草案已于 2008 年 1 月 22 日公布。HTML5 仍处于完善之中。2013 年 5 月 6 日，HTML5.1 正式草案公布。该规范定义了第五次重大版本，第一次要修订万维网的核心语言：超文本标记语言。在这个版本中，新功能不断推出，以帮助 Web 应用程序的作者，努力提高新元素互操作性。直到 2014 年 10 月 29 日，经过几乎 8 年的艰辛努力，HTML5 标准规范终于制定完成了，并已公开发布。HTML5 还在继续修改完善，增加新的功能。</p>
+<h2 id="二、常用的标签"><a href="#二、常用的标签" class="headerlink" title="二、常用的标签"></a>二、常用的标签</h2><h3 id="1-基本标签"><a href="#1-基本标签" class="headerlink" title="1.  基本标签"></a>1.  基本标签</h3><p>一个网页的大致构成是：</p>
+<pre class="line-numbers language-html"><code class="language-html">
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment" spellcheck="true">&lt;!--编码格式--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment" spellcheck="true">&lt;!-- 优先使用最新的ie版本 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>文档标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>资源所在路径<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>规定被链接文档的MIME类型<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>定义编码方式<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token comment" spellcheck="true">&lt;!--主体内容 显示在网页上的，由许多的标签组成--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+     ...
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>引用文件地址<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--自己写的JavaScript代码，可在当前页面写，也可以另外写一个js文件，然后在引入 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><a href="magnet:?xt=urn:btih:9DB46A612D04763AA7DB02A0FF63EDE2EA555867&dn=CentOS-8.1.1911-x86_64-dvd1.iso">CentOS-8.1系统磁力链接</a></li>
+<li><code>&lt;!DOCTYPE HTML&gt;</code>定义文档类型为<code>HTML</code>，自从HTML5问世之后，就开始使用。这个在编写代码时必须要写上，这个是用来声明文档类型的，文档类型类似于连接，规定了HTML 页面必须遵从的良好规则，能自动检测错误和其他有用的东西</li>
+<li><code>&lt;head&gt;&lt;/head&gt;</code>定义文档的一些相关信息</li>
+<li><code>&lt;title&gt;&lt;/title&gt;</code>定义文档的标题</li>
+<li><code>&lt;meta&gt;</code>定义关于<code>HTML</code>文档的元信息，关键词，作者等。不会显示在网页上。它的属性有<code>charset</code>，<code>name</code>，<code>http-equiv</code>，<code>content</code>属性等，后期再对这个标签进行详细的解释。</li>
+<li><code>&lt;link&gt;</code>用于链接样式表。关于什么是<code>MIME</code>类型，可以参考<code>MIME</code>类型参考手册，有具体的讲解。</li>
+<li><code>&lt;!-- --&gt;</code>定义注释，便于开发者阅读浏览。</li>
+<li><code>&lt;h1&gt;~&lt;h6&gt;</code>定义标题，字体的大小<code>&lt;h1&gt;</code>最大，<code>&lt;h6&gt;</code>最小。</li>
+<li><code>&lt;p&gt;&lt;/p&gt;</code>段落标签，是一个块级标签。</li>
+<li><code>&lt;span&gt;&lt;/span&gt;</code>和<code>&lt;div&gt;&lt;/div&gt;</code>定义文档的节。</li>
+<li><code>&lt;iframe&gt;&lt;/iframe&gt;</code>定义文档的内联框架。</li>
 </ul>
-<blockquote>
-<p>系统来源：<a target="_blank" rel="noopener" href="https://next.itellyou.cn/">MSDN,I tell you</a></p>
-<p>如需安装其他版本或其他系统，可进入网站自行选择系统</p>
-</blockquote>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200811224617.png" alt="CentOS系统镜像下载"></p>
-<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><ul>
-<li>安装过程中关闭更新</li>
-<li>输入许可证密钥：<code>UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA</code></li>
+<h3 id="2-表格标签"><a href="#2-表格标签" class="headerlink" title="2.  表格标签"></a>2.  表格标签</h3><ul>
+<li><code>&lt;table&gt;&lt;/table&gt;</code> 定义表格</li>
+<li><code>&lt;th&gt;&lt;/th&gt;</code>定义表格的表头</li>
+<li><code>&lt;tr&gt;&lt;/tr&gt;</code>定义表格的行</li>
+<li><code>&lt;td&gt;&lt;/td&gt;</code>定义表格的单元</li>
+<li><code>&lt;caption&gt;&lt;/caption&gt;</code>定义表格标题</li>
+<li><code>&lt;thead&gt;&lt;thead&gt;</code>定义表格中的表头内容</li>
+<li><code>&lt;tbody&gt;&lt;/tbody&gt;</code>定义表格中的主体内容</li>
+<li><code>&lt;tfoot&gt;&lt;/tfood&gt;</code>定义表格中的表注内容（脚注）</li>
 </ul>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200811223524.png" alt="产品密钥"></p>
-<h2 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h2><ol>
-<li><p>点击创建新的虚拟机</p>
-</li>
-<li><p>选择自定义，点击下一步</p>
-</li>
-<li><p>硬件兼容性，选择最新版本，点击下一步</p>
-</li>
-<li><p>点击浏览，选择提前下载好的镜像系统，点击下一步</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200811232624.png" alt="选择镜像"></p>
-</li>
-<li><p>设置用户名和密码，点击下一步</p>
-</li>
-<li><p>点击设置虚拟机存放的位置，这里建议选择存放在C盘以外的其他盘。</p>
-</li>
-<li><p>根据电脑配置，选择处理器数量，数量设置适中即可。</p>
-</li>
-<li><p>设置虚拟机的内存大小，也不能设置太高，要根据电脑配置选择，建议最少选择512M。我这里选择1024M。</p>
-</li>
-<li><p>设置网络类型，默认下一步即可。</p>
-</li>
-<li><p>I/O控制器类型选择，默认下一步</p>
-</li>
-<li><p>磁盘类型，默认下一步</p>
-</li>
-<li><p>创建虚拟机磁盘大小，根据自身需求、系统类型、电脑配置设置虚拟机磁盘大小，我用于学习Linux系统，需求不高，在这里设置40G。</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200811234117.png" alt="容量大小设置"></p>
-</li>
-<li><p>下一步安装虚拟机，等待系统自动安装。</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200811234307.png" alt="配置汇总"></p>
-</li>
-</ol>
-<p>14.点击编辑虚拟机</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812070414.png" alt="编辑"></p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812070652.png" alt="确认镜像路径"></p>
-<ol start="15">
-<li>开启虚拟机安装系统，选择<code>Install CentOS Linux 8</code>，<code>enter</code>进入</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812070758.png" alt="install centos"></p>
-<ol start="16">
-<li>安装过程</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812070854.png" alt="安装过程"></p>
-<ol start="17">
-<li>安装初始配置，选择简体中文</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071047.png" alt="选择语言"></p>
-<ol start="18">
-<li>设置分区</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071216.png" alt="设置分区"></p>
-<ol start="19">
-<li>选择自定义，点击完成</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071535.png" alt="设置分区"></p>
-<ol start="20">
-<li>添加磁盘分区</li>
-</ol>
-<p>Linux的分区，并不像Windows一样，分成C、D、E等盘，介绍几个重要的分区：</p>
+<h3 id="3-列表标签"><a href="#3-列表标签" class="headerlink" title="3. 列表标签"></a>3. 列表标签</h3><ul>
+<li><code>&lt;ul&gt;&lt;/ul&gt;</code>定义无序列表</li>
+<li><code>&lt;ol&gt;&lt;/ol&gt;</code>定义有序列表</li>
+<li><code>&lt;li&gt;&lt;/li&gt;</code>定义列表项</li>
+<li><code>&lt;dl&gt;&lt;/dl&gt;</code>定义列表</li>
+<li><code>&lt;dt&gt;&lt;/dt&gt;</code>自定义列表项目</li>
+<li><code>&lt;dd&gt;&lt;/dd&gt;</code>定义自定义列表的描述</li>
+</ul>
+<h3 id="4-表单标签"><a href="#4-表单标签" class="headerlink" title="4. 表单标签"></a>4. 表单标签</h3><ul>
+<li><code>&lt;form&gt;&lt;/form&gt;</code>定义供用户输入的表单</li>
+<li><code>&lt;input&gt;</code>定义输入控件，如密码框，输入框，按钮等</li>
+<li><code>&lt;textarea&gt;&lt;/textarea&gt;</code> 定义文本域 （一个多行的输入控件）</li>
+<li><code>&lt;label&gt;&lt;/label&gt;</code> 定义了 <code>&lt;input&gt;</code> 元素的标签，一般为输入标题</li>
+<li><code>&lt;filedset&gt;&lt;/filedset&gt;</code> 定义了一组相关的表单元素，并使用外框包含起来</li>
+<li><code>&lt;legend&gt;&lt;/legend&gt; </code>定义了<code>&lt;fieldset&gt;</code>元素的标题</li>
+<li><code>&lt;select&gt;&lt;/select&gt;</code> 定义了下拉选项列表</li>
+<li><code>&lt;optgroup&gt;&lt;/optgroup&gt;</code> 定义了下拉选项组</li>
+<li><code>&lt;option&gt;&lt;/option&gt;</code> 定义下拉列表中的选项</li>
+<li><code>&lt;button&gt;&lt;/button&gt;</code> 定义一个点击按钮</li>
+</ul>
+<h3 id="5-多媒体链接"><a href="#5-多媒体链接" class="headerlink" title="5. 多媒体链接"></a>5. 多媒体链接</h3><ul>
+<li><code>&lt;a&gt;&lt;/a&gt;</code>定义一个超链接</li>
+<li><code>&lt;img&gt;</code>定义图像</li>
+<li><code>&lt;embed&gt;&lt;/embed&gt;</code> 定义在页面中嵌入的内容，可插入音频视频等。</li>
+</ul>
+<h3 id="6-格式标签"><a href="#6-格式标签" class="headerlink" title="6. 格式标签"></a>6. 格式标签</h3><ul>
+<li><code>&lt;b&gt;&lt;b/&gt;</code> 定义粗体文本</li>
+<li><code>&lt;del&gt;&lt;/del&gt;</code>定义被删除文本</li>
+<li><code>&lt;em&gt;&lt;/em&gt;</code> 定义强调文本</li>
+<li><code>&lt;i&gt;&lt;/i&gt;</code> 定义斜体文本</li>
+<li><code>&lt;sup&gt;&lt;/sup&gt;</code> 定义上标文本</li>
+<li><code>&lt;sub&gt;&lt;/sub&gt;</code> 定义下标文本</li>
+<li><code>&lt;hr&gt;</code> 定义水平线</li>
+<li><code>&lt;br&gt;</code> 定义简单的换行</li>
+</ul>
+<p>&emsp;&emsp;常用的标签基本上就是这些了，有些标签在现在的网页开发中很少用或者是被弃用淘汰了，在新的 HTML5 中新增了很多的标签和属性。同时，如果对HTML想更加深入的了解或学习，可去<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html5-intro.html">菜鸟教程</a>系统学习。</p>
+<p>更多标签搜索：<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-byfunc.html">HTML标签列表（功能排序）</a>。</p>
+<p>&emsp;&emsp;与此同时，此文章不关是仅仅列出一些常用标签，可以在以后需要使用时访问本站，使用<code>ctrl+F</code>搜索标签，即可快速明白标签大致用途，方便修改以及自定义博客。</p>
+<p><strong>参考文章</strong></p>
 <ul>
-<li>交换分区（swap）：交换分区和Windows的虚拟内存很像。现在内存也便宜，物理服务器的配置也高，以前的说法是一般为物理内存的2倍，现在一般情况下划分为4~8GB备用即可。我们虚拟机的内存是4GB，我们就划8GB吧。</li>
-<li>启动分区（boot）：200MB足够了。</li>
-<li>根分区（/）：剩余空间都给根分区吧。当然我们也可以单独划出/data分区，专门用来存储存数据，不过这里我们先不这样做，直接全部都给根分区。</li>
-</ul>
-<p>按照下图顺序依次进行设置：</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071640.png" alt="image-20200812071639950"></p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071804.png" alt="分区情况"></p>
-<ol start="21">
-<li>点击完成后会弹出更改摘要页面，点击接受更改：</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812071904.png" alt="更改摘要页面"></p>
-<ol start="22">
-<li>设置根密码：</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812072013.png" alt="根密码设置"></p>
-<ol start="22">
-<li>安装完成</li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812074504.png" alt="欢迎界面"></p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812074613.png" alt="image-20200812074613582"></p>
-<ol start="23">
-<li>安装完成之后，关闭虚拟机，点击编辑虚拟机，移除<code>CD/DVD</code></li>
-</ol>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200812074926.png" alt="image-20200812074926218"></p>
-<ul>
-<li><p>参考文章：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112122692">VMware 安装 CentOS 8.1(centos 8 系列安装过程类似) 完整教程</a></p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/7aedb564.html">Yafine</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/html/html5-intro.html">菜鸟教程</a></li>
 </ul>
 
             </div>
@@ -663,8 +659,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
                                 </a>
                             
                         </div>
@@ -1087,29 +1087,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/12/Markdown_Typora_PicGo/">
+                <a href="/posts/1e44">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Markdown高效使用之Typora集成PicGo图床">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="虚拟机安装Linux系统记录">
                         
-                        <span class="card-title">Markdown高效使用之Typora集成PicGo图床</span>
+                        <span class="card-title">虚拟机安装Linux系统记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown高效使用之Typora集成PicGo图床前言Markdown软件有多种，个人在Windows端使用两种软件，也认为是最好用的。
-
-Typora
-简单，合并了写作和预览，所见即所得。
-
-VS code
-整个软件不仅仅是支持Ma
+                            使用VMware虚拟机安装Linux系统，学习Linux。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-10
                         </span>
                         <span class="publish-author">
                             
@@ -1126,12 +1120,8 @@ VS code
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                        <span class="chip bg-color">图床</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1145,18 +1135,20 @@ VS code
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/09/Htmlbasic-tags/">
+                <a href="/posts/922">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="HTML 基础知识总结">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="VI/VIM 编辑器安装及使用">
                         
-                        <span class="card-title">HTML 基础知识总结</span>
+                        <span class="card-title">VI/VIM 编辑器安装及使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTML 基础知识总结在搭建Hexo个人博客过程中，尤其是自定义Hexo主题时，不可避免的会接触到Html语法。对于修改Hexo主题来说，所需要的Html其实不需要很多。因为绝大多数都是写好了的，只需要我们看懂，然后依葫芦画瓢，好好修改一下
+                            VI/VIM 编辑器安装及使用VI和VIM是什么
+VI 是 Unix 操作系统和类 Unix 操作系统中最通用的文本编辑器。
+VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。可以主动的以字体颜色辨别语法的正确性，方便程序设计
                         
                     </div>
                     <div class="publish-info">
@@ -1178,12 +1170,8 @@ VS code
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

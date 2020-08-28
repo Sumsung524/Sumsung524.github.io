@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用shell脚本做文件备份, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="Linux学习笔记, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用shell脚本做文件备份 | 肆零肆</title>
+    <title>Linux学习笔记 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用shell脚本做文件备份</h1>
+                    <h1 class="description center-align post-title">Linux学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -505,10 +505,6 @@
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/shell/">
-                                <span class="chip bg-color">shell</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -530,7 +526,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-08-13
                 </div>
                 
 
@@ -546,101 +542,395 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用shell脚本做文件备份"><a href="#使用shell脚本做文件备份" class="headerlink" title="使用shell脚本做文件备份"></a>使用shell脚本做文件备份</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>无论是在搭建自己的个人博客过程中还是平时的工作生活中，都会有文件备份的习惯，有些文件往往比较重要，需要经常性的打包备份一次。就我在搭建Hexo博客而言，每次都要清理<code>public</code>文件夹后将文件进行打包备份，移动到其他文件夹或者网盘存储。每次重复性的，周期性的操作认为比较繁琐，因此想使用一个简单的脚本将重复繁琐的备份任务用一个命令解决。</p>
-<p>开始吧~</p>
-<h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell简单的说就是我们使用的命令解释器，你打开的终端就是shell。你部署hexo博客就是用的Git bash，其中bash属于shell中的一种。</p>
-<h2 id="什么是shell脚本"><a href="#什么是shell脚本" class="headerlink" title="什么是shell脚本"></a>什么是shell脚本</h2><p>我们打开终端(shell)敲下一行行命令，是只能一条一条的发送命令。我所理解的shell脚本就是，可以将bash中一条一条敲下的命令组合到一起，命令之间可以相互联系，最终依次全部执行的文件。而且这类文件是一类带有<code>.sh</code>拓展名的文件。</p>
-<ul>
-<li>shell脚本如何编写？</li>
+                <ul>
+<li><code>mkdir</code>    创建目录</li>
 </ul>
-<p>使用<code>vi</code>/<code>vim</code>编辑器、<code>VS code</code>、<code>Notepad++</code>等其他编辑器，以<code>shell scripts</code>的格式保存即可编写<code>.sh</code>文件。</p>
-<p>使用<code>bash</code>中执行的命令都可以在<code>shell</code>脚本中执行。</p>
-<p>如需要深入了解<code>shell</code>脚本可参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">shell教程</a>。</p>
+<p><code>mkdir -p /dir1/dir2</code>     连续创建目录 </p>
 <ul>
-<li>shell脚本如何运行？<ul>
-<li>可双击<code>.sh</code>文件直接运行</li>
-<li>在脚本文件目录下运行<code>sh xx.sh</code></li>
-<li>添加环境变量PATH，使你的脚本变成一个命令。</li>
+<li><code>touch</code>    创建文件</li>
 </ul>
+<p>创建以<code>file[n]</code>命名的一万个文件：</p>
+<p><code>touch file&#123;1..10000&#125;</code></p>
+<ul>
+<li><code>&gt;</code>    重定向</li>
+</ul>
+<p>重定向<code>&gt;</code>,会清除文件里以前所有的数据；</p>
+<p>利用重定向将内容写入<code>file.txt</code>文本：</p>
+<p><code>echo ‘I am Studying Linux’&gt;file.txt</code></p>
+<ul>
+<li><code>&gt;&gt;</code>    内容追加</li>
+</ul>
+<p>利用重定向将内容写入<code>file.txt</code>文本，只在文件尾部追加需要的内容</p>
+<p><code>echo ‘I am Studying Linux’&gt;&gt;file.txt</code></p>
+<blockquote>
+<p>可追加多行</p>
+</blockquote>
+<ul>
+<li><code>cat</code>命令重定向</li>
+</ul>
+<p><code>cat &gt;file.txt #回车并直接写入需要内容，按ctrl+C/D结束</code></p>
+<ul>
+<li><code>cat</code>命令内容追加：</li>
+</ul>
+<p><code>cat &gt;&gt;file.txt #cat命令内容追加，按ctrl+C/D结束</code></p>
+<ul>
+<li><code>cat</code>命令多行内容追加：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">>></span>file.txt<span class="token operator">&lt;&lt;</span>xmq
+<span class="token operator">></span>line1
+<span class="token operator">></span>line2
+<span class="token operator">></span>line3
+<span class="token operator">></span>xmq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>自定义设置字符作为开始与结束的标志</p>
+</blockquote>
+<p>创建内容并同时写入内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"写入的内容"</span> <span class="token operator">></span>/usr/data/file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>凡是用echo、touch创建的都是“文件”</p>
+</blockquote>
+<ul>
+<li><code>&lt;</code>    输入重定向</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">&lt;</span>file.txt <span class="token comment" spellcheck="true">#即 cat file.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">></span>abc.txt <span class="token operator">&lt;</span>file1.txt <span class="token comment" spellcheck="true">#将file1.txt中的内容重定向到abc.txt文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token string">" "</span> <span class="token string">"\n"</span><span class="token operator">&lt;</span>a.txt <span class="token operator">>></span>a.txt <span class="token comment" spellcheck="true">#将a.txt中的空格改成换行符，并追加到a.txt后</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>箭头方向即数据流向，输入重定向，将文件中的数据流向给命令</p>
+</blockquote>
+<ul>
+<li><code>2&gt;&gt;</code>错误内容追加</li>
+</ul>
+<p>输入错误命令，并将错误结果追加到<code>file.txt</code>中</p>
+<pre class="line-numbers language-bash"><code class="language-bash">lls <span class="token operator">>></span>file1.txt 2<span class="token operator">>></span>file2.txt 
+<span class="token function">ls</span> <span class="token operator">>></span>file1.txt 2<span class="token operator">>></span>file2.txt <span class="token comment" spellcheck="true">#正确内容追加到file1，错误内容追加到file2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ls</span> <span class="token operator">&amp;</span><span class="token operator">>></span>file1.txt <span class="token comment" spellcheck="true">#正确和错误的内容全部追加到fiel1</span>
+lls <span class="token operator">>></span>file1.txt 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token comment" spellcheck="true">#标准错误输出同标准正确输出一致，全部追加到file1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>总结：</li>
+</ul>
+<p><code>&gt;</code>或<code>1&gt;</code>    输出重定向：把前面输出的东西输入到后边的文件中，会清除文件原有内容。</p>
+<p><code>&gt;&gt;</code>或<code>1&gt;&gt;</code>    追加重定向：把前面输出的东西追加到后边的文件尾部，不会清除文件原有内容。</p>
+<p><code>0&lt;</code>或<code>&lt;</code>    输入重定向：输入重定向用于改变命令的输入，后面指定输入内容，前面跟文件名。</p>
+<p><code>0&lt;&lt;</code>或<code>&lt;&lt;</code>    追加输入重定向：后跟字符串，用来表示“输入结束”，也可用<code>ctrl+D</code>来结束输入。</p>
+<p><code>2&gt;</code>    错误重定向：把错误信息输入到后边的文件中，会删除原文文件内容。</p>
+<p><code>2&gt;&gt;</code>    错误追加重定向：把错误信息追加到后边的文件中，不会删除原文文件内容。</p>
+<blockquote>
+<p>说明：</p>
+<p>1、箭头的指向就是数据的流向。</p>
+<p>数字说明：</p>
+<p>标准输入：    代码为0，使用&lt;或&lt;&lt;。数据流向：从右到左。</p>
+<p>标准正常输出：    代码为1，使用&gt;或&gt;&gt;。数据（正确的数据）流向：从左到右。</p>
+<p>标准错误输出：    代码为2，使用2&gt;或&gt;&gt;。 数据（错误的数据）流向：从左到右。</p>
+</blockquote>
+<ul>
+<li><code>cat</code>    查看文件内容</li>
+</ul>
+<p>查看某一文件下所有文件内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">find</span> /data/data/ -type f <span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">cat</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p><code>xargs</code>    从标准输入获取内容创建和执行命令行 </p>
+<p>常用命令：<code>xargs -n 数字</code>分组</p>
 </li>
 </ul>
-<h2 id="制作打包备份博客源代码的shell脚本"><a href="#制作打包备份博客源代码的shell脚本" class="headerlink" title="制作打包备份博客源代码的shell脚本"></a>制作打包备份博客源代码的shell脚本</h2><p>开始制作脚本之前，需要了解一下，在打包过程中，需要用到自己安装的压缩软件的打包命令。</p>
-<p>我使用的是<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/">Bandizip软件</a>，官网提供了软件相关的命令行代码，<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/help/parameter/">Bandizip命令行参数</a>。其他软件可自行百度。此教程使用Bandizip示例。</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200712234406.png" alt="Bandizip命令行参数"></p>
-<p>使用<code>vi</code>、<code>vim</code>、<code>VS code</code>等编辑器创建新文本，使用简单的命令组合制作脚本：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
-<span class="token comment" spellcheck="true"># 用于打包备份blog文件</span>
-<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io <span class="token comment" spellcheck="true"># 定位到需要清理的位置</span>
-<span class="token keyword">echo</span> <span class="token string">"已定位到目标文件夹"</span>
-hexo clean <span class="token comment" spellcheck="true"># 清理文件</span>
-<span class="token keyword">echo</span> <span class="token string">"清理完成"</span>
-<span class="token function">cd</span> /c/Users/Sumsung524 <span class="token comment" spellcheck="true"># 定位到需要打包的位置</span>
-<span class="token keyword">echo</span> <span class="token string">"已定位到打包位置"</span>
-bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip Sumsung524.github.io
-<span class="token comment" spellcheck="true"># 将Sumsung524.github.io文件夹打包，并以当天打包时间命名。</span>
-<span class="token comment" spellcheck="true"># c表示打包文件，-y表示：所有询问都为是若无错误发生，则在任务完成时关闭（解）压缩窗口</span>
-<span class="token keyword">echo</span> <span class="token string">"打包完成"</span>
-<span class="token function">mv</span> <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip
-<span class="token comment" spellcheck="true"># 将生成的打包文件移动到备份文件夹中</span>
-<span class="token keyword">echo</span> <span class="token string">"移动成功"</span>
-<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
-hexo generate <span class="token comment" spellcheck="true"># 回到原来的位置重新解析文件</span>
-<span class="token keyword">echo</span> <span class="token string">"重新解析成功"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>做好之后以<code>.sh</code>拓展名保存到一个位置（你也可以直接不带任何拓展名，同样可以直接运行命令，甚至更加方便）。其中<code>#!/bin/sh</code>代表是一个<code>shell</code>脚本文件（这个没有关系不大），<code>#</code>用于注释，<code>echo</code>表示输出内容，可以不用。<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>表示打包当天的日期。</p>
-<p>如果你认为代码太复杂可以简化为：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
-<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io
-hexo clean
-<span class="token function">cd</span> /c/Users/Sumsung524
-bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip Sumsung524.github.io
-<span class="token function">mv</span> <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip
-<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
-hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果你需要在打包的时候需要对文件加上其他命名，可加入如下代码：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"输入文件名"</span>
-<span class="token function">read</span> file_name
-bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span><span class="token string">"$&amp;#123;file_name&amp;#125;"</span>.zip Sumsung524.github.io
-<span class="token function">mv</span> *.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在这里添加了一个叫<code>file_name</code>（名称自取）的变量，访问变量时，需要在变量名称之前添加<code>“$”</code>，如<code>“$ &#123;变量&#125;”</code>，将变量用<code>“&#123;&#125;”</code>括起来。</p>
-<p>将<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>改为<code>*.zip</code>。会将所在目录下的所有<code>zip</code>格式移动到目标目录。</p>
-<p>这样做好之后，运行脚本的时候就需要你设置文件名：</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713161443.png" alt="要求输入文件名"></p>
-<p>当然如果不想加文件名的时候可以选择直接回车。效果和之前脚本一样。</p>
-<h2 id="添加PATH"><a href="#添加PATH" class="headerlink" title="添加PATH"></a>添加PATH</h2><p>做好脚本之后，测试一两次没有问题之后，我们将脚本保存到一个文件夹中，以便日后再用。但以后每次使用都要到脚本文件目录下执行脚本，要在前面输入很长一段的路径，很不方便。因此我们要找一个linux命令行在任意目录下启动任意的脚本的方法，就是给他添加一个PATH。</p>
-<blockquote>
-<p>简单说PATH就是一组路径的字符串变量，当你输入的命令不带任何路径时，LINUX会在PATH记录的路径中查找该命令。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token keyword">echo</span> 1 2 3 4 5 6 7 8 <span class="token operator">></span>a.txt
+$ <span class="token function">cat</span> <span class="token operator">&lt;</span>a.txt
+1 2 3 4 5 6 7 8
+$ <span class="token function">xargs</span> -n 4 <span class="token operator">&lt;</span>a.txt
+1 2 3 4
+5 6 7 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>PATH的作用就是每次在Bash里面输入一个命令时, Bash都会去PATH列表里面去找对应的文件,找到了就执行, 脚本其实就是一个可执行的文件(ls, cd, mkdir..)</li>
-<li>可以输入命令echo $PATH查看所有的路径,Bash就会在这些路径中依次查找</li>
+<li><p><code>cp</code>    复制文件</p>
+<p><code>cp -r 文件夹路径</code>    -r，递归复制，用于复制文件夹</p>
+<p><code>cp -a 文件夹路径</code>    复制，用于复制文件夹,保持文件属性，如果文件为链接文件将复制链接</p>
+</li>
+<li><p><code>rm -f 文件名</code>  -f （force）强制删除 </p>
+<p><code>rm -rf 目录名</code>  -r （recursive）递归，删除目录</p>
+<p><code>rm -v 文件名</code>  -v 提示已删除的文件</p>
+</li>
 </ul>
+<blockquote>
+<p>rm命令使用比较危险，删除后无法恢复。一般使用find命令删除文件</p>
 </blockquote>
 <ul>
-<li>临时设置PATH</li>
+<li><code>find</code></li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">pwd</span> <span class="token comment" spellcheck="true">#查看下脚本所在的绝对路径</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"脚本的绝对路径:<span class="token variable">$PATH</span>"</span> <span class="token comment" spellcheck="true"># 这句话就是将脚本所在的目录加到PATH里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>上面的PATH在重启Bash后就会失效。</p>
+<p>按时间查找文件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">find</span> /data -mtime +7 <span class="token comment" spellcheck="true">#+7表示七天以前的文件，7表示查找第7天的文件，-7表示最近7天</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查找某一个路径下类型为“文件“的数据：</p>
+<p><code>find /data -type f</code> </p>
+<p>查找某一个路径下类型为“文件“名称为<code>file.txt</code>的数据：</p>
+<p><code>find /data -type f -name &quot;file.txt&quot;</code></p>
 <ul>
-<li>永久设置PATH</li>
+<li><code>find</code>的<code>-exec</code>  对查找到的数据进行处理</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> ~/.bashrc <span class="token comment" spellcheck="true"># 创建~/.bashrc</span>
-<span class="token function">vi</span> ~/.bashrc <span class="token comment" spellcheck="true"># 编辑~/.bashrc</span>
-在编辑器里写入 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"local的绝对路径:<span class="token variable">$PATH</span>"</span>
-<span class="token function">source</span> ~/.bashrc <span class="token comment" spellcheck="true"># 保存编辑,这句命令一定要写</span>
-<span class="token function">zip</span> <span class="token comment" spellcheck="true"># zip是我的脚本文件名，直接输入你的文件名即可直接运行脚本。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>注意:</strong></p>
-<p>整个备份脚本文件已经做完了，以后可以轻松的使用一个自己自定义的命令（修改脚本文件名）即可完成文件备份了！在使用过程中有几个需要注意的点：</p>
-<ol>
-<li>不要去改动备份目标文件夹路径中文件夹的名称，或者改动之后相应的脚本位置也需要统一改动。</li>
-<li>打包目录下不能存放其他<code>zip</code>格式的文件，否则会全部移动到目标路径文件夹下。</li>
-<li>可以将备份文件的目标路径设置为网盘的备份文件夹（OneDrive、百度网盘、天翼云等），从而实现双备份。</li>
-</ol>
+<p>对某一个路径下类型为“文件“名称为<code>file.txt</code>的数据进行删除：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">find</span> /data -type f -name <span class="token string">"file.txt"</span> -exec <span class="token function">rm</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125; \; #&amp;#123;&amp;#125;表示查找的内容，即将查找到的内容进行删除</span>
+<span class="token function">find</span> /data -type f -name <span class="token string">"file.txt"</span> <span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">rm</span> -f <span class="token comment" spellcheck="true">#通过管道符号|将数据传给rm，xargs将查找到的数据变成一行，等同于rm -f a.txt b.txt c.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
-<p>个人使用的是Onedrive网盘同步盘，将目标文件夹下备份打包好的文件，等网盘同步之后，使用释放空间功能，将打包的文件上传到网盘而不保留到本地，既释放了空间，也实现的文件的备份。目标文件夹只相当于一个临时存储区。</p>
+<p>一般使用该命令删除，好处在于设置的条件比较多，不容易误删</p>
+<p>-type f    （file）文件    -type d    （directory）目录    -type c(    character) 字符    -type    b    (block)块设备、磁盘     -type  s(socket)</p>
 </blockquote>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713163508.png" alt="Onedrive释放本地空间存储文件至云端"></p>
-<p>另外，如需系统学习shell脚本请下载：<a target="_blank" rel="noopener" href="https://sumsung.lanzous.com/iRRTvekg2na">Linux命令行与shell脚本编程大全.第3版</a>。</p>
+<ul>
+<li><code>|</code>    管道符：将上一个命令的数据传递给下一个命令进行处理，管道符可多次使用。</li>
+</ul>
+<p>对某一个路径下类型为“文件“名称为<code>file.txt</code>的数据进行移动：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> `find aaa/ -type f -name <span class="token string">"*.txt"</span> ` bbb/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>!</code>    可取反    <code>-a</code>取交集    <code>-o</code>   取并集，或者</p>
+<p><code>-</code>   上一次所在的目录</p>
+<p><code>~</code>   当前用户的家目录 </p>
+<p><code>.</code>    当前目录</p>
+<p><code>..</code>     上一级目录</p>
+<ul>
+<li><p><code>grep</code>    过滤命令（Linux三剑客之一），过滤需要的内容，使用<code>-v</code>表示排除；</p>
+<p>查看<code>file.txt</code>文件中除<code>abc</code>字符以外的内容</p>
+<p><code>grep -v abc file.txt</code> </p>
+<p>查看<code>file.txt</code>文件中含<code>abc</code>字符的内容</p>
+<p><code>grep abc file.txt</code> </p>
+</li>
+</ul>
+<blockquote>
+<p>grep num -A/-B/-C num file.txt </p>
+<p>-A除了显示匹配一行之外，并显示该行之后的num行；</p>
+<p>-B 除了显示匹配的一行之外，并显示该行之前的num行；</p>
+<p>-C    除了显示匹配的一行之外，并显示该行之前后的各num行。</p>
+</blockquote>
+<ul>
+<li><code>head -n 文件名</code>  表示读取文件的前<code>n</code>行,默认前十行</li>
+<li><code>tail -n</code> 表示读取文件的后<code>n</code>行，默认为十行</li>
+</ul>
+<p>查看文件前十行和后十行内容。并将数据在一行输出：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">seq</span> 20 <span class="token operator">></span>file.txt    <span class="token comment" spellcheck="true">#排序</span>
+$ <span class="token function">head</span> file.txt <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token comment" spellcheck="true">#xargs 将数据变为一行</span>
+1 2 3 4 5 6 7 8 9 10
+$ <span class="token function">tail</span> file.txt <span class="token operator">|</span> <span class="token function">xargs</span>
+11 12 13 14 15 16 17 18 19 20<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p><code>yum install Irzsz telnet tree nmap nc -y #-y表示直接同意安装</code>   使用<code>yum</code>安装常用命令（如果没有）</p>
+</li>
+<li><p><code>LANG=en</code>  改成英文版本   <code>LANG=&quot;zh_CN.UTF-8&quot;</code>     改成中文版本</p>
+</li>
+<li><p><code>alias</code>  设置/查看系统命令名别</p>
+</li>
+</ul>
+<p>别名的作用：</p>
+<p>（1）给危险得命令加一些参数保护，防止人为误操作。</p>
+<p>（2）把很多复杂的字符串或命令变成一个简单的字符串命令。</p>
+<p>为<code>rm</code>设置别名,告之不允许使用:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">alias</span> rm<span class="token operator">=</span><span class="token string">'echo this command does not allow to use.'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>unalias 命令</code>    删除别名，尽量不使用，并且重启系统后失效</li>
+</ul>
+<blockquote>
+<p>alias设置别名，内容保存在系统内存中，无法永久保存，重启系统后失效；</p>
+<p>要定义永久别名，需要将数据存储到文件目录中：</p>
+<p>/etc/profile    全局生效</p>
+<p>~/.bashrc    当前用户生效</p>
+</blockquote>
+<ul>
+<li><code>cp</code>    直接覆盖文件不提示</li>
+</ul>
+<p>如何执行拷贝命令，遇到同名文件直接（让Linux系统不提示）覆盖</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">touch</span> /tmp/test.txt
+$ <span class="token function">touch</span> /mnt/test.txt
+$ \cp /mnt/test.txt /tmp/ <span class="token comment" spellcheck="true">#加反斜号直接覆盖,使用反斜线，作用在于屏蔽别名。（使用alias命令查看）</span>
+$ /bin/cp /mnt/test.txt /tmp/ <span class="token comment" spellcheck="true">#加上命令全路径，直接覆盖执行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>seq 数字</code>    生成序列</li>
+<li><code>seq -s &quot;分隔符&quot;</code>      <code>-s</code>指定分隔符</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">seq</span> 100 <span class="token operator">></span>file.txt    <span class="token comment" spellcheck="true">#从数字1排到100生成100行数据文件</span>
+$ <span class="token function">seq</span> 3 10 <span class="token comment" spellcheck="true">#从数字3到10生成数据</span>
+$ <span class="token function">seq</span> 1 2 10 <span class="token comment" spellcheck="true">#从数字1到10每隔2位数生成数据，相当于等差数列，等差为2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>sed</code>  <code>stream editor</code>,流编辑器，实现对文件的增删改替查换。<code>Linux</code>命令三剑客之一</li>
+</ul>
+<p><code>sed &#39;s#需要替换的内容#替换的内容#g&#39; file.txt  </code>       #s表示替换，g表示全局，#表示分隔符，也可使用其他任何字符替代。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> <span class="token operator">>></span>file.txt <span class="token operator">&lt;&lt;</span>input
+<span class="token operator">></span> this is first line
+<span class="token operator">></span> this is second line
+<span class="token operator">></span> input
 
+$ <span class="token function">sed</span> <span class="token string">'s/first/second/g'</span> file.txt
+this is second line
+this is second line<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>有4种可用的替换标记：</p>
+<ul>
+<li><p>数字，表明同一行文本中替换具体第几处的数据；</p>
+</li>
+<li><p>g，表明新文本将会替换所有匹配的文本；</p>
+</li>
+<li><p>p，表明原先行的内容要打印出来（即修改行重复显示一行）；</p>
+</li>
+<li><p>w file，将替换的结果写到文件中。</p>
+</li>
+</ul>
+</blockquote>
+<p>示例1：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"111 111 111"</span> <span class="token operator">></span>file.txt
+<span class="token function">sed</span> -i <span class="token string">'s/111/222/2'</span> file.txt
+<span class="token function">cat</span> file.txt
+111 222 111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例2：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> file.txt 
+111 111 111
+222 222 222
+$ <span class="token function">sed</span> <span class="token string">'s/222/333/p'</span> file.txt
+111 111 111
+333 222 222
+333 222 222
+<span class="token function">sed</span> <span class="token string">'s/222/333/gp'</span> file.txt
+111 111 111
+333 333 333
+333 333 333
+$ <span class="token function">sed</span> <span class="token string">'s/222/333/gpw file_new.txt'</span> file.txt
+111 111 111
+333 333 333
+333 333 333
+$ <span class="token function">cat</span> file_new.txt 
+333 333 333
+$ <span class="token function">cat</span> file.txt 
+111 111 111
+222 222 222<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>sed -e</code>    在命令行使用多个编辑器命令</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> file.txt
+111 111 111
+222 222 222
+$ <span class="token function">sed</span> -e <span class="token string">'s/111/333/g;s/222/444/g'</span> file.txt
+333 333 333
+444 444 444<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>sed -f xxx.sed file.txt</code>    从文件中读取编辑器命令</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> xxx.sed
+s/aaa/bbb/
+s/ccc/ddd/
+s/eee/fff/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>用于每次需要重复替换多个相同的字符</p>
+</blockquote>
+<ul>
+<li><code>sed -i</code>     将替换结果写入到文件中</li>
+</ul>
+<p>将<code>/data/data/</code>目录下所有文件中<code>aaa</code>替换为<code>bbb</code>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">find</span> /data/data/ -type f <span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">sed</span> -i <span class="token string">'s/aaa/bbb/g'</span> <span class="token comment" spellcheck="true">#-i表示修改文件内容，如果不带-i将仅仅输出到上，而不存入文件中。</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>自我练习：</strong></p>
+<p>在文件<code>file.txt</code>中将任意一行中<code>tabs1</code>的字符后一行添加内容：<code>name:www.google.com</code>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> file.txt
+tabs1:
+name:www.baidu.com
+url:www.baidu.com
+img:/soft/one.png
+$ <span class="token function">sed</span> -i <span class="token string">'s/tabs1/tabs1\nname:www.googole.com/g'</span> file.txt <span class="token comment" spellcheck="true">#\n表示换行</span>
+tabs1:
+name:www.google.com
+name:www.baidu.com
+url:www.baidu.com
+img:/soft/one.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将目录下<code>.txt</code>格式的文件中的数据<code>one</code>改成<code>two</code>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cat</span> *
+one
+one
+one
+one
+$ <span class="token function">find</span> -type f -name <span class="token string">"*.txt"</span> <span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">sed</span> -i <span class="token string">'s/one/two/g'</span> <span class="token comment" spellcheck="true">#第一种方法</span>
+$ <span class="token function">cat</span> *
+<span class="token punctuation">[</span>sumsung@localhost aaa<span class="token punctuation">]</span>$ <span class="token function">cat</span> *
+two
+two
+two
+two
+$ <span class="token function">sed</span> -i <span class="token string">'s/two/one/g'</span> `find -type f -name <span class="token string">"*.txt"</span>` <span class="token operator">&amp;&amp;</span> <span class="token function">cat</span> * <span class="token comment" spellcheck="true">#第二种方法，``里面的命令将会先执行</span>
+one
+one
+one
+one<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>sed -n</code>    不产生命令输出，sed处理的结果将不会输出到<code>CLI</code>中,通常与<code>p</code>标记一同使用，用于仅仅输出替换的数据行内容。</li>
+</ul>
+<p>打印某一行：</p>
+<p><code>sed -n &#39;20&#39;p file.txt</code></p>
+<p>打印最后一行：</p>
+<p><code>sed -n &#39;$&#39;p file.txt</code></p>
+<p><strong>总结：</strong></p>
+<p><code>sed</code>命令选项总结：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-e</td>
+<td>在命令行使用多个编辑器命令</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>从文件中读取编辑器命令</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>将替换结果写入到文件中</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>不产生命令输出，sed处理的结果将不会输出到<code>CLI</code>中</td>
+</tr>
+</tbody></table>
+<p><code>sed</code>替换标记总结：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字</td>
+<td>表明同一行文本中替换具体第几处的数据</td>
+</tr>
+<tr>
+<td>g</td>
+<td>表明全局替换</td>
+</tr>
+<tr>
+<td>p</td>
+<td>表明原先行的内容要打印出来（即修改行重复显示一行）；</td>
+</tr>
+<tr>
+<td>w file</td>
+<td>将替换的结果写入文件中</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>awk</code>  过滤、输出内容。</li>
+</ul>
+<p>查看某一行：</p>
+<p><code>awk NR==19 file.txt</code></p>
+<p>只查看<code>file.txt</code>文件（100行）内第20行到30行的内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">head</span> -30 file.txt<span class="token operator">|</span><span class="token function">tail</span> -10 <span class="token comment" spellcheck="true">#用法太low</span>
+$ <span class="token function">sed</span> -n <span class="token string">'20,30'</span>p file.txt <span class="token comment" spellcheck="true"># -n的目的是用于取消默认输出,p代表打印（print）</span>
+$ <span class="token function">awk</span> <span class="token string">'NR>19&amp;&amp;NR&lt;31'</span> file.txt <span class="token comment" spellcheck="true">#NR代表行号</span>
+$ <span class="token function">grep</span> 20 -A 10 file.txt <span class="token comment" spellcheck="true">#-A除了显示匹配一行之外，并显示该行之后的num行；-B 除了显示匹配的一行之外，并显示该行之前的num行；-C    除了显示匹配的一行之外，并显示该行之前后的各num行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>快捷键总结：</strong></p>
+<ul>
+<li><code>tab</code>键 三下可列出/补全命令</li>
+<li><code>ctrl + c</code>   终止当前任务命令或程序</li>
+<li><code>ctrl + d</code>   退出当前用户环境。相当于<code>exit</code>、<code>logout</code></li>
+<li><code>ctrl + l </code>   清屏<code>clear</code></li>
+<li><code>ctrl shitf c</code> CRT里复制的命令</li>
+<li><code>ctrl shift v</code>  CRT里的粘贴命令</li>
+<li><code>ctrl A</code>  光标定位到开头</li>
+<li><code>ctrl E</code>  光标定位到结尾</li>
+<li><code>ctrl U</code> 清理前面的内容</li>
+<li><code>ctrl K</code>  清理后面的内容</li>
+<li><code>ctrl R</code>  搜索</li>
+</ul>
+<h1 id="72"><a href="#72" class="headerlink" title="72"></a>72</h1>
             </div>
             <hr/>
 
@@ -655,10 +945,6 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
                             
                                 <a href="/tags/Linux/">
                                     <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/shell/">
-                                    <span class="chip bg-color">shell</span>
                                 </a>
                             
                         </div>
@@ -1081,26 +1367,23 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/13/WebsiteTabs/">
+                <a href="/posts/cdf9">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="为你的Hexo博客添加新页面">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript基础教程">
                         
-                        <span class="card-title">为你的Hexo博客添加新页面</span>
+                        <span class="card-title">JavaScript基础教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            为你的Hexo博客添加新页面前言
-由于自己收藏了很多各式各样的网站，很多都很有价值，一直都在存在浏览器书签中，由于书签网站比较多，东西比较杂乱。需要整理，正好想将自己的网站整理出来放到自己的Blog上。于是想做一个书签网站分享页。
-
-今天来
+                            JavaScript基础教程
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-23
                         </span>
                         <span class="publish-author">
                             
@@ -1117,12 +1400,8 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Hexo-themes-matery/">
-                        <span class="chip bg-color">Hexo-themes-matery</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1136,24 +1415,23 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/12/hexo_markdowneditor/">
+                <a href="/posts/5851">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="新建文章自动打开本地Markdown编辑器">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="网站SEO优化">
                         
-                        <span class="card-title">新建文章自动打开本地Markdown编辑器</span>
+                        <span class="card-title">网站SEO优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新建文章自动打开本地Markdown编辑器使用Hexo写新文章时，需要控制台执行 hexo new &quot;文章名字&quot;，这样就会在_posts 下生成一篇新文章，但需要手动打开，挺麻烦的。
-只需要在站点根目录下新建 scrip
+                            借助谷歌及百度两大搜索引擎进行收录详解，分别介绍两种不同的方式收录网站的方法。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
                             </span>
                         <span class="publish-author">
                             
@@ -1172,10 +1450,6 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
                     
                     <a href="/tags/Hexo/">
                         <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>

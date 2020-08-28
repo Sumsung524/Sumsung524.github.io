@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML 基础知识总结, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="JavaScript基础教程, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HTML 基础知识总结 | 肆零肆</title>
+    <title>JavaScript基础教程 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTML 基础知识总结</h1>
+                    <h1 class="description center-align post-title">JavaScript基础教程</h1>
                 </div>
             </div>
         </div>
@@ -501,12 +501,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
-                            </a>
-                        
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -530,7 +526,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-09
+                    2020-08-23
                 </div>
                 
 
@@ -546,106 +542,234 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="HTML-基础知识总结"><a href="#HTML-基础知识总结" class="headerlink" title="HTML 基础知识总结"></a>HTML 基础知识总结</h1><p>在搭建Hexo个人博客过程中，尤其是自定义Hexo主题时，不可避免的会接触到Html语法。对于修改Hexo主题来说，所需要的Html其实不需要很多。因为绝大多数都是写好了的，只需要我们看懂，然后依葫芦画瓢，好好修改一下就好了。所以只需要有个基础知识，认识一些常用标签，稍微入个门就足够我们使用了。</p>
-<h2 id="一、HTML-的简述"><a href="#一、HTML-的简述" class="headerlink" title="一、HTML 的简述"></a>一、HTML 的简述</h2><p>&emsp;&emsp;HTML, 超文本标记语言，英文全称是Hyper Text Markup Language，由 Tim Berners-Lee 在 1982 年提出，它是互联网上应用最广泛的标记语言。</p>
-<h3 id="1-HTML4-01-和-XHTML"><a href="#1-HTML4-01-和-XHTML" class="headerlink" title="1. HTML4.01 和 XHTML"></a>1. HTML4.01 和 XHTML</h3><p>&emsp;&emsp;XHTML的全称是 (eXtensible Hyper Text Markup Language，扩展的超文本标记语言)，XHTML和HTML4.01（先前的HTML） 具有很好的兼容性，而且XHTML是更严格、更纯净的HTML代码。W3C组织制定XHTML，目标是逐步取代原有的HTML。简单地说，XHTML就是最新版本的HTML规范。</p>
-<p>&emsp;&emsp;XHTML要求HTML文档首先必须是一份<code>XML</code>文档。<code>XML</code>文档是一种结构化文档，它有如下4条基本规则：</p>
-<ul>
-<li>整个文档有且有一个根元素。</li>
-<li>每个元素都由开始标签和结束标签组成，例如<code>&lt;a&gt;&lt;/a&gt;</code>，就是一对标签。除非使用空元素语法，例如 <code>&lt;br/&gt;</code> 就是空元素语法。</li>
-<li>元素与元素之间应该合理嵌套。例如<code>&lt;div&gt;&lt;span&gt;内容&lt;/span&gt;&lt;/div&gt;</code>，这可以明确的看出<code>&lt;/span&gt;</code>元素是<code>&lt;/div&gt;</code>的子元素，这就是合理嵌套。但<code>&lt;div&gt;&lt;span&gt;内容&lt;/div&gt;&lt;/span&gt;</code>这种写法就比较混乱，也就是所谓的不合理嵌套。</li>
-<li>元素的属性必须有属性值，而且属性值应该用引号（单引号和双引号都可以）引起来。</li>
+                <h1 id="JavaScirpt教程"><a href="#JavaScirpt教程" class="headerlink" title="JavaScirpt教程"></a>JavaScirpt教程</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">快速入门</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F">数据类型和变量</a></li>
 </ul>
-<h3 id="2-HTML5-的诞生"><a href="#2-HTML5-的诞生" class="headerlink" title="2. HTML5 的诞生"></a>2. HTML5 的诞生</h3><p>&emsp;&emsp;HTML5 是指万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言的第五次重大修改。HTML5 的设计目的是为了在移动设备上支持多媒体。新的语法特征被引进以支持这一点，如<code>video</code>、<code>audio</code>和<code>canvas</code>标记。还引进了新的功能，可以真正改变用户与文档的交互方式。</p>
-<p>&emsp;&emsp;HTML5 的第一份正式草案已于 2008 年 1 月 22 日公布。HTML5 仍处于完善之中。2013 年 5 月 6 日，HTML5.1 正式草案公布。该规范定义了第五次重大版本，第一次要修订万维网的核心语言：超文本标记语言。在这个版本中，新功能不断推出，以帮助 Web 应用程序的作者，努力提高新元素互操作性。直到 2014 年 10 月 29 日，经过几乎 8 年的艰辛努力，HTML5 标准规范终于制定完成了，并已公开发布。HTML5 还在继续修改完善，增加新的功能。</p>
-<h2 id="二、常用的标签"><a href="#二、常用的标签" class="headerlink" title="二、常用的标签"></a>二、常用的标签</h2><h3 id="1-基本标签"><a href="#1-基本标签" class="headerlink" title="1.  基本标签"></a>1.  基本标签</h3><p>一个网页的大致构成是：</p>
-<pre class="line-numbers language-html"><code class="language-html">
-<span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
+<li><strong>如何运行JavaScript代码</strong></li>
+</ol>
+<ul>
+<li>直接嵌入</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js">
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello, world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+  <span class="token operator">...</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>&emsp; 由<script>...</script>包含的代码就是JavaScript代码，它将直接被浏览器执行。</p>
+<ul>
+<li>引用<code>.js</code>文件</li>
+</ul>
+<pre class="line-numbers language-markdown"><code class="language-markdown">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment" spellcheck="true">&lt;!--编码格式--></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment" spellcheck="true">&lt;!-- 优先使用最新的ie版本 --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>文档标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>资源所在路径<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>规定被链接文档的MIME类型<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>定义编码方式<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/js/abc.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  <span class="token comment" spellcheck="true">&lt;!--主体内容 显示在网页上的，由许多的标签组成--></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
-     ...
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>引用文件地址<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!--自己写的JavaScript代码，可在当前页面写，也可以另外写一个js文件，然后在引入 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  ...
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>&emsp; 把JavaScript代码放到一个单独的<code>.js</code>文件，然后在HTML中通过<code>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;</code>引入这个文件,<code>/static/js/abc.js</code>就会被浏览器执行。</p>
+<ol start="2">
+<li><strong>如何编写JavaScript代码</strong></li>
+</ol>
+<p>可以用任何文本编辑器来编写JavaScript代码。推荐以下几种文本编辑器：</p>
 <ul>
-<li><code>&lt;!DOCTYPE HTML&gt;</code>定义文档类型为<code>HTML</code>，自从HTML5问世之后，就开始使用。这个在编写代码时必须要写上，这个是用来声明文档类型的，文档类型类似于连接，规定了HTML 页面必须遵从的良好规则，能自动检测错误和其他有用的东西</li>
-<li><code>&lt;head&gt;&lt;/head&gt;</code>定义文档的一些相关信息</li>
-<li><code>&lt;title&gt;&lt;/title&gt;</code>定义文档的标题</li>
-<li><code>&lt;meta&gt;</code>定义关于<code>HTML</code>文档的元信息，关键词，作者等。不会显示在网页上。它的属性有<code>charset</code>，<code>name</code>，<code>http-equiv</code>，<code>content</code>属性等，后期再对这个标签进行详细的解释。</li>
-<li><code>&lt;link&gt;</code>用于链接样式表。关于什么是<code>MIME</code>类型，可以参考<code>MIME</code>类型参考手册，有具体的讲解。</li>
-<li><code>&lt;!-- --&gt;</code>定义注释，便于开发者阅读浏览。</li>
-<li><code>&lt;h1&gt;~&lt;h6&gt;</code>定义标题，字体的大小<code>&lt;h1&gt;</code>最大，<code>&lt;h6&gt;</code>最小。</li>
-<li><code>&lt;p&gt;&lt;/p&gt;</code>段落标签，是一个块级标签。</li>
-<li><code>&lt;span&gt;&lt;/span&gt;</code>和<code>&lt;div&gt;&lt;/div&gt;</code>定义文档的节。</li>
-<li><code>&lt;iframe&gt;&lt;/iframe&gt;</code>定义文档的内联框架。</li>
+<li>Visual Studio Code</li>
 </ul>
-<h3 id="2-表格标签"><a href="#2-表格标签" class="headerlink" title="2.  表格标签"></a>2.  表格标签</h3><ul>
-<li><code>&lt;table&gt;&lt;/table&gt;</code> 定义表格</li>
-<li><code>&lt;th&gt;&lt;/th&gt;</code>定义表格的表头</li>
-<li><code>&lt;tr&gt;&lt;/tr&gt;</code>定义表格的行</li>
-<li><code>&lt;td&gt;&lt;/td&gt;</code>定义表格的单元</li>
-<li><code>&lt;caption&gt;&lt;/caption&gt;</code>定义表格标题</li>
-<li><code>&lt;thead&gt;&lt;thead&gt;</code>定义表格中的表头内容</li>
-<li><code>&lt;tbody&gt;&lt;/tbody&gt;</code>定义表格中的主体内容</li>
-<li><code>&lt;tfoot&gt;&lt;/tfood&gt;</code>定义表格中的表注内容（脚注）</li>
-</ul>
-<h3 id="3-列表标签"><a href="#3-列表标签" class="headerlink" title="3. 列表标签"></a>3. 列表标签</h3><ul>
-<li><code>&lt;ul&gt;&lt;/ul&gt;</code>定义无序列表</li>
-<li><code>&lt;ol&gt;&lt;/ol&gt;</code>定义有序列表</li>
-<li><code>&lt;li&gt;&lt;/li&gt;</code>定义列表项</li>
-<li><code>&lt;dl&gt;&lt;/dl&gt;</code>定义列表</li>
-<li><code>&lt;dt&gt;&lt;/dt&gt;</code>自定义列表项目</li>
-<li><code>&lt;dd&gt;&lt;/dd&gt;</code>定义自定义列表的描述</li>
-</ul>
-<h3 id="4-表单标签"><a href="#4-表单标签" class="headerlink" title="4. 表单标签"></a>4. 表单标签</h3><ul>
-<li><code>&lt;form&gt;&lt;/form&gt;</code>定义供用户输入的表单</li>
-<li><code>&lt;input&gt;</code>定义输入控件，如密码框，输入框，按钮等</li>
-<li><code>&lt;textarea&gt;&lt;/textarea&gt;</code> 定义文本域 （一个多行的输入控件）</li>
-<li><code>&lt;label&gt;&lt;/label&gt;</code> 定义了 <code>&lt;input&gt;</code> 元素的标签，一般为输入标题</li>
-<li><code>&lt;filedset&gt;&lt;/filedset&gt;</code> 定义了一组相关的表单元素，并使用外框包含起来</li>
-<li><code>&lt;legend&gt;&lt;/legend&gt; </code>定义了<code>&lt;fieldset&gt;</code>元素的标题</li>
-<li><code>&lt;select&gt;&lt;/select&gt;</code> 定义了下拉选项列表</li>
-<li><code>&lt;optgroup&gt;&lt;/optgroup&gt;</code> 定义了下拉选项组</li>
-<li><code>&lt;option&gt;&lt;/option&gt;</code> 定义下拉列表中的选项</li>
-<li><code>&lt;button&gt;&lt;/button&gt;</code> 定义一个点击按钮</li>
-</ul>
-<h3 id="5-多媒体链接"><a href="#5-多媒体链接" class="headerlink" title="5. 多媒体链接"></a>5. 多媒体链接</h3><ul>
-<li><code>&lt;a&gt;&lt;/a&gt;</code>定义一个超链接</li>
-<li><code>&lt;img&gt;</code>定义图像</li>
-<li><code>&lt;embed&gt;&lt;/embed&gt;</code> 定义在页面中嵌入的内容，可插入音频视频等。</li>
-</ul>
-<h3 id="6-格式标签"><a href="#6-格式标签" class="headerlink" title="6. 格式标签"></a>6. 格式标签</h3><ul>
-<li><code>&lt;b&gt;&lt;b/&gt;</code> 定义粗体文本</li>
-<li><code>&lt;del&gt;&lt;/del&gt;</code>定义被删除文本</li>
-<li><code>&lt;em&gt;&lt;/em&gt;</code> 定义强调文本</li>
-<li><code>&lt;i&gt;&lt;/i&gt;</code> 定义斜体文本</li>
-<li><code>&lt;sup&gt;&lt;/sup&gt;</code> 定义上标文本</li>
-<li><code>&lt;sub&gt;&lt;/sub&gt;</code> 定义下标文本</li>
-<li><code>&lt;hr&gt;</code> 定义水平线</li>
-<li><code>&lt;br&gt;</code> 定义简单的换行</li>
-</ul>
-<p>&emsp;&emsp;常用的标签基本上就是这些了，有些标签在现在的网页开发中很少用或者是被弃用淘汰了，在新的 HTML5 中新增了很多的标签和属性。同时，如果对HTML想更加深入的了解或学习，可去<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html5-intro.html">菜鸟教程</a>系统学习。</p>
-<p>更多标签搜索：<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-byfunc.html">HTML标签列表（功能排序）</a>。</p>
-<p>&emsp;&emsp;与此同时，此文章不关是仅仅列出一些常用标签，可以在以后需要使用时访问本站，使用<code>ctrl+F</code>搜索标签，即可快速明白标签大致用途，方便修改以及自定义博客。</p>
-<p><strong>参考文章</strong></p>
+<p>微软出的Visual Studio Code，可以看做迷你版Visual Studio，免费！跨平台！内置JavaScript支持。</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/7aedb564.html">Yafine</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/html/html5-intro.html">菜鸟教程</a></li>
+<li>Sublime Text</li>
 </ul>
+<p>Sublime Text是一个好用的文本编辑器，免费。</p>
+<ul>
+<li>Notepad++</li>
+</ul>
+<p>Notepad++也是免费的文本编辑器，但仅限Windows下使用。</p>
+<blockquote>
+<p>注意：不可以用Word或写字板来编写JavaScript或HTML，因为带格式的文本保存后不是纯文本文件，无法被浏览器正常读取。也尽量不要用记事本编写，它会自作聪明地在保存UTF-8格式文本时添加BOM头。</p>
+</blockquote>
+<ol start="3">
+<li><strong>如何调试JavaScript代码</strong></li>
+</ol>
+<ul>
+<li>使用Google Chrome浏览器调试</li>
+</ul>
+<p>要查看一个变量的内容：</p>
+<p>查看(View)-开发者(Developer)-开发者工具(Developer Tools) 在Console中输入console.log(内容);</p>
+<p>回车后显示的值就是变量的内容。</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
+<li><strong>语法</strong></li>
+</ol>
+<p>&emsp; JavaScript的语法和Java语言类似，每个语句以<code>;</code>结束，语句块用<code>&#123;...&#125;</code>。但是，JavaScript并不强制要求在每个语句的结尾加<code>;</code>，浏览器中负责执行JavaScript代码的引擎会自动在每个语句的结尾补上<code>;</code>。</p>
+<p>&emsp; 花括号<code>&#123;...&#125;</code>内的语句具有缩进，通常是4个空格。缩进不是JavaScript语法要求必须的，但缩进有助于我们理解代码的层次，所以编写代码时要遵守缩进规则。很多文本编辑器具有“自动缩进”的功能，可以帮助整理代码。</p>
+<blockquote>
+<p><code>&#123;...&#125;</code>还可以嵌套，形成层级结构</p>
+</blockquote>
+<ol start="2">
+<li><strong>注释</strong></li>
+</ol>
+<p>&emsp; 以<code>//</code>开头直到行末的字符被视为行注释，注释是给开发人员看到，JavaScript引擎会自动忽略。</p>
+<p>&emsp; 另一种块注释是用<code>/*...*/</code>把多行字符包裹起来，把一大“块”视为一个注释。</p>
+<ol start="3">
+<li><strong>大小写</strong></li>
+</ol>
+<p>&emsp; JavaScript严格区分大小写。</p>
+<h3 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h3><ol>
+<li><strong>Number</strong></li>
+</ol>
+<p>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</p>
+<pre><code>123; // 整数123
+0.456; // 浮点数0.456
+1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
+-99; // 负数
+NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
+Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity</code></pre>
+<p>Number可以直接做四则运算，规则和数学一致：</p>
+<pre><code>1 + 2; // 3
+(1 + 2) * 5 / 2; // 7.5
+2 / 0; // Infinity
+0 / 0; // NaN
+10 % 3; // 1
+10.5 % 3; // 1.5</code></pre>
+<p>注意%是求余运算。</p>
+<ol start="2">
+<li><strong>字符串</strong></li>
+</ol>
+<p>字符串是以单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来的任意文本，比如<code>&#39;abc&#39;</code>，<code>&quot;xyz&quot;</code>等等。</p>
+<ol start="3">
+<li><strong>布尔值</strong></li>
+</ol>
+<p>布尔值和布尔代数的表示完全一致，一个布尔值只有<code>true</code>、<code>false</code>两种值。</p>
+<pre><code>true; // 这是一个true值
+false; // 这是一个false值
+2 &gt; 1; // 这是一个true值
+2 &gt;= 3; // 这是一个false值</code></pre>
+<p><code>&amp;&amp;</code>运算是与运算，只有所有都为<code>true</code>，<code>&amp;&amp;</code>运算结果才是<code>true</code>:</p>
+<pre><code>true &amp;&amp; true; // 这个&amp;&amp;语句计算结果为true
+true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false
+false &amp;&amp; true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false</code></pre>
+<p><code>||</code>运算是或运算，只要其中有一个为<code>true</code>，<code>||</code>运算结果就是<code>true</code>：</p>
+<pre><code>false || false; // 这个||语句计算结果为false
+true || false; // 这个||语句计算结果为true
+false || true || false; // 这个||语句计算结果为true</code></pre>
+<p><code>!</code>运算是非运算，它是一个单目运算符，把<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>：</p>
+<pre><code>! true; // 结果为false
+! false; // 结果为true
+! (2 &gt; 5); // 结果为true</code></pre>
+<p>布尔值经常用在条件判断中，比如：</p>
+<pre><code>var age = 15;
+if (age &gt;= 18) &amp;#123;
+    alert(&#39;adult&#39;);
+&amp;#125; else &amp;#123;
+    alert(&#39;teenager&#39;);
+&amp;#125;</code></pre>
+<ol start="4">
+<li><strong>比较运算符</strong></li>
+</ol>
+<p>JavaScript允许对任意数据类型做比较：</p>
+<pre><code>false == 0; // true
+false === 0; // false</code></pre>
+<p>要特别注意相等运算符<code>==</code>。JavaScript在设计时，有两种比较运算符：</p>
+<ul>
+<li><p>第一种是<code>==</code>比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；</p>
+</li>
+<li><p>第二种是<code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
+</li>
+</ul>
+<p>由于JavaScript这个设计缺陷，不要使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
+<p>另一个例外是<code>NaN</code>这个特殊的Number与所有其他值都不相等，包括它自己：</p>
+<p><code>NaN === NaN; // false</code></p>
+<p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数：</p>
+<p><code>isNaN(NaN); // true</code></p>
+<p>最后要注意浮点数的相等比较：</p>
+<p><code>1 / 3 === (1 - 2 / 3); // false</code></p>
+<p>这不是JavaScript的设计缺陷。浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数。要比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个阈值：</p>
+<p><code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></p>
+<ol start="5">
+<li><strong>null和undefined</strong></li>
+</ol>
+<p><code>null</code>表示一个“空”的值，它和0以及空字符串<code>&#39;&#39;</code>不同，<code>0</code>是一个数值，<code>&#39;&#39;</code>表示长度为0的字符串，而<code>null</code>表示“空”。</p>
+<p>在JavaScript中，还有一个和null类似的undefined，它表示“未定义”。</p>
+<blockquote>
+<p>JavaScript的设计者希望用null表示一个空的值，而undefined表示值未定义。事实证明，区分两者的意义不大。大多数情况下，我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</p>
+</blockquote>
+<ol start="6">
+<li><strong>数组</strong></li>
+</ol>
+<ul>
+<li>数组用<code>[]</code>表示</li>
+</ul>
+<p>数组是一组按顺序排列的集合，集合的每个值称为元素。JavaScript的数组可以包括==任意数据==类型。例如：</p>
+<pre><code>[1, 2, 3.14, &#39;Hello&#39;, null, true];</code></pre>
+<p>上述数组包含6个元素。数组用<code>[]</code>表示，元素之间用<code>,</code>分隔。</p>
+<ul>
+<li>通过<code>Array()</code>函数实现</li>
+</ul>
+<p>另一种创建数组的方法是通过Array()函数实现：</p>
+<p><code>new Array(1, 2, 3); // 创建了数组[1, 2, 3]</code></p>
+<p>然而，出于代码的可读性考虑，强烈建议直接使用<code>[]</code>。</p>
+<p>数组的元素可以通过索引来访问。请注意，索引的起始值为0：</p>
+<pre><code>var arr = [1, 2, 3.14, &#39;Hello&#39;, null, true];
+arr[0]; // 返回索引为0的元素，即1
+arr[5]; // 返回索引为5的元素，即true
+arr[6]; // 索引超出了范围，返回undefined</code></pre>
+<ol start="7">
+<li><strong>对象</strong></li>
+</ol>
+<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
+<pre><code>var person = &amp;#123;
+    name: &#39;Bob&#39;,
+    age: 20,
+    tags: [&#39;js&#39;, &#39;web&#39;, &#39;mobile&#39;],
+    city: &#39;Beijing&#39;,
+    hasCar: true,
+    zipcode: null
+&amp;#125;;</code></pre>
+<p>JavaScript==对象的键都是字符串类型，值可以是任意数据类型==。上述person对象一共定义了6个键值对，其中每个键又称为对象的属性，例如，person的name属性为’Bob’，zipcode属性为null。</p>
+<p>要获取一个对象的属性，我们用对象变量.属性名的方式：</p>
+<pre><code>person.name; // &#39;Bob&#39;
+person.zipcode; // null</code></pre>
+<ol start="8">
+<li><strong>变量</strong></li>
+</ol>
+<p>变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且==不能用数字==开头。变量名也不能是JavaScript的关键字，如<code>if</code>、<code>while</code>等。申明一个变量用<code>var</code>语句，比如：</p>
+<pre><code>var a; // 申明了变量a，此时a的值为undefined
+var $b = 1; // 申明了变量$b，同时给$b赋值，此时$b的值为1
+var s_007 = &#39;007&#39;; // s_007是一个字符串
+var Answer = true; // Answer是一个布尔值true
+var t = null; // t的值是null</code></pre>
+<p>在JavaScript中，使用等号<code>=</code>对变量进行赋值。可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，但是要注意只能用<code>var</code>申明一次，例如：</p>
+<pre><code>var a = 123; // a的值是整数123
+a = &#39;ABC&#39;; // a变为字符串</code></pre>
+<p>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言，赋值语句如下：</p>
+<pre><code>int a = 123; // a是整数类型变量，类型用int申明
+a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pre>
+<p>和静态语言相比，动态语言更灵活，就是这个原因。</p>
+<blockquote>
+<p>要显示变量的内容，可以用<code>console.log(x)</code>，打开Chrome的控制台就可以看到结果。使用<code>console.log()</code>代替<code>alert()</code>的好处是可以避免弹出烦人的对话框。</p>
+</blockquote>
+<ol start="9">
+<li><strong>strict模式</strong></li>
+</ol>
+<p>JavaScript在设计之初，为了方便初学者学习，并不强制要求用<code>var</code>申明变量。这个设计错误带来了严重的后果：如果一个变量没有通过<code>var</code>申明就被使用，那么该变量就自动被申明为全局变量：</p>
+<pre><code>i = 10; // i现在是全局变量</code></pre>
+<p>在同一个页面的不同的JavaScript文件中，如果都不用<code>var</code>申明，恰好都使用了变量<code>i</code>，将造成变量i互相影响，产生难以调试的错误结果。</p>
+<p>使用<code>var</code>申明的变量则不是全局变量，它的范围被限制在该变量被申明的函数体内（函数的概念将稍后讲解），同名变量在不同的函数体内互不冲突。</p>
+<p>为了修补JavaScript这一严重设计缺陷，ECMA在后续规范中推出了strict模式，在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。</p>
+<p>启用strict模式的方法是在JavaScript代码的第一行写上：</p>
+<p><code>&#39;use strict&#39;;</code></p>
+<p>这是一个字符串，不支持strict模式的浏览器会把它当做一个字符串语句执行，支持strict模式的浏览器将开启strict模式运行JavaScript。</p>
 
             </div>
             <hr/>
@@ -659,12 +783,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
-                                </a>
-                            
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1087,30 +1207,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/10/centos8vmware/">
+                <a href="/posts/9e33">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="虚拟机安装Linux系统记录">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598633600930&di=6f1599f35c3ac5a7e951da38b1c4c9ee&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180919%2F829aa14145a34d7eb80cefc6161fe71e.jpeg" class="responsive-img" alt="高等减振道床技术培训会议记录">
                         
-                        <span class="card-title">虚拟机安装Linux系统记录</span>
+                        <span class="card-title">高等减振道床技术培训会议记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用VMware虚拟机安装Linux系统，学习Linux。
+                            高等减振道床设计说明及施工工艺流程记录
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    土木工程
                                 </a>
                             
                             
@@ -1120,8 +1240,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E9%AB%98%E7%AD%89%E5%87%8F%E6%8C%AF%E9%81%93%E5%BA%8A/">
+                        <span class="chip bg-color">高等减振道床</span>
                     </a>
                     
                 </div>
@@ -1135,25 +1255,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/09/ShortcutsForVI/">
+                <a href="/posts/86b7">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="VI/VIM 编辑器安装及使用">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Linux学习笔记">
                         
-                        <span class="card-title">VI/VIM 编辑器安装及使用</span>
+                        <span class="card-title">Linux学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VI/VIM 编辑器安装及使用VI和VIM是什么
-VI 是 Unix 操作系统和类 Unix 操作系统中最通用的文本编辑器。
-VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。可以主动的以字体颜色辨别语法的正确性，方便程序设计
+                            学习Linux。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
                             </span>
                         <span class="publish-author">
                             

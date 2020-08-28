@@ -1128,7 +1128,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/12/hexo_markdowneditor/">
+                <a href="/posts/5670">
                     <div class="card-image">
                         
                         <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="新建文章自动打开本地Markdown编辑器">
@@ -1181,7 +1181,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/12/Markdown_Typora_PicGo/">
+                <a href="/posts/d04d">
                     <div class="card-image">
                         
                         <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Markdown高效使用之Typora集成PicGo图床">
