@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript基础教程, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="WJ-7B型扣件安装说明会议记录, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript基础教程 | 肆零肆</title>
+    <title>WJ-7B型扣件安装说明会议记录 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829085344.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript基础教程</h1>
+                    <h1 class="description center-align post-title">WJ-7B型扣件安装说明会议记录</h1>
                 </div>
             </div>
         </div>
@@ -501,8 +501,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/%E6%89%A3%E4%BB%B6/">
+                                <span class="chip bg-color">扣件</span>
                             </a>
                         
                     </div>
@@ -513,8 +513,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                计算机
+                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                土木工程
                             </a>
                         
                     </div>
@@ -526,7 +526,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-23
+                    2020-08-26
                 </div>
                 
 
@@ -542,234 +542,224 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScirpt教程"><a href="#JavaScirpt教程" class="headerlink" title="JavaScirpt教程"></a>JavaScirpt教程</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">快速入门</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F">数据类型和变量</a></li>
-</ul>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
-<li><strong>如何运行JavaScript代码</strong></li>
+                <p>2020.08.24    星期一</p>
+<h2 id="培训流程："><a href="#培训流程：" class="headerlink" title="培训流程："></a>培训流程：</h2><p>1.培训人员对本工程或本工程中的一项细节进行详细解说。</p>
+<p>2.培训人员提出存在的疑问，培训人员进行答疑。</p>
+<h2 id="培训内容："><a href="#培训内容：" class="headerlink" title="培训内容："></a>培训内容：</h2><p>1.WJ-7B扣件的组成及安装注意事项</p>
+<h2 id="一、部件组成及说明"><a href="#一、部件组成及说明" class="headerlink" title="一、部件组成及说明"></a>一、部件组成及说明</h2><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829085935.png" alt="WJ-7B扣件组成"></p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829114106.jpg" alt="WJ-7B标准套件" style="zoom: 25%;" />
+
+<ol>
+<li>弹条</li>
 </ol>
-<ul>
-<li>直接嵌入</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js">
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-<span class="token operator">&lt;</span>head<span class="token operator">></span>
-  <span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello, world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
-<span class="token operator">&lt;</span>body<span class="token operator">></span>
-  <span class="token operator">...</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&emsp; 由<script>...</script>包含的代码就是JavaScript代码，它将直接被浏览器执行。</p>
-<ul>
-<li>引用<code>.js</code>文件</li>
-</ul>
-<pre class="line-numbers language-markdown"><code class="language-markdown">
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/js/abc.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  ...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&emsp; 把JavaScript代码放到一个单独的<code>.js</code>文件，然后在HTML中通过<code>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;</code>引入这个文件,<code>/static/js/abc.js</code>就会被浏览器执行。</p>
-<ol start="2">
-<li><strong>如何编写JavaScript代码</strong></li>
-</ol>
-<p>可以用任何文本编辑器来编写JavaScript代码。推荐以下几种文本编辑器：</p>
-<ul>
-<li>Visual Studio Code</li>
-</ul>
-<p>微软出的Visual Studio Code，可以看做迷你版Visual Studio，免费！跨平台！内置JavaScript支持。</p>
-<ul>
-<li>Sublime Text</li>
-</ul>
-<p>Sublime Text是一个好用的文本编辑器，免费。</p>
-<ul>
-<li>Notepad++</li>
-</ul>
-<p>Notepad++也是免费的文本编辑器，但仅限Windows下使用。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829090918.png" alt="弹条型号"></p>
 <blockquote>
-<p>注意：不可以用Word或写字板来编写JavaScript或HTML，因为带格式的文本保存后不是纯文本文件，无法被浏览器正常读取。也尽量不要用记事本编写，它会自作聪明地在保存UTF-8格式文本时添加BOM头。</p>
+<p>一般地段使用W1弹条，直径14mm；小阻力地段使用X2型，直径13mm</p>
 </blockquote>
-<ol start="3">
-<li><strong>如何调试JavaScript代码</strong></li>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829114223.png" alt="X2弹条" style="zoom: 50%;" />
+
+<ol start="2">
+<li>轨下垫板</li>
 </ol>
-<ul>
-<li>使用Google Chrome浏览器调试</li>
-</ul>
-<p>要查看一个变量的内容：</p>
-<p>查看(View)-开发者(Developer)-开发者工具(Developer Tools) 在Console中输入console.log(内容);</p>
-<p>回车后显示的值就是变量的内容。</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
-<li><strong>语法</strong></li>
-</ol>
-<p>&emsp; JavaScript的语法和Java语言类似，每个语句以<code>;</code>结束，语句块用<code>&#123;...&#125;</code>。但是，JavaScript并不强制要求在每个语句的结尾加<code>;</code>，浏览器中负责执行JavaScript代码的引擎会自动在每个语句的结尾补上<code>;</code>。</p>
-<p>&emsp; 花括号<code>&#123;...&#125;</code>内的语句具有缩进，通常是4个空格。缩进不是JavaScript语法要求必须的，但缩进有助于我们理解代码的层次，所以编写代码时要遵守缩进规则。很多文本编辑器具有“自动缩进”的功能，可以帮助整理代码。</p>
+<p>轨下垫板分为A、 B两类， A类兼顾货运的客运专线， B类用于无货运的客运专线。每一类又分为一般地段使用的<strong>橡胶垫板</strong>和桥上使用的<strong>复合垫板</strong>两种。  </p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829091427.png" alt="轨下垫板"></p>
 <blockquote>
-<p><code>&#123;...&#125;</code>还可以嵌套，形成层级结构</p>
+<p>一般地段使用橡胶垫板，小阻力地段采用复合垫板</p>
 </blockquote>
-<ol start="2">
-<li><strong>注释</strong></li>
-</ol>
-<p>&emsp; 以<code>//</code>开头直到行末的字符被视为行注释，注释是给开发人员看到，JavaScript引擎会自动忽略。</p>
-<p>&emsp; 另一种块注释是用<code>/*...*/</code>把多行字符包裹起来，把一大“块”视为一个注释。</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829114423.png" alt="橡胶垫板" style="zoom:50%;" />
+
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829114609.png" alt="复合垫板" style="zoom:50%;" />
+
 <ol start="3">
-<li><strong>大小写</strong></li>
+<li>绝缘块</li>
 </ol>
-<p>&emsp; JavaScript严格区分大小写。</p>
-<h3 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h3><ol>
-<li><strong>Number</strong></li>
-</ol>
-<p>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</p>
-<pre><code>123; // 整数123
-0.456; // 浮点数0.456
-1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
--99; // 负数
-NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
-Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity</code></pre>
-<p>Number可以直接做四则运算，规则和数学一致：</p>
-<pre><code>1 + 2; // 3
-(1 + 2) * 5 / 2; // 7.5
-2 / 0; // Infinity
-0 / 0; // NaN
-10 % 3; // 1
-10.5 % 3; // 1.5</code></pre>
-<p>注意%是求余运算。</p>
-<ol start="2">
-<li><strong>字符串</strong></li>
-</ol>
-<p>字符串是以单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来的任意文本，比如<code>&#39;abc&#39;</code>，<code>&quot;xyz&quot;</code>等等。</p>
-<ol start="3">
-<li><strong>布尔值</strong></li>
-</ol>
-<p>布尔值和布尔代数的表示完全一致，一个布尔值只有<code>true</code>、<code>false</code>两种值。</p>
-<pre><code>true; // 这是一个true值
-false; // 这是一个false值
-2 &gt; 1; // 这是一个true值
-2 &gt;= 3; // 这是一个false值</code></pre>
-<p><code>&amp;&amp;</code>运算是与运算，只有所有都为<code>true</code>，<code>&amp;&amp;</code>运算结果才是<code>true</code>:</p>
-<pre><code>true &amp;&amp; true; // 这个&amp;&amp;语句计算结果为true
-true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false
-false &amp;&amp; true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false</code></pre>
-<p><code>||</code>运算是或运算，只要其中有一个为<code>true</code>，<code>||</code>运算结果就是<code>true</code>：</p>
-<pre><code>false || false; // 这个||语句计算结果为false
-true || false; // 这个||语句计算结果为true
-false || true || false; // 这个||语句计算结果为true</code></pre>
-<p><code>!</code>运算是非运算，它是一个单目运算符，把<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>：</p>
-<pre><code>! true; // 结果为false
-! false; // 结果为true
-! (2 &gt; 5); // 结果为true</code></pre>
-<p>布尔值经常用在条件判断中，比如：</p>
-<pre><code>var age = 15;
-if (age &gt;= 18) &amp;#123;
-    alert(&#39;adult&#39;);
-&amp;#125; else &amp;#123;
-    alert(&#39;teenager&#39;);
-&amp;#125;</code></pre>
+<p>绝缘块分为9号和10号两种，正常安装时采用9号绝缘块，当绝缘块与铁垫板挡肩的缝隙大于1mm时更换为10号绝缘块。  </p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829091745.png" alt="绝缘块" style="zoom:80%;" />
+
+<blockquote>
+<p>10号绝缘块如需要，自行购买。</p>
+</blockquote>
+<p>9号绝缘块</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829114858.png" alt="9号绝缘块" style="zoom: 80%;" />
+
+
+
 <ol start="4">
-<li><strong>比较运算符</strong></li>
+<li>绝缘缓冲垫板</li>
 </ol>
-<p>JavaScript允许对任意数据类型做比较：</p>
-<pre><code>false == 0; // true
-false === 0; // false</code></pre>
-<p>要特别注意相等运算符<code>==</code>。JavaScript在设计时，有两种比较运算符：</p>
-<ul>
-<li><p>第一种是<code>==</code>比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；</p>
-</li>
-<li><p>第二种是<code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
-</li>
-</ul>
-<p>由于JavaScript这个设计缺陷，不要使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
-<p>另一个例外是<code>NaN</code>这个特殊的Number与所有其他值都不相等，包括它自己：</p>
-<p><code>NaN === NaN; // false</code></p>
-<p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数：</p>
-<p><code>isNaN(NaN); // true</code></p>
-<p>最后要注意浮点数的相等比较：</p>
-<p><code>1 / 3 === (1 - 2 / 3); // false</code></p>
-<p>这不是JavaScript的设计缺陷。浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数。要比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个阈值：</p>
-<p><code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></p>
+<p>绝缘缓冲垫板分为2mm和6mm两种厚度，正常安装时采用6mm厚垫板，钢轨高低位置负调整时采用2mm的垫板。  </p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829092108.png" alt="绝缘缓冲垫板" style="zoom:50%;" />
+
+<p>绝缘缓冲垫板与铁垫板送过来时已经配套</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829115117.png" alt="绝缘缓冲垫板与铁垫板" style="zoom:80%;" />
+
 <ol start="5">
-<li><strong>null和undefined</strong></li>
+<li>预埋套管</li>
 </ol>
-<p><code>null</code>表示一个“空”的值，它和0以及空字符串<code>&#39;&#39;</code>不同，<code>0</code>是一个数值，<code>&#39;&#39;</code>表示长度为0的字符串，而<code>null</code>表示“空”。</p>
-<p>在JavaScript中，还有一个和null类似的undefined，它表示“未定义”。</p>
+<p>该部件预先埋设于混凝土轨枕或轨道板中，埋设精度应满足图示的要求，且预埋套管顶面应低于轨枕或轨道板承轨面0~0.5mm。预埋套管埋设后，如不在轨枕厂进行扣件预组装，应加盖塑料（或其他材料）盖以防雨水和泥污进入。 </p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829092715.png" alt="预埋套管"></p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829093155.jpg" alt="轨枕预埋套管" style="zoom:67%;" />
+
 <blockquote>
-<p>JavaScript的设计者希望用null表示一个空的值，而undefined表示值未定义。事实证明，区分两者的意义不大。大多数情况下，我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</p>
+<p>使用塑料盖盖号的轨枕</p>
 </blockquote>
 <ol start="6">
-<li><strong>数组</strong></li>
+<li>调高垫板</li>
 </ol>
+<p>调高垫板分<strong>轨下调高垫板</strong>和<strong>铁垫板下调高垫板</strong>两种，分别放置于轨下垫板与铁垫板之间和铁垫板与绝缘缓冲垫板之间。</p>
 <ul>
-<li>数组用<code>[]</code>表示</li>
+<li>轨下调高垫板按厚度分为0.5mm、 1mm、 2mm、 5mm和8mm五种规格。  </li>
 </ul>
-<p>数组是一组按顺序排列的集合，集合的每个值称为元素。JavaScript的数组可以包括==任意数据==类型。例如：</p>
-<pre><code>[1, 2, 3.14, &#39;Hello&#39;, null, true];</code></pre>
-<p>上述数组包含6个元素。数组用<code>[]</code>表示，元素之间用<code>,</code>分隔。</p>
-<ul>
-<li>通过<code>Array()</code>函数实现</li>
-</ul>
-<p>另一种创建数组的方法是通过Array()函数实现：</p>
-<p><code>new Array(1, 2, 3); // 创建了数组[1, 2, 3]</code></p>
-<p>然而，出于代码的可读性考虑，强烈建议直接使用<code>[]</code>。</p>
-<p>数组的元素可以通过索引来访问。请注意，索引的起始值为0：</p>
-<pre><code>var arr = [1, 2, 3.14, &#39;Hello&#39;, null, true];
-arr[0]; // 返回索引为0的元素，即1
-arr[5]; // 返回索引为5的元素，即true
-arr[6]; // 索引超出了范围，返回undefined</code></pre>
-<ol start="7">
-<li><strong>对象</strong></li>
-</ol>
-<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
-<pre><code>var person = &amp;#123;
-    name: &#39;Bob&#39;,
-    age: 20,
-    tags: [&#39;js&#39;, &#39;web&#39;, &#39;mobile&#39;],
-    city: &#39;Beijing&#39;,
-    hasCar: true,
-    zipcode: null
-&amp;#125;;</code></pre>
-<p>JavaScript==对象的键都是字符串类型，值可以是任意数据类型==。上述person对象一共定义了6个键值对，其中每个键又称为对象的属性，例如，person的name属性为’Bob’，zipcode属性为null。</p>
-<p>要获取一个对象的属性，我们用对象变量.属性名的方式：</p>
-<pre><code>person.name; // &#39;Bob&#39;
-person.zipcode; // null</code></pre>
-<ol start="8">
-<li><strong>变量</strong></li>
-</ol>
-<p>变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且==不能用数字==开头。变量名也不能是JavaScript的关键字，如<code>if</code>、<code>while</code>等。申明一个变量用<code>var</code>语句，比如：</p>
-<pre><code>var a; // 申明了变量a，此时a的值为undefined
-var $b = 1; // 申明了变量$b，同时给$b赋值，此时$b的值为1
-var s_007 = &#39;007&#39;; // s_007是一个字符串
-var Answer = true; // Answer是一个布尔值true
-var t = null; // t的值是null</code></pre>
-<p>在JavaScript中，使用等号<code>=</code>对变量进行赋值。可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，但是要注意只能用<code>var</code>申明一次，例如：</p>
-<pre><code>var a = 123; // a的值是整数123
-a = &#39;ABC&#39;; // a变为字符串</code></pre>
-<p>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言，赋值语句如下：</p>
-<pre><code>int a = 123; // a是整数类型变量，类型用int申明
-a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pre>
-<p>和静态语言相比，动态语言更灵活，就是这个原因。</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829093641.png" alt="轨下调高垫板" style="zoom:67%;" />
+
 <blockquote>
-<p>要显示变量的内容，可以用<code>console.log(x)</code>，打开Chrome的控制台就可以看到结果。使用<code>console.log()</code>代替<code>alert()</code>的好处是可以避免弹出烦人的对话框。</p>
+<p>需要另行购买</p>
 </blockquote>
-<ol start="9">
-<li><strong>strict模式</strong></li>
+<ul>
+<li>铁垫板下调高垫板</li>
+</ul>
+<p>铁垫板下调高垫板放置于铁垫板与绝缘缓冲垫板之间。铁垫板下调高垫板只有一种规格，厚度为8mm。  </p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829093744.png" alt="铁垫板下调高垫板" style="zoom:67%;" />
+
+<blockquote>
+<p>需要另行购买</p>
+</blockquote>
+<h2 id="二、铺轨顺序及要求"><a href="#二、铺轨顺序及要求" class="headerlink" title="二、铺轨顺序及要求"></a>二、铺轨顺序及要求</h2><ol>
+<li>安装前准备工作</li>
 </ol>
-<p>JavaScript在设计之初，为了方便初学者学习，并不强制要求用<code>var</code>申明变量。这个设计错误带来了严重的后果：如果一个变量没有通过<code>var</code>申明就被使用，那么该变量就自动被申明为全局变量：</p>
-<pre><code>i = 10; // i现在是全局变量</code></pre>
-<p>在同一个页面的不同的JavaScript文件中，如果都不用<code>var</code>申明，恰好都使用了变量<code>i</code>，将造成变量i互相影响，产生难以调试的错误结果。</p>
-<p>使用<code>var</code>申明的变量则不是全局变量，它的范围被限制在该变量被申明的函数体内（函数的概念将稍后讲解），同名变量在不同的函数体内互不冲突。</p>
-<p>为了修补JavaScript这一严重设计缺陷，ECMA在后续规范中推出了strict模式，在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。</p>
-<p>启用strict模式的方法是在JavaScript代码的第一行写上：</p>
-<p><code>&#39;use strict&#39;;</code></p>
-<p>这是一个字符串，不支持strict模式的浏览器会把它当做一个字符串语句执行，支持strict模式的浏览器将开启strict模式运行JavaScript。</p>
+<ul>
+<li>选择弹条型号和轨下垫板</li>
+<li>准备9号绝缘块和适当的10号绝缘块</li>
+<li>准备6mm厚绝缘缓冲垫板 </li>
+<li>清除轨枕泥污，摘除的塑料盖，清除杂物和积水，在套管中注入约15g铁路专用防护油脂</li>
+</ul>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829094614.png" alt="清理轨枕" style="zoom:67%;" />
+
+<ol start="2">
+<li>预安装</li>
+</ol>
+<p>步骤1：安放绝缘缓冲垫板</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829094850.png" alt="安放绝缘缓冲垫板" style="zoom:67%;" />
+
+<p>步骤2：安放铁垫板</p>
+<p>安放铁垫板，使<strong>轨底坡朝向轨道内侧</strong>（按铁垫板上的箭头方向）。铁垫板的螺栓孔中心应与预埋套管中心对正。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829095646.png" alt="安放铁垫板"></p>
+<blockquote>
+<p>正常安装下不需要放置铁垫板下调高垫板，绝缘缓冲垫板上直接放置铁垫板</p>
+</blockquote>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829095618.png" alt="铁垫板放置"></p>
+<p>单根轨枕上安装两块铁垫板后的效果图：</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829100055.png" alt="安放效果图"></p>
+<p>步骤3：安放平垫块</p>
+<p>将平垫块安放在铁垫板上，并使平垫块距圆孔中心较长一侧朝内。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829100313.png" alt="安放平垫圈"></p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829121341.png" alt="平垫块" style="zoom:67%;" />
+
+<p>核对方法</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829100856.png" alt="标记线对齐" style="zoom:67%;" />
+
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829121626.png" alt="标记线对齐" style="zoom:67%;" />
+
+<p>步骤4：安放重型弹簧垫圈和锚固螺栓</p>
+<p>将锚固螺栓套上弹簧垫圈，先用手旋入预埋套管中。在锚固螺栓拧紧前调整铁垫板位置，使铁垫板上外侧标记线与平垫块上的标记线对齐，然后用可控制扭矩的扳手或机具以<strong>100~150N.m</strong>的扭矩紧固锚固螺栓。  </p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829100551.png" alt="安放锚固螺栓" style="zoom:67%;" />
+
+<blockquote>
+<p>锚固螺栓初调扭矩100~150N·m</p>
+</blockquote>
+<ol start="3">
+<li>现场最终安装</li>
+</ol>
+<p>步骤1：安放轨下垫板 </p>
+<p>清除铁垫板承轨面泥污，将轨下垫板按正确的方位安放在铁垫板承轨面上。  </p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101047.png" alt="安装橡胶垫板" style="zoom:67%;" />
+
+<p>橡胶垫铺设方位：</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101230.png" alt="橡胶垫铺设方法" style="zoom:67%;" />
+
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829121740.png" alt="橡胶垫板摆放" style="zoom:50%;" />
+
+<p>步骤2：安放钢轨</p>
+<p>清除轨底上下面的泥污，将钢轨安放在轨下垫板的中间位置。  </p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101334.png" alt="安放钢轨"></p>
+<p>步骤3：安放绝缘块</p>
+<p>将9号绝缘块安放在钢轨和铁垫板挡肩之间，不得猛烈敲击使其入位，绝缘块与钢轨接触面应密贴。如绝缘块与铁垫板挡肩的缝隙大于1mm时，应调换为10号绝缘块。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101451.png" alt="安放钢轨"></p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101548.png" alt="安放示意"></p>
+<p>步骤4：安放T型螺栓</p>
+<p>将T型螺栓螺纹部分涂油，然后安放。  </p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829101746.png" alt="防护油脂"></p>
+<blockquote>
+<p>涂油是为了防止螺栓锈蚀，且在运营期间需要定期涂油。</p>
+</blockquote>
+<p>将T型螺栓头部按照如图所示的角度，插入铁垫板</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829102005.png" alt="插入铁垫板"></p>
+<p>T型螺栓头部插入铁垫板后，按<strong>顺时针方向</strong>旋转T型螺栓90° ，螺栓头部到预定位置</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829121839.png" alt="T型螺栓" style="zoom: 50%;" />
+
+<p>步骤5：安放弹条 </p>
+<p>将弹条后端两支撑点安放在铁垫板两支撑台上凹槽内，前端扣压住绝缘块</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829102210.png" alt="安放弹条"></p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829121938.png" alt="弹条放置" style="zoom:67%;" />
+
+<p>步骤6：安放平垫圈和螺母，紧固弹条</p>
+<p>安放平垫圈和螺母，上提T型螺栓，用手拧紧螺母（螺母与螺栓应对正，切忌斜拧），确认螺栓垂直后，再用可控制扭矩的扳手或机具拧紧螺母，使弹条安装到位。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829102423.png" alt="安放平垫圈和螺母紧固弹条"></p>
+<blockquote>
+<p>安装建议：</p>
+<p>通常情况下， W1型弹条的理论安装扭矩在120N.m左右， X2型弹条的理论安装扭矩在80N.m左右。在现场大规模安装前，建议先取10个扣件节点进行安装，以测出使弹条能按照以上“安装到位标准”达到正确安装位置的实际安装扭矩，然后以实际扭矩的均值进行大规模安装。安装时采用可控制扭矩的扳手或机具，防止扭矩过大造成弹条产生残变和绝缘块损坏或扭矩过小弹条安装不到位。</p>
+</blockquote>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829122031.png" alt="紧固弹条" style="zoom: 67%;" />
+
+<p>步骤7 拧紧锚固螺栓  </p>
+<p>确认轨距和轨向合适后，采用可控制扭矩的扳手或机具以<strong>300~350N.m</strong>的扭矩拧紧锚固螺栓。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829103222.png" alt="拧紧锚固螺栓"></p>
+<blockquote>
+<p>特别提示：</p>
+<p>在铺设轨枕或轨道板的过程中，应对所有外露的扣件部件采用适当的防护措施进行包装，以保持清洁。  </p>
+</blockquote>
+<p>安装完成</p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829105842.jpg" alt="WJ-7B一般地段安装完成图" style="zoom: 33%;" />
+
+<h2 id="三、安装调整"><a href="#三、安装调整" class="headerlink" title="三、安装调整"></a>三、安装调整</h2><ol>
+<li>调整轨距和轨向 </li>
+</ol>
+<p>检查轨距和轨向，如有不合适:</p>
+<ul>
+<li>松开锚固螺栓；  </li>
+<li>用改道器卡住钢轨铁垫板予以调整，使轨距和轨向合适;</li>
+<li>用可控制扭矩的扳手或机具以300~350N.m的扭矩拧紧锚固螺栓。</li>
+</ul>
+<p><strong>卡阻现象</strong></p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829103928.png" alt="卡阻现象"></p>
+<p>发生卡阻现象时，应将平垫块掉头使用</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104104.png" alt="平垫块掉头"></p>
+<ol start="2">
+<li>调整钢轨高低</li>
+</ol>
+<p>钢轨高低位置调整量为**-4~+26mm**，可按下表选用所需厚度的绝缘缓冲垫板和调高垫板进行调整。 </p>
+<p> <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104424.png" alt="选用厚度"></p>
+<ul>
+<li>钢轨高低位置负调整时</li>
+</ul>
+<p>应先卸下锚固螺栓，提升钢轨，将下6mm厚的绝缘缓冲垫板更换为2mm厚的绝缘缓冲垫板，钢轨复位后检查轨向和轨距，必要时进行调整，确认合适后用可控制扭矩的扳手或机具以300~350N.m的扭矩拧紧锚固螺栓，然后根据调整量，在轨下垫板和铁垫板间垫入所需厚度的轨下调高垫板。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104608.png" alt="更换绝缘缓冲垫板"></p>
+<ul>
+<li>轨下调高垫板调整时</li>
+</ul>
+<p>应先松开弹条，取出绝缘块，提升钢轨，在轨下垫板和铁垫板间垫入所需厚度的轨下调高垫板，钢轨落下后再用可控制扭矩的扳手或机具拧紧螺母，使弹条安装到位。轨下垫板总厚度不得超过10mm， 数量不得超过2块，并应把最薄的垫板放置在下面， 以防轨下调高垫板窜出。（当调高量需0.5mm级别时，可紧贴铁垫板承轨面加垫0.5mm后的轨下调高垫板，数量可为3块。）</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104839.png" alt="轨下调高垫板调整"></p>
+<ul>
+<li>铁垫板下调高垫板调整 </li>
+</ul>
+<p>应先卸下锚固螺栓，提升钢轨，在铁垫板和绝缘缓冲垫板之间垫入所需厚度的铁垫板下调高垫板，钢轨复位后检查轨距和轨向，必要时进行调整，确认合适后用可控制扭矩的扳手或机具以300~350N.m的扭矩拧紧锚固螺栓。铁垫板下调高垫板，总厚度不得超过16mm，数量不得超过2块。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104954.png" alt="铁垫板下调高垫板调整"></p>
+<h2 id="四、养护维修要求"><a href="#四、养护维修要求" class="headerlink" title="四、养护维修要求"></a>四、养护维修要求</h2><p>特别要防止绝缘缓冲垫板排水口（上图红圈位置）堵塞。  </p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829104143.png" alt="绝缘缓冲垫板排水口"></p>
+<h2 id="五、参考引用"><a href="#五、参考引用" class="headerlink" title="五、参考引用"></a>五、参考引用</h2><ul>
+<li>WJ-7型扣件安装作业指导</li>
+<li>JYD-03-07-S-GD-01-01 正线扣件及轨枕</li>
+</ul>
 
             </div>
             <hr/>
@@ -783,8 +773,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/%E6%89%A3%E4%BB%B6/">
+                                    <span class="chip bg-color">扣件</span>
                                 </a>
                             
                         </div>
@@ -1207,30 +1197,30 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/16da">
+                <a href="/posts/8812">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829085344.png" class="responsive-img" alt="WJ-7B型扣件安装说明会议记录">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="搭建Hexo theme metery主题博客记录">
                         
-                        <span class="card-title">WJ-7B型扣件安装说明会议记录</span>
+                        <span class="card-title">搭建Hexo theme metery主题博客记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WJ-7B一般扣件组成及安装学习记录
+                            Hexo Bolg搭建记录
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
-                                    土木工程
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
                                 </a>
                             
                             
@@ -1240,8 +1230,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%89%A3%E4%BB%B6/">
-                        <span class="chip bg-color">扣件</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1255,23 +1245,23 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/86b7">
+                <a href="/posts/cdf9">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Linux学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript基础教程">
                         
-                        <span class="card-title">Linux学习笔记</span>
+                        <span class="card-title">JavaScript基础教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习Linux。
+                            JavaScript基础教程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-23
                             </span>
                         <span class="publish-author">
                             
@@ -1288,8 +1278,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript基础教程, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="Markdown语法, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript基础教程 | 肆零肆</title>
+    <title>Markdown语法 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript基础教程</h1>
+                    <h1 class="description center-align post-title">Markdown语法</h1>
                 </div>
             </div>
         </div>
@@ -501,8 +501,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
                     </div>
@@ -513,8 +513,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                计算机
+                            <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" class="post-category">
+                                方法技能
                             </a>
                         
                     </div>
@@ -526,7 +526,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-23
+                    2020-08-12
                 </div>
                 
 
@@ -542,234 +542,358 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScirpt教程"><a href="#JavaScirpt教程" class="headerlink" title="JavaScirpt教程"></a>JavaScirpt教程</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">快速入门</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F">数据类型和变量</a></li>
-</ul>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
-<li><strong>如何运行JavaScript代码</strong></li>
-</ol>
+                <h3 id="一、Markdown标题"><a href="#一、Markdown标题" class="headerlink" title="一、Markdown标题"></a>一、Markdown标题</h3><p>有两种形式：</p>
 <ul>
-<li>直接嵌入</li>
+<li><strong>使用=和-标记一级和二级标题</strong></li>
 </ul>
-<pre class="line-numbers language-js"><code class="language-js">
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-<span class="token operator">&lt;</span>head<span class="token operator">></span>
-  <span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello, world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
-<span class="token operator">&lt;</span>body<span class="token operator">></span>
-  <span class="token operator">...</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&emsp; 由<script>...</script>包含的代码就是JavaScript代码，它将直接被浏览器执行。</p>
+<p>示例：</p>
+<pre><code>我展示的是一级标题
+===================
+
+我展示的是二级标题
+-------------------
+</code></pre>
+<p>效果：</p>
+<hr>
+<h1 id="我展示的是一级标题"><a href="#我展示的是一级标题" class="headerlink" title="我展示的是一级标题"></a>我展示的是一级标题</h1><h2 id="我展示的是二级标题"><a href="#我展示的是二级标题" class="headerlink" title="我展示的是二级标题"></a>我展示的是二级标题</h2><hr>
 <ul>
-<li>引用<code>.js</code>文件</li>
+<li><strong>使用#号标记</strong></li>
 </ul>
-<pre class="line-numbers language-markdown"><code class="language-markdown">
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/static/js/abc.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  ...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&emsp; 把JavaScript代码放到一个单独的<code>.js</code>文件，然后在HTML中通过<code>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;</code>引入这个文件,<code>/static/js/abc.js</code>就会被浏览器执行。</p>
-<ol start="2">
-<li><strong>如何编写JavaScript代码</strong></li>
-</ol>
-<p>可以用任何文本编辑器来编写JavaScript代码。推荐以下几种文本编辑器：</p>
-<ul>
-<li>Visual Studio Code</li>
+<p>示例：</p>
+<pre><code>#一级标题
+##二级标题
+###三级标题
+####四级标题
+#####五级标题
+######六级标题</code></pre>
+<p>效果：</p>
+<hr>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a><center>一级标题</center></h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a><center>二级标题</center></h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a><center>三级标题</center></h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a><center>四级标题</center></h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a><center>五级标题</center></h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a><center>六级标题</center></h6><hr>
+<h3 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h3><p>示例：</p>
+<pre><code>*斜体文本*  **粗体文本**   ***粗斜体文本***
+_斜体文本_  __粗体文本__   ____粗斜体文本___</code></pre>
+<p>效果：</p>
+<hr>
+<p><em>斜体文本</em>  <strong>粗体文本</strong>   <strong><em>粗斜体文本</em></strong></p>
+<p><em>斜体文本</em>  <strong>粗体文本</strong>   <strong><em>粗斜体文本</em></strong></p>
+<hr>
+<h3 id="三、分割线"><a href="#三、分割线" class="headerlink" title="三、分割线"></a>三、分割线</h3><p>示例：</p>
+<pre><code>***
+* * *
+- - -
+--------</code></pre>
+<p>效果：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<h3 id="四、删除线"><a href="#四、删除线" class="headerlink" title="四、删除线"></a>四、删除线</h3><p>如果需要给文字添加删除线，只需要在文字的两端加上两个波浪线~~</p>
+<p>示例：</p>
+<p><code>~~markdown~~ markdown</code></p>
+<p>效果：</p>
+<hr>
+<p><del>markdown</del> markdown</p>
+<hr>
+<h3 id="五、下划线"><a href="#五、下划线" class="headerlink" title="五、下划线"></a>五、下划线</h3><p>示例：</p>
+<pre><code>&lt;u&gt;markdown&lt;/u&gt; markdown</code></pre>
+<p>效果：</p>
+<hr>
+<p><u>markdown</u> markdown</p>
+<hr>
+<h3 id="六、脚注"><a href="#六、脚注" class="headerlink" title="六、脚注"></a>六、脚注</h3><p>使用[^+标注名称]表示脚注，然后在下方注释脚注的内容。</p>
+<p>示例：</p>
+<pre><code>[^markdown]
+
+[^markdown]:markdown</code></pre>
+<p>效果：</p>
+<hr>
+<p><a href="markdown">^markdown</a></p>
+<hr>
+<h3 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h3><ul>
+<li><strong>无序列表</strong></li>
 </ul>
-<p>微软出的Visual Studio Code，可以看做迷你版Visual Studio，免费！跨平台！内置JavaScript支持。</p>
+<p>示例：</p>
+<pre><code>* 第一项
++ 第二项
+- 第三项</code></pre>
+<p>效果：</p>
+<hr>
 <ul>
-<li>Sublime Text</li>
+<li>第一项</li>
 </ul>
-<p>Sublime Text是一个好用的文本编辑器，免费。</p>
 <ul>
-<li>Notepad++</li>
+<li>第二项</li>
 </ul>
-<p>Notepad++也是免费的文本编辑器，但仅限Windows下使用。</p>
-<blockquote>
-<p>注意：不可以用Word或写字板来编写JavaScript或HTML，因为带格式的文本保存后不是纯文本文件，无法被浏览器正常读取。也尽量不要用记事本编写，它会自作聪明地在保存UTF-8格式文本时添加BOM头。</p>
-</blockquote>
-<ol start="3">
-<li><strong>如何调试JavaScript代码</strong></li>
-</ol>
 <ul>
-<li>使用Google Chrome浏览器调试</li>
+<li>第三项</li>
 </ul>
-<p>要查看一个变量的内容：</p>
-<p>查看(View)-开发者(Developer)-开发者工具(Developer Tools) 在Console中输入console.log(内容);</p>
-<p>回车后显示的值就是变量的内容。</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
-<li><strong>语法</strong></li>
-</ol>
-<p>&emsp; JavaScript的语法和Java语言类似，每个语句以<code>;</code>结束，语句块用<code>&#123;...&#125;</code>。但是，JavaScript并不强制要求在每个语句的结尾加<code>;</code>，浏览器中负责执行JavaScript代码的引擎会自动在每个语句的结尾补上<code>;</code>。</p>
-<p>&emsp; 花括号<code>&#123;...&#125;</code>内的语句具有缩进，通常是4个空格。缩进不是JavaScript语法要求必须的，但缩进有助于我们理解代码的层次，所以编写代码时要遵守缩进规则。很多文本编辑器具有“自动缩进”的功能，可以帮助整理代码。</p>
-<blockquote>
-<p><code>&#123;...&#125;</code>还可以嵌套，形成层级结构</p>
-</blockquote>
-<ol start="2">
-<li><strong>注释</strong></li>
-</ol>
-<p>&emsp; 以<code>//</code>开头直到行末的字符被视为行注释，注释是给开发人员看到，JavaScript引擎会自动忽略。</p>
-<p>&emsp; 另一种块注释是用<code>/*...*/</code>把多行字符包裹起来，把一大“块”视为一个注释。</p>
-<ol start="3">
-<li><strong>大小写</strong></li>
-</ol>
-<p>&emsp; JavaScript严格区分大小写。</p>
-<h3 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h3><ol>
-<li><strong>Number</strong></li>
-</ol>
-<p>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</p>
-<pre><code>123; // 整数123
-0.456; // 浮点数0.456
-1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
--99; // 负数
-NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
-Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity</code></pre>
-<p>Number可以直接做四则运算，规则和数学一致：</p>
-<pre><code>1 + 2; // 3
-(1 + 2) * 5 / 2; // 7.5
-2 / 0; // Infinity
-0 / 0; // NaN
-10 % 3; // 1
-10.5 % 3; // 1.5</code></pre>
-<p>注意%是求余运算。</p>
-<ol start="2">
-<li><strong>字符串</strong></li>
-</ol>
-<p>字符串是以单引号<code>&#39;</code>或双引号<code>&quot;</code>括起来的任意文本，比如<code>&#39;abc&#39;</code>，<code>&quot;xyz&quot;</code>等等。</p>
-<ol start="3">
-<li><strong>布尔值</strong></li>
-</ol>
-<p>布尔值和布尔代数的表示完全一致，一个布尔值只有<code>true</code>、<code>false</code>两种值。</p>
-<pre><code>true; // 这是一个true值
-false; // 这是一个false值
-2 &gt; 1; // 这是一个true值
-2 &gt;= 3; // 这是一个false值</code></pre>
-<p><code>&amp;&amp;</code>运算是与运算，只有所有都为<code>true</code>，<code>&amp;&amp;</code>运算结果才是<code>true</code>:</p>
-<pre><code>true &amp;&amp; true; // 这个&amp;&amp;语句计算结果为true
-true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false
-false &amp;&amp; true &amp;&amp; false; // 这个&amp;&amp;语句计算结果为false</code></pre>
-<p><code>||</code>运算是或运算，只要其中有一个为<code>true</code>，<code>||</code>运算结果就是<code>true</code>：</p>
-<pre><code>false || false; // 这个||语句计算结果为false
-true || false; // 这个||语句计算结果为true
-false || true || false; // 这个||语句计算结果为true</code></pre>
-<p><code>!</code>运算是非运算，它是一个单目运算符，把<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>：</p>
-<pre><code>! true; // 结果为false
-! false; // 结果为true
-! (2 &gt; 5); // 结果为true</code></pre>
-<p>布尔值经常用在条件判断中，比如：</p>
-<pre><code>var age = 15;
-if (age &gt;= 18) &amp;#123;
-    alert(&#39;adult&#39;);
-&amp;#125; else &amp;#123;
-    alert(&#39;teenager&#39;);
-&amp;#125;</code></pre>
-<ol start="4">
-<li><strong>比较运算符</strong></li>
-</ol>
-<p>JavaScript允许对任意数据类型做比较：</p>
-<pre><code>false == 0; // true
-false === 0; // false</code></pre>
-<p>要特别注意相等运算符<code>==</code>。JavaScript在设计时，有两种比较运算符：</p>
+<hr>
 <ul>
-<li><p>第一种是<code>==</code>比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；</p>
+<li><strong>有序列表</strong><br>示例：<br>```</li>
+</ul>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项<pre><code>效果：</code></pre>
 </li>
-<li><p>第二种是<code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
+</ol>
+<hr>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<hr>
+<ul>
+<li><strong>列表嵌套</strong></li>
+</ul>
+<ol>
+<li>第一项<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
 </li>
+<li>第二项<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
 </ul>
-<p>由于JavaScript这个设计缺陷，不要使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
-<p>另一个例外是<code>NaN</code>这个特殊的Number与所有其他值都不相等，包括它自己：</p>
-<p><code>NaN === NaN; // false</code></p>
-<p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数：</p>
-<p><code>isNaN(NaN); // true</code></p>
-<p>最后要注意浮点数的相等比较：</p>
-<p><code>1 / 3 === (1 - 2 / 3); // false</code></p>
-<p>这不是JavaScript的设计缺陷。浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数。要比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个阈值：</p>
-<p><code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></p>
-<ol start="5">
-<li><strong>null和undefined</strong></li>
+</li>
 </ol>
-<p><code>null</code>表示一个“空”的值，它和0以及空字符串<code>&#39;&#39;</code>不同，<code>0</code>是一个数值，<code>&#39;&#39;</code>表示长度为0的字符串，而<code>null</code>表示“空”。</p>
-<p>在JavaScript中，还有一个和null类似的undefined，它表示“未定义”。</p>
+<h2 id="八、Markdown-区块"><a href="#八、Markdown-区块" class="headerlink" title="八、Markdown 区块"></a>八、Markdown 区块</h2><ul>
+<li><strong>基本嵌套</strong></li>
+</ul>
+<p>示例：</p>
+<pre><code>&gt; 区块应用
+&gt; markdown
+&gt; markdown</code></pre>
+<p>效果：</p>
 <blockquote>
-<p>JavaScript的设计者希望用null表示一个空的值，而undefined表示值未定义。事实证明，区分两者的意义不大。大多数情况下，我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</p>
+<p>区块应用<br><br>markdown<br><br>markdown</p>
 </blockquote>
-<ol start="6">
-<li><strong>数组</strong></li>
-</ol>
 <ul>
-<li>数组用<code>[]</code>表示</li>
+<li><strong>嵌套区块</strong></li>
 </ul>
-<p>数组是一组按顺序排列的集合，集合的每个值称为元素。JavaScript的数组可以包括==任意数据==类型。例如：</p>
-<pre><code>[1, 2, 3.14, &#39;Hello&#39;, null, true];</code></pre>
-<p>上述数组包含6个元素。数组用<code>[]</code>表示，元素之间用<code>,</code>分隔。</p>
-<ul>
-<li>通过<code>Array()</code>函数实现</li>
-</ul>
-<p>另一种创建数组的方法是通过Array()函数实现：</p>
-<p><code>new Array(1, 2, 3); // 创建了数组[1, 2, 3]</code></p>
-<p>然而，出于代码的可读性考虑，强烈建议直接使用<code>[]</code>。</p>
-<p>数组的元素可以通过索引来访问。请注意，索引的起始值为0：</p>
-<pre><code>var arr = [1, 2, 3.14, &#39;Hello&#39;, null, true];
-arr[0]; // 返回索引为0的元素，即1
-arr[5]; // 返回索引为5的元素，即true
-arr[6]; // 索引超出了范围，返回undefined</code></pre>
-<ol start="7">
-<li><strong>对象</strong></li>
-</ol>
-<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
-<pre><code>var person = &amp;#123;
-    name: &#39;Bob&#39;,
-    age: 20,
-    tags: [&#39;js&#39;, &#39;web&#39;, &#39;mobile&#39;],
-    city: &#39;Beijing&#39;,
-    hasCar: true,
-    zipcode: null
-&amp;#125;;</code></pre>
-<p>JavaScript==对象的键都是字符串类型，值可以是任意数据类型==。上述person对象一共定义了6个键值对，其中每个键又称为对象的属性，例如，person的name属性为’Bob’，zipcode属性为null。</p>
-<p>要获取一个对象的属性，我们用对象变量.属性名的方式：</p>
-<pre><code>person.name; // &#39;Bob&#39;
-person.zipcode; // null</code></pre>
-<ol start="8">
-<li><strong>变量</strong></li>
-</ol>
-<p>变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且==不能用数字==开头。变量名也不能是JavaScript的关键字，如<code>if</code>、<code>while</code>等。申明一个变量用<code>var</code>语句，比如：</p>
-<pre><code>var a; // 申明了变量a，此时a的值为undefined
-var $b = 1; // 申明了变量$b，同时给$b赋值，此时$b的值为1
-var s_007 = &#39;007&#39;; // s_007是一个字符串
-var Answer = true; // Answer是一个布尔值true
-var t = null; // t的值是null</code></pre>
-<p>在JavaScript中，使用等号<code>=</code>对变量进行赋值。可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，但是要注意只能用<code>var</code>申明一次，例如：</p>
-<pre><code>var a = 123; // a的值是整数123
-a = &#39;ABC&#39;; // a变为字符串</code></pre>
-<p>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言，赋值语句如下：</p>
-<pre><code>int a = 123; // a是整数类型变量，类型用int申明
-a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pre>
-<p>和静态语言相比，动态语言更灵活，就是这个原因。</p>
+<p>示例：</p>
+<pre><code>&gt; 最外层
+&gt;&gt; 第一层嵌套
+&gt;&gt;&gt;第二层嵌套</code></pre>
+<p>效果：</p>
+<hr>
 <blockquote>
-<p>要显示变量的内容，可以用<code>console.log(x)</code>，打开Chrome的控制台就可以看到结果。使用<code>console.log()</code>代替<code>alert()</code>的好处是可以避免弹出烦人的对话框。</p>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
 </blockquote>
-<ol start="9">
-<li><strong>strict模式</strong></li>
-</ol>
-<p>JavaScript在设计之初，为了方便初学者学习，并不强制要求用<code>var</code>申明变量。这个设计错误带来了严重的后果：如果一个变量没有通过<code>var</code>申明就被使用，那么该变量就自动被申明为全局变量：</p>
-<pre><code>i = 10; // i现在是全局变量</code></pre>
-<p>在同一个页面的不同的JavaScript文件中，如果都不用<code>var</code>申明，恰好都使用了变量<code>i</code>，将造成变量i互相影响，产生难以调试的错误结果。</p>
-<p>使用<code>var</code>申明的变量则不是全局变量，它的范围被限制在该变量被申明的函数体内（函数的概念将稍后讲解），同名变量在不同的函数体内互不冲突。</p>
-<p>为了修补JavaScript这一严重设计缺陷，ECMA在后续规范中推出了strict模式，在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。</p>
-<p>启用strict模式的方法是在JavaScript代码的第一行写上：</p>
-<p><code>&#39;use strict&#39;;</code></p>
-<p>这是一个字符串，不支持strict模式的浏览器会把它当做一个字符串语句执行，支持strict模式的浏览器将开启strict模式运行JavaScript。</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="九、Markdown代码"><a href="#九、Markdown代码" class="headerlink" title="九、Markdown代码"></a>九、Markdown代码</h2><ul>
+<li><strong>单行代码</strong></li>
+</ul>
+<p>示例：<br>`markdown`代码</p>
+<p>效果：</p>
+<hr>
+<p><code>markdown</code>代码</p>
+<hr>
+<ul>
+<li><strong>多行代码</strong></li>
+</ul>
+<p>示例：</p>
+<pre><code>` ` `
+markdown
+markdown
+` ` `</code></pre>
+<p>效果：</p>
+<hr>
+<pre><code>markdown
+markdown</code></pre>
+<hr>
+<h2 id="十、Markdown链接"><a href="#十、Markdown链接" class="headerlink" title="十、Markdown链接"></a>十、Markdown链接</h2><ul>
+<li><strong>[链接名称](链接地址)</strong></li>
+</ul>
+<p>示例：</p>
+<pre><code>[GitHub](https://github.com/)</code></pre>
+<p>效果：</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></p>
+<hr>
+<ul>
+<li><strong>&lt;链接地址&gt;</strong></li>
+</ul>
+<p>示例：</p>
+<pre><code>
+&lt;https://github.com/&gt;</code></pre>
+<p>效果：</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
+<hr>
+<ul>
+<li><strong>高级链接</strong></li>
+</ul>
+<p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行：</p>
+<p>示例：</p>
+<pre><code>这个链接用 1 作为网址变量 [Google][1]
+这个链接用 runoob 作为网址变量 [GitHub][GitHub]
+然后在文档的结尾为变量赋值（网址）
+
+  [1]: http://www.google.com/
+  [GitHub]: http://www.github.com/</code></pre>
+<p>效果：</p>
+<p>这个链接用 1 作为网址变量 <a target="_blank" rel="noopener" href="http://www.google.com/">Google</a></p>
+<p>这个链接用 runoob 作为网址变量 <a target="_blank" rel="noopener" href="https://www.github.com/">GitHub</a></p>
+<p>然后在文档的结尾为变量赋值（网址）</p>
+<h2 id="十一、Markdown图片"><a href="#十一、Markdown图片" class="headerlink" title="十一、Markdown图片"></a>十一、Markdown图片</h2><ul>
+<li>基本格式：</li>
+</ul>
+<pre><code>![alt 属性文本](图片地址)
+
+![alt 属性文本](图片地址 &quot;可选标题&quot;)</code></pre>
+<p>示例：</p>
+<pre><code>![肆零肆 图标](https://github.com/Sumsung524/learngit/blob/master/fourzerofour.png?raw=ture)
+
+![肆零肆 图标](https://github.com/Sumsung524/learngit/blob/master/fourzerofour.png?raw=ture &quot;GitHub&quot;)</code></pre>
+<p>效果：</p>
+<p><img src="https://github.com/Sumsung524/learngit/blob/master/fourzerofour.png?raw=ture" alt="肆零肆 图标"></p>
+<p><img src="https://github.com/Sumsung524/learngit/blob/master/fourzerofour.png?raw=ture" alt="肆零肆 图标" title="肆零肆"></p>
+<ul>
+<li>引用格式</li>
+</ul>
+<p>示例：</p>
+<pre><code>这个链接用 1 作为网址变量 [肆零肆][1].
+然后在文档的结尾为变量赋值（网址）
+
+[1]: https://github.com/Sumsung524/learngit/blob/master/Student-fourzerofour.png?raw=ture</code></pre>
+<p>效果：</p>
+<hr>
+<p>这个链接用 1 作为网址变量 <a target="_blank" rel="noopener" href="https://github.com/Sumsung524/learngit/blob/master/fourzerofour.png?raw=ture">肆零肆</a>.</p>
+<p>然后在文档的结尾为变量赋值（网址）</p>
+<hr>
+<h2 id="十二、Markdown表格"><a href="#十二、Markdown表格" class="headerlink" title="十二、Markdown表格"></a>十二、Markdown表格</h2><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。</p>
+<p>示例：</p>
+<pre><code>|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |</code></pre>
+<p>效果：<br>|  表头   | 表头  |<br>|  —-  | —-  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |</p>
+<ul>
+<li>对齐方式</li>
+</ul>
+<p>示例：</p>
+<pre><code>-: 设置内容和标题栏居右对齐。
+:- 设置内容和标题栏居左对齐。
+:-: 设置内容和标题栏居中对齐。</code></pre>
+<p>效果：</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐 左对齐</th>
+<th align="right">右对齐 右对齐</th>
+<th align="center">居中对齐 居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="十三、Markdown高级技巧"><a href="#十三、Markdown高级技巧" class="headerlink" title="十三、Markdown高级技巧"></a>十三、Markdown高级技巧</h2><ul>
+<li>支持的HTML元素</li>
+</ul>
+<p><code>目前支持的 HTML 元素有：&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;等</code></p>
+<p>示例</p>
+<p><code>使用 &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;b&gt;Ctrl&lt;/b&gt;+&lt;b&gt;Alt&lt;/b&gt;+&lt;b&gt;Del&lt;/b&gt; 重启电脑</code><br>效果：</p>
+<hr>
+<p>使用 <b>Ctrl</b>+<b>Alt</b>+<b>Del</b> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;i&gt;Ctrl&lt;/i&gt;+&lt;i&gt;Alt&lt;/i&gt;+&lt;i&gt;Del&lt;/i&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <i>Ctrl</i>+<i>Alt</i>+<i>Del</i> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;em&gt;Ctrl&lt;/em&gt;+&lt;em&gt;Alt&lt;/em&gt;+&lt;em&gt;Del&lt;/em&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <em>Ctrl</em>+<em>Alt</em>+<em>Del</em> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;sup&gt;Ctrl&lt;/sup&gt;+&lt;sup&gt;Alt&lt;/sup&gt;+&lt;sup&gt;Del&lt;/sup&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <sup>Ctrl</sup>+<sup>Alt</sup>+<sup>Del</sup> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;sub&gt;Ctrl&lt;/sub&gt;+&lt;sub&gt;Alt&lt;/sub&gt;+&lt;sub&gt;Del&lt;/sub&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <sub>Ctrl</sub>+<sub>Alt</sub>+<sub>Del</sub> 重启电脑</p>
+<hr>
+<p>示例：</p>
+<p><code>使用 &lt;br&gt;Ctrl&lt;/br&gt;+&lt;br&gt;Alt&lt;/br&gt;+&lt;br&gt;Del&lt;/br&gt; 重启电脑</code></p>
+<p>效果：</p>
+<hr>
+<p>使用 <br>Ctrl</br>+<br>Alt</br>+<br>Del</br> 重启电脑</p>
+<hr>
+<ul>
+<li><strong>转义</strong></li>
+</ul>
+<p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符</p>
+<p>Markdown 使用反斜杠转义特殊字符</p>
+<pre><code>\*\*星号*\*\
+**星号**</code></pre>
+<p>**星号<em>\</em>\</p>
+<p><strong>星号</strong></p>
+<p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<pre><code>\   反斜线
+`   反引号
+*   星号
+_   下划线
+&amp;#123;&amp;#125;  花括号
+[]  方括号
+()  小括号
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   感叹号</code></pre>
+<h2 id="十四、Markdown小技巧"><a href="#十四、Markdown小技巧" class="headerlink" title="十四、Markdown小技巧"></a>十四、Markdown小技巧</h2><ul>
+<li><strong>首行缩进</strong></li>
+</ul>
+<p>示例：</p>
+<pre><code>&amp;emsp; 首行缩进 //全角缩进
+&amp;ensp; 首行缩进 //半角缩进
+无缩进</code></pre>
+<p>效果：</p>
+<hr>
+<p>&emsp; 首行缩进</p>
+<p>&ensp; 首行缩进</p>
+<p>无缩进</p>
+<hr>
+<ul>
+<li><strong>文本高亮</strong></li>
+</ul>
+<p>示例：</p>
+<p><code>==文本高亮==</code></p>
+<p>效果：</p>
+<hr>
+<p>==文本高亮==</p>
 
             </div>
             <hr/>
@@ -783,8 +907,8 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
                                 </a>
                             
                         </div>
@@ -1207,72 +1331,24 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/16da">
+                <a href="/posts/5851">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200829085344.png" class="responsive-img" alt="WJ-7B型扣件安装说明会议记录">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="网站SEO优化">
                         
-                        <span class="card-title">WJ-7B型扣件安装说明会议记录</span>
+                        <span class="card-title">网站SEO优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WJ-7B一般扣件组成及安装学习记录
+                            借助谷歌及百度两大搜索引擎进行收录详解，分别介绍两种不同的方式收录网站的方法。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
-                                    土木工程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%89%A3%E4%BB%B6/">
-                        <span class="chip bg-color">扣件</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/86b7">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Linux学习笔记">
-                        
-                        <span class="card-title">Linux学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            学习Linux。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1288,8 +1364,60 @@ a = &quot;ABC&quot;; // 错误：不能把字符串赋给整型变量</code></pr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/345d">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200802152444.jpg" class="responsive-img" alt="2020.08.02日一标现场记录">
+                        
+                        <span class="card-title">2020.08.02日一标现场记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            参观金义东轨道工程01标现场记录
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    土木工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E5%9C%B0/">
+                        <span class="chip bg-color">基地</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9C%B0%E4%B8%8B%E7%BA%BF/">
+                        <span class="chip bg-color">地下线</span>
                     </a>
                     
                 </div>
