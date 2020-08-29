@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo-themes-matery主题目录总结, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="keywords" content="使用shell脚本做文件备份, 资源分享,网站导航,个人博客，技能分享">
     <meta name="description" content="资源收集控，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo-themes-matery主题目录总结 | 肆零肆</title>
+    <title>使用shell脚本做文件备份 | 肆零肆</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo-themes-matery主题目录总结</h1>
+                    <h1 class="description center-align post-title">使用shell脚本做文件备份</h1>
                 </div>
             </div>
         </div>
@@ -501,12 +501,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/Hexo-themes-matery/">
-                                <span class="chip bg-color">Hexo-themes-matery</span>
+                            <a href="/tags/shell/">
+                                <span class="chip bg-color">shell</span>
                             </a>
                         
                     </div>
@@ -530,7 +530,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-08
+                    2020-07-12
                 </div>
                 
 
@@ -546,187 +546,100 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo-themes-matery主题目录总结"><a href="#Hexo-themes-matery主题目录总结" class="headerlink" title="Hexo-themes-matery主题目录总结"></a>Hexo-themes-matery主题目录总结</h1><p><strong>博客的目录结构如下图：</strong></p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/Hexo-theme-matery.png" alt="hexo-theme-matery主题目录结构"></p>
+                <h1 id="使用shell脚本做文件备份"><a href="#使用shell脚本做文件备份" class="headerlink" title="使用shell脚本做文件备份"></a>使用shell脚本做文件备份</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>无论是在搭建自己的个人博客过程中还是平时的工作生活中，都会有文件备份的习惯，有些文件往往比较重要，需要经常性的打包备份一次。就我在搭建Hexo博客而言，每次都要清理<code>public</code>文件夹后将文件进行打包备份，移动到其他文件夹或者网盘存储。每次重复性的，周期性的操作认为比较繁琐，因此想使用一个简单的脚本将重复繁琐的备份任务用一个命令解决。</p>
+<p>开始吧~</p>
+<h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell简单的说就是我们使用的命令解释器，你打开的终端就是shell。你部署hexo博客就是用的Git bash，其中bash属于shell中的一种。</p>
+<h2 id="什么是shell脚本"><a href="#什么是shell脚本" class="headerlink" title="什么是shell脚本"></a>什么是shell脚本</h2><p>我们打开终端(shell)敲下一行行命令，是只能一条一条的发送命令。我所理解的shell脚本就是，可以将bash中一条一条敲下的命令组合到一起，命令之间可以相互联系，最终依次全部执行的文件。而且这类文件是一类带有<code>.sh</code>拓展名的文件。</p>
+<ul>
+<li>shell脚本如何编写？</li>
+</ul>
+<p>使用<code>vi</code>/<code>vim</code>编辑器、<code>VS code</code>、<code>Notepad++</code>等其他编辑器，以<code>shell scripts</code>的格式保存即可编写<code>.sh</code>文件。</p>
+<p>使用<code>bash</code>中执行的命令都可以在<code>shell</code>脚本中执行。</p>
+<p>如需要深入了解<code>shell</code>脚本可参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">shell教程</a>。</p>
+<ul>
+<li>shell脚本如何运行？<ul>
+<li>可双击<code>.sh</code>文件直接运行</li>
+<li>在脚本文件目录下运行<code>sh xx.sh</code></li>
+<li>添加环境变量PATH，使你的脚本变成一个命令。</li>
+</ul>
+</li>
+</ul>
+<h2 id="制作打包备份博客源代码的shell脚本"><a href="#制作打包备份博客源代码的shell脚本" class="headerlink" title="制作打包备份博客源代码的shell脚本"></a>制作打包备份博客源代码的shell脚本</h2><p>开始制作脚本之前，需要了解一下，在打包过程中，需要用到自己安装的压缩软件的打包命令。</p>
+<p>我使用的是<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/">Bandizip软件</a>，官网提供了软件相关的命令行代码，<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/help/parameter/">Bandizip命令行参数</a>。其他软件可自行百度。此教程使用Bandizip示例。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200712234406.png" alt="Bandizip命令行参数"></p>
+<p>使用<code>vi</code>、<code>vim</code>、<code>VS code</code>等编辑器创建新文本，使用简单的命令组合制作脚本：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<span class="token comment" spellcheck="true"># 用于打包备份blog文件</span>
+<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io <span class="token comment" spellcheck="true"># 定位到需要清理的位置</span>
+<span class="token keyword">echo</span> <span class="token string">"已定位到目标文件夹"</span>
+hexo clean <span class="token comment" spellcheck="true"># 清理文件</span>
+<span class="token keyword">echo</span> <span class="token string">"清理完成"</span>
+<span class="token function">cd</span> /c/Users/Sumsung524 <span class="token comment" spellcheck="true"># 定位到需要打包的位置</span>
+<span class="token keyword">echo</span> <span class="token string">"已定位到打包位置"</span>
+bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip Sumsung524.github.io
+<span class="token comment" spellcheck="true"># 将Sumsung524.github.io文件夹打包，并以当天打包时间命名。</span>
+<span class="token comment" spellcheck="true"># c表示打包文件，-y表示：所有询问都为是若无错误发生，则在任务完成时关闭（解）压缩窗口</span>
+<span class="token keyword">echo</span> <span class="token string">"打包完成"</span>
+<span class="token function">mv</span> <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip
+<span class="token comment" spellcheck="true"># 将生成的打包文件移动到备份文件夹中</span>
+<span class="token keyword">echo</span> <span class="token string">"移动成功"</span>
+<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
+hexo generate <span class="token comment" spellcheck="true"># 回到原来的位置重新解析文件</span>
+<span class="token keyword">echo</span> <span class="token string">"重新解析成功"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>做好之后以<code>.sh</code>拓展名保存到一个位置（你也可以直接不带任何拓展名，同样可以直接运行命令，甚至更加方便）。其中<code>#!/bin/sh</code>代表是一个<code>shell</code>脚本文件（这个没有关系不大），<code>#</code>用于注释，<code>echo</code>表示输出内容，可以不用。<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>表示打包当天的日期。</p>
+<p>如果你认为代码太复杂可以简化为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io
+hexo clean
+<span class="token function">cd</span> /c/Users/Sumsung524
+bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip Sumsung524.github.io
+<span class="token function">mv</span> <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip
+<span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
+hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果你需要在打包的时候需要对文件加上其他命名，可加入如下代码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"输入文件名"</span>
+<span class="token function">read</span> file_name
+bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span><span class="token string">"$&amp;#123;file_name&amp;#125;"</span>.zip Sumsung524.github.io
+<span class="token function">mv</span> *.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这里添加了一个叫<code>file_name</code>（名称自取）的变量，访问变量时，需要在变量名称之前添加<code>“$”</code>，如<code>“$ &#123;变量&#125;”</code>，将变量用<code>“&#123;&#125;”</code>括起来。</p>
+<p>将<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>改为<code>*.zip</code>。会将所在目录下的所有<code>zip</code>格式移动到目标目录。</p>
+<p>这样做好之后，运行脚本的时候就需要你设置文件名：</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713161443.png" alt="要求输入文件名"></p>
+<p>当然如果不想加文件名的时候可以选择直接回车。效果和之前脚本一样。</p>
+<h2 id="添加PATH"><a href="#添加PATH" class="headerlink" title="添加PATH"></a>添加PATH</h2><p>做好脚本之后，测试一两次没有问题之后，我们将脚本保存到一个文件夹中，以便日后再用。但以后每次使用都要到脚本文件目录下执行脚本，要在前面输入很长一段的路径，很不方便。因此我们要找一个linux命令行在任意目录下启动任意的脚本的方法，就是给他添加一个PATH。</p>
 <blockquote>
-<p>在定制个人博客过程中，颜色标记越红的文件（文件夹），代表需要修改或添加参数的频繁可能越高。<br>定制完成后的后期发布文章，一般只需关注<code>/source/_post/</code>中的内容。</p>
+<p>简单说PATH就是一组路径的字符串变量，当你输入的命令不带任何路径时，LINUX会在PATH记录的路径中查找该命令。</p>
+<ul>
+<li>PATH的作用就是每次在Bash里面输入一个命令时, Bash都会去PATH列表里面去找对应的文件,找到了就执行, 脚本其实就是一个可执行的文件(ls, cd, mkdir..)</li>
+<li>可以输入命令echo $PATH查看所有的路径,Bash就会在这些路径中依次查找</li>
+</ul>
 </blockquote>
-<h1 id="目录说明"><a href="#目录说明" class="headerlink" title="目录说明"></a>目录说明</h1><h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a><a name='_config.yml'></a>_config.yml</h2><p>全局配置文件,配置主要基本参数。如网站标题、部署信息、主题选择、默认文件夹、插件设置等。</p>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a><a name='package.json'></a>package.json</h2><p>应用程序、插件的版本信息,一般不用。</p>
-<h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a><a name='node_modules'></a>node_modules</h2><p>hexo基于<code>node.js</code>，所以会有这个文件夹，<code>node.js</code>里面放着各种库,对于定制我们的博客，一般用不着。</p>
-<h2 id="public"><a href="#public" class="headerlink" title="public"></a><a name='public'></a>public</h2><p>生成的网页文件目录。<br>使用<code>hexo clean &amp;&amp; hexo generate </code>命令会重新删除并重新生成文件夹。<br>使用<code>hexo deploy</code>部署到github或者gitee上的代码也就是这个文件夹中的文件。</p>
-<h2 id="source"><a href="#source" class="headerlink" title="source"></a><a name='source'></a>source</h2><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。<code>Markdown </code>和<code>HTML</code>文件会被解析并放到 <code>public </code>文件夹，而其他文件会被直接拷贝过去。</p>
-<h3 id="data"><a href="#data" class="headerlink" title="_data"></a><a name='_data'></a>_data</h3><ul>
-<li><p>friends.json</p>
-<p>定义友情链接卡片文件，通过修动此文件中对应信息，可对友情链接中的文本信息进行修改。</p>
-</li>
-</ul>
-<h3 id="post"><a href="#post" class="headerlink" title="_post"></a><a name='_post'></a>_post</h3><p>博客文章存放的位置，所有发表的博客文章在此文件夹中。</p>
-<h3 id="CNAME"><a href="#CNAME" class="headerlink" title="CNAME"></a><a name='cname'></a>CNAME</h3><p>域名解析的地址，用于绑定域名。</p>
-<h3 id="404-md"><a href="#404-md" class="headerlink" title="404.md"></a><a name='404.md'></a>404.md</h3><p>404错误页面</p>
-<h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a><a name='categories'></a>categories</h3><p>分类页</p>
 <ul>
-<li>index.md</li>
+<li>临时设置PATH</li>
 </ul>
-<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a><a name='contact'></a>Contact</h3><p>留言页</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">pwd</span> <span class="token comment" spellcheck="true">#查看下脚本所在的绝对路径</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"脚本的绝对路径:<span class="token variable">$PATH</span>"</span> <span class="token comment" spellcheck="true"># 这句话就是将脚本所在的目录加到PATH里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>上面的PATH在重启Bash后就会失效。</p>
 <ul>
-<li>index.md</li>
+<li>永久设置PATH</li>
 </ul>
-<h3 id="friends"><a href="#friends" class="headerlink" title="friends"></a><a name='friends'></a>friends</h3><p>友情链接页</p>
-<ul>
-<li>index.md</li>
-</ul>
-<h3 id="tags"><a href="#tags" class="headerlink" title="tags"></a><a name='tags'></a>tags</h3><p>标签页</p>
-<ul>
-<li>index.md</li>
-</ul>
-<h3 id="about"><a href="#about" class="headerlink" title="about"></a><a name='about'></a>about</h3><p>关于页面</p>
-<ul>
-<li><p>index.md</p>
-<p>在设定好卡片之后，可编辑文件加入内容。</p>
-</li>
-</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> ~/.bashrc <span class="token comment" spellcheck="true"># 创建~/.bashrc</span>
+<span class="token function">vi</span> ~/.bashrc <span class="token comment" spellcheck="true"># 编辑~/.bashrc</span>
+在编辑器里写入 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"local的绝对路径:<span class="token variable">$PATH</span>"</span>
+<span class="token function">source</span> ~/.bashrc <span class="token comment" spellcheck="true"># 保存编辑,这句命令一定要写</span>
+<span class="token function">zip</span> <span class="token comment" spellcheck="true"># zip是我的脚本文件名，直接输入你的文件名即可直接运行脚本。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意:</strong></p>
+<p>整个备份脚本文件已经做完了，以后可以轻松的使用一个自己自定义的命令（修改脚本文件名）即可完成文件备份了！在使用过程中有几个需要注意的点：</p>
+<ol>
+<li>不要去改动备份目标文件夹路径中文件夹的名称，或者改动之后相应的脚本位置也需要统一改动。</li>
+<li>打包目录下不能存放其他<code>zip</code>格式的文件，否则会全部移动到目标路径文件夹下。</li>
+<li>可以将备份文件的目标路径设置为网盘的备份文件夹（OneDrive、百度网盘、天翼云等），从而实现双备份。</li>
+</ol>
 <blockquote>
-<p><code>source</code>文件夹中的文件是通过<code>hexo new page &quot;xxx&quot;</code>创建出来的。index.md是页面的基本配置。似乎没什么用。</p>
+<p>个人使用的是Onedrive网盘同步盘，将目标文件夹下备份打包好的文件，等网盘同步之后，使用释放空间功能，将打包的文件上传到网盘而不保留到本地，既释放了空间，也实现的文件的备份。目标文件夹只相当于一个临时存储区。</p>
 </blockquote>
-<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a><a name='themes'></a>themes</h2><p>主题文件夹，存放Hexo主题的文件夹，更多主题访问：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes</a></p>
-<h3 id="hexo-theme-matery"><a href="#hexo-theme-matery" class="headerlink" title="hexo-theme-matery"></a><a name='hexo-theme-matery'></a>hexo-theme-matery</h3><ul>
-<li><p>_config.yml</p>
-<p>主题的配置文件，配置文件中含有大量注释说明，根据注释即可知道使用方法。<br>与该主题相关的大多数配置都在这个文件里面。比如，配置菜单导航的名称、路径和图标、banner设置、音乐视频模板基础设置、社交链接、代码块、动效、副标题打字效果、评论插件等。<br>相比于根目录下的<code>_config.yml</code>更加详细。</p>
-</li>
-</ul>
-<ul>
-<li><p>languages<br>语言相关，一般用不到</p>
-</li>
-<li><p>layout</p>
-<p>主题结构布置、布局的模板库，自定义程度较高时，此文件夹的改动也会较为频繁。</p>
-<ul>
-<li><p>_partial</p>
-<p>定义小组件的功能布局文件</p>
-</li>
-<li><p>_widget</p>
-<p>定义小项目的功能布局文件</p>
-</li>
-<li><p>404.ejs</p>
-<p>404页面</p>
-</li>
-<li><p>about.ejs</p>
-<p>“关于”页面的模板文件。</p>
-</li>
-<li><p>archive.ejs</p>
-<p>归档页面</p>
-</li>
-<li><p>categories.ejs</p>
-<p>分类页面</p>
-</li>
-<li><p>contact.ejs</p>
-<p>留言板页面</p>
-</li>
-<li><p>friends.ejs</p>
-<p>友情链接页面</p>
-</li>
-<li><p>index,ejs</p>
-<p>首页</p>
-</li>
-<li><p>post.ejs</p>
-<p>博客阅读页面</p>
-</li>
-<li><p>tags.ejs</p>
-<p>标签页面</p>
-</li>
-<li><p>layout.ejs</p>
-<p>整体功能布局文件，所有页面都会存在的功能布局文件，相当于在各种主要页面之之中都存在的某些功能，都在这个文件中。比如说，在每个页面都有的鼠标的点击效果、滚动条效果等。</p>
-</li>
-</ul>
-</li>
-<li><p>source<br>媒体文件的存放文件夹，定义主题外观，图片更改等。自定义程度较高时，此文件夹的改动也会较为频繁。</p>
-<ul>
-<li><p>css</p>
-<p>样式文件夹：主题的各个部分的颜色，各个部件放置的位置、透明度等设置都在这个当中，主要的是对matery.css的设置。</p>
-<ul>
-<li><p>matery.css</p>
-<p>定义整个主题的各个组件的外观、位置等</p>
-</li>
-<li><p>gitment.css</p>
-<p>gitment评论样式设置</p>
-</li>
-<li><p>my.css</p>
-<p>表情外观位置设置。</p>
-</li>
-<li><p>my-gittalk.css</p>
-<p>gittalk的外观设置</p>
-</li>
-</ul>
-</li>
-<li><p>favicon.png</p>
-<p>网站图标</p>
-</li>
-<li><p>js</p>
-<p>外观动效文件夹</p>
-<ul>
-<li><p>click_show_text.js</p>
-<p>点击效果动效设置</p>
-</li>
-<li><p>matery.js</p>
-<p>整个主题</p>
-</li>
-<li><p>search.js</p>
-<p>搜索引擎</p>
-</li>
-</ul>
-</li>
-<li><p>libs</p>
-<p>各种小部件功能实现文件</p>
-</li>
-<li><p>medias</p>
-<p>图片文件集合，需要用到的本地图片都在这个文件夹中。</p>
-<ul>
-<li><p>avatar.png</p>
-<p>头像</p>
-</li>
-<li><p>banner</p>
-</li>
-<li><p>comment_bg.png</p>
-<p>评论区图片</p>
-</li>
-<li><p>cover.png</p>
-</li>
-<li><p>featureimages</p>
-<p>特征图。发文章是用的图片一般在这里</p>
-</li>
-<li><p>icp.png</p>
-<p>看图片就知道了<br>网页最下方图片</p>
-</li>
-<li><p>logo.png</p>
-<p>logo图标</p>
-</li>
-<li><p>reward</p>
-<p>支付宝微信二维码</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>LICENSE</p>
-<p>许可证</p>
-</li>
-<li><p>README.md<br>主题说明，没用，移除</p>
-</li>
-<li><p>README_CN.md<br>主题说明，没用，移除</p>
-</li>
-</ul>
-<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a><a name='scaffolds'></a>scaffolds</h2><p>模板    文件夹：更新文章、草稿、页面或自定义内容的模板集合</p>
-<h3 id="draft-md"><a href="#draft-md" class="headerlink" title="draft.md"></a><a name='draft.md'></a>draft.md</h3><p>草稿模板</p>
-<h3 id="page-md"><a href="#page-md" class="headerlink" title="page.md"></a><a name='page.md'></a>page.md</h3><p>页面模板</p>
-<h3 id="post-md"><a href="#post-md" class="headerlink" title="post.md"></a><a name='post.md'></a>post.md</h3><p>博客文章模板<br>可根据Front-matter选项自行设置模板格式。<br>使用hexo new post 创建将默认使用该模板</p>
-<br>
-
-<p><strong>参考来源</strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo文档</a></li>
-</ul>
-<p><strong>注：</strong></p>
-<p>内容由个人经验总结，仅列出大概框架和解释，以便快速入门，更快的熟悉hexo目录结构和matery主题，其他主题区别不大，也可以以此作为参考。如有更多补充、有疑问或问题的之处，欢迎在评论区留言。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713163508.png" alt="Onedrive释放本地空间存储文件至云端"></p>
+<p>另外，如需系统学习shell脚本请下载：<a target="_blank" rel="noopener" href="https://sumsung.lanzous.com/iRRTvekg2na">Linux命令行与shell脚本编程大全.第3版</a>。</p>
 
             </div>
             <hr/>
@@ -740,12 +653,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/Hexo-themes-matery/">
-                                    <span class="chip bg-color">Hexo-themes-matery</span>
+                                <a href="/tags/shell/">
+                                    <span class="chip bg-color">shell</span>
                                 </a>
                             
                         </div>
@@ -1168,25 +1081,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/922">
+                <a href="/posts/17f27652">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="VI/VIM 编辑器安装及使用">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="为你的Hexo博客添加新页面">
                         
-                        <span class="card-title">VI/VIM 编辑器安装及使用</span>
+                        <span class="card-title">为你的Hexo博客添加新页面</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VI/VIM 编辑器安装及使用VI和VIM是什么
-VI 是 Unix 操作系统和类 Unix 操作系统中最通用的文本编辑器。
-VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。可以主动的以字体颜色辨别语法的正确性，方便程序设计
+                            为你的Hexo博客添加新页面前言
+由于自己收藏了很多各式各样的网站，很多都很有价值，一直都在存在浏览器书签中，由于书签网站比较多，东西比较杂乱。需要整理，正好想将自己的网站整理出来放到自己的Blog上。于是想做一个书签网站分享页。
+
+今天来
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
                         </span>
                         <span class="publish-author">
                             
@@ -1203,8 +1117,12 @@ VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo-themes-matery/">
+                        <span class="chip bg-color">Hexo-themes-matery</span>
                     </a>
                     
                 </div>
@@ -1215,26 +1133,27 @@ VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2293">
+                <a href="/posts/efa3dd55">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hexo-themes-matery主题目录总结">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="新建文章自动打开本地Markdown编辑器">
                         
-                        <span class="card-title">Hexo-themes-matery主题目录总结</span>
+                        <span class="card-title">新建文章自动打开本地Markdown编辑器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            帮助刚接触hexo博客或Hexo-themes-matery主题的新人快速入门，更快的了解目录结构，以便自定义修改博客，或方便以后快速查阅。
+                            新建文章自动打开本地Markdown编辑器使用Hexo写新文章时，需要控制台执行 hexo new &quot;文章名字&quot;，这样就会在_posts 下生成一篇新文章，但需要手动打开，挺麻烦的。
+只需要在站点根目录下新建 scrip
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -1248,7 +1167,6 @@ VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1256,8 +1174,8 @@ VIM 编辑器是从 VI 发展出来的一个性能更强大的文本编辑器。
                         <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Hexo-themes-matery/">
-                        <span class="chip bg-color">Hexo-themes-matery</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
