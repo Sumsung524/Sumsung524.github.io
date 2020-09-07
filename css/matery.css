@@ -1829,6 +1829,10 @@ footer .copy-right {
 
 .top-scroll .btn-floating i {
     line-height: 48px;
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 368px) and (max-width: 767px) {
