@@ -277,15 +277,6 @@ mark {
     color: #fff;
 }
 
-.progress-bar {
-    height: 4px;
-    position: fixed;
-    bottom: 0px;
-    z-index: 300;
-    background: linear-gradient(to right, #4285f4 0%,  #ea4335 75%, #fbbc05 80%, #4285f4 85%, #34a853 90%, #ea4335 100%);
-    opacity: 1.0;
-}
-
 .sidenav-overlay {
     z-index: 500;
 }
@@ -1758,11 +1749,11 @@ footer .social-statis {
 }
 
 footer a {
-    color: #999;
+    color: rgb(255, 255, 255);
 }
 
 footer .copy-right {
-    color: #444;
+    color: rgb(255, 255, 255);
 }
 
 /*搜索层样式*/
@@ -2068,7 +2059,7 @@ footer .copy-right {
 
   ::-webkit-scrollbar {
 
-    width: 0.1px;
+    width: 6px;
   
     height: 6px;
   
