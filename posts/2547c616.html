@@ -29,11 +29,95 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
     
-<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .ball-clip-rotate > div {
+        background-color: #279fcf;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        border: 5px solid #279fcf;
+        border-bottom-color: transparent;
+        height: 32px;
+        width: 32px;
+        background: transparent !important;
+        display: inline-block;
+        -webkit-animation: rotate 0.75s 0s linear infinite;
+                animation: rotate 0.75s 0s linear infinite; }
+      
+      @keyframes rotate {
+        0% {
+          -webkit-transform: rotate(0deg) scale(1);
+                  transform: rotate(0deg) scale(1); }
+      
+        50% {
+          -webkit-transform: rotate(180deg) scale(0.6);
+                  transform: rotate(180deg) scale(0.6); }
+      
+        100% {
+          -webkit-transform: rotate(360deg) scale(1);
+                  transform: rotate(360deg) scale(1); } }
+      
+      @keyframes scale {
+        30% {
+          -webkit-transform: scale(0.3);
+                  transform: scale(0.3); }
+      
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },0);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
-<body>
+
+ <div id="loading-container" class="loaders">
+ <div class="loader">
+ <div class="loader-inner ball-clip-rotate">
+   <div></div>
+ </div>
+</div>
+ </div><body>
     
     
     
