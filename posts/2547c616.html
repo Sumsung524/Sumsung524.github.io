@@ -1976,6 +1976,194 @@ https://post.zz173.com/posts/8ddf18fb.html
 crc32 & dec
 https://post.zz173.com/posts/1690090958.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>生成完后，原 md 文件的 Front-matter 内会增加 abbrlink 字段，值为生成的 ID 。这个字段确保了在我们修改了 Front-matter 内的博客标题 title 或创建日期 date 字段之后而不会改变链接地址。</p>
+<h3 id="3-压缩代码"><a href="#3-压缩代码" class="headerlink" title="3.压缩代码"></a>3.压缩代码</h3><p>因为 hexo 生成的 html、css、js 等都有很多的空格或者换行，而空格和换行也是占用字节的，所以需要将空格换行去掉也就是我要进行的 “压缩”。</p>
+<p>有人说空格换行能占多少字节？确实占不了多少，但是一个人访问是这么多字节，那么一百人，一万人呢？加起来这量就不少了吧，这都是流量啊！这也是很多 css/js 文件的后缀为.min.js 或.min.css 的原因。虽然我们可能没那么多访问量，但是能减小一点资源文件的大小也是对访问速度有那么一点提升的。</p>
+<p>我们采用 gulp 代码压缩方式。</p>
+<p>使用方法：</p>
+<p>进入站点根目录下依次执行下面的命令：</p>
+<pre class="line-numbers language-BASH"><code class="language-BASH"># 全局安装gulp模块
+npm install gulp -g
+# 安装各种小功能模块  执行这步的时候，可能会提示权限的问题，最好以管理员模式执行
+npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify gulp-imagemin --save
+# 额外的功能模块
+npm install gulp-debug gulp-clean-css gulp-changed gulp-if gulp-plumber gulp-babel babel-preset-es2015 del @babel/core --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 Hexo 根目录新建文件 gulpfile.js，并复制以下内容到文件中，有中文注释，可以根据自己需求修改。（注意：文件名不能错，一定为 gulpfile.js，否则会出错！）</p>
+<pre class="line-numbers language-JS"><code class="language-JS">var gulp = require("gulp");
+var debug = require("gulp-debug");
+var cleancss = require("gulp-clean-css"); //css压缩组件
+var uglify = require("gulp-uglify"); //js压缩组件
+var htmlmin = require("gulp-htmlmin"); //html压缩组件
+var htmlclean = require("gulp-htmlclean"); //html清理组件
+var imagemin = require("gulp-imagemin"); //图片压缩组件
+var changed = require("gulp-changed"); //文件更改校验组件
+var gulpif = require("gulp-if"); //任务 帮助调用组件
+var plumber = require("gulp-plumber"); //容错组件（发生错误不跳出任务，并报出错误内容）
+var isScriptAll = true; //是否处理所有文件，(true|处理所有文件)(false|只处理有更改的文件)
+var isDebug = true; //是否调试显示 编译通过的文件
+var gulpBabel = require("gulp-babel");
+var es2015Preset = require("babel-preset-es2015");
+var del = require("del");
+var Hexo = require("hexo");
+var hexo = new Hexo(process.cwd(), &#123;&#125;); // 初始化一个hexo对象
+
+// 清除public文件夹
+gulp.task("clean", function () &#123;
+    return del(["public/**/*"]);
+&#125;);
+
+// 下面几个跟hexo有关的操作，主要通过hexo.call()去执行，注意return
+// 创建静态页面 （等同 hexo generate）
+gulp.task("generate", function () &#123;
+    return hexo.init().then(function () &#123;
+        return hexo
+            .call("generate", &#123;
+                watch: false
+            &#125;)
+            .then(function () &#123;
+                return hexo.exit();
+            &#125;)
+            .catch(function (err) &#123;
+                return hexo.exit(err);
+            &#125;);
+    &#125;);
+&#125;);
+
+// 启动Hexo服务器
+gulp.task("server", function () &#123;
+    return hexo
+        .init()
+        .then(function () &#123;
+            return hexo.call("server", &#123;&#125;);
+        &#125;)
+        .catch(function (err) &#123;
+            console.log(err);
+        &#125;);
+&#125;);
+
+// 部署到服务器
+gulp.task("deploy", function () &#123;
+    return hexo.init().then(function () &#123;
+        return hexo
+            .call("deploy", &#123;
+                watch: false
+            &#125;)
+            .then(function () &#123;
+                return hexo.exit();
+            &#125;)
+            .catch(function (err) &#123;
+                return hexo.exit(err);
+            &#125;);
+    &#125;);
+&#125;);
+
+// 压缩public目录下的js文件
+gulp.task("compressJs", function () &#123;
+    return gulp
+        .src(["./public/**/*.js", "!./public/libs/**"]) //排除的js
+        .pipe(gulpif(!isScriptAll, changed("./public")))
+        .pipe(gulpif(isDebug, debug(&#123; title: "Compress JS:" &#125;)))
+        .pipe(plumber())
+        .pipe(
+            gulpBabel(&#123;
+                presets: [es2015Preset] // es5检查机制
+            &#125;)
+        )
+        .pipe(uglify()) //调用压缩组件方法uglify(),对合并的文件进行压缩
+        .pipe(gulp.dest("./public")); //输出到目标目录
+&#125;);
+
+// 压缩public目录下的css文件
+gulp.task("compressCss", function () &#123;
+    var option = &#123;
+        rebase: false,
+        //advanced: true, //类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
+        compatibility: "ie7" //保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+        //keepBreaks: true, //类型：Boolean 默认：false [是否保留换行]
+        //keepSpecialComments: '*' //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀
+    &#125;;
+    return gulp
+        .src(["./public/**/*.css", "!./public/**/*.min.css"]) //排除的css
+        .pipe(gulpif(!isScriptAll, changed("./public")))
+        .pipe(gulpif(isDebug, debug(&#123; title: "Compress CSS:" &#125;)))
+        .pipe(plumber())
+        .pipe(cleancss(option))
+        .pipe(gulp.dest("./public"));
+&#125;);
+
+// 压缩public目录下的html文件
+gulp.task("compressHtml", function () &#123;
+    var cleanOptions = &#123;
+        protect: /<\!--%fooTemplate\b.*?%-->/g, //忽略处理
+        unprotect: /<script [^>]*\btype="text\/x-handlebars-template"[\s\S]+?<\/script>/gi //特殊处理
+    &#125;;
+    var minOption = &#123;
+        collapseWhitespace: true, //压缩HTML
+        collapseBooleanAttributes: true, //省略布尔属性的值 <input checked="true"/> ==> <input />
+        removeEmptyAttributes: true, //删除所有空格作属性值 <input id="" /> ==> <input />
+        removeScriptTypeAttributes: true, //删除<script>的type="text/javascript"
+        removeStyleLinkTypeAttributes: true, //删除<style>和<link>的type="text/css"
+        removeComments: true, //清除HTML注释
+        minifyJS: true, //压缩页面JS
+        minifyCSS: true, //压缩页面CSS
+        minifyURLs: true //替换页面URL
+    &#125;;
+    return gulp
+        .src("./public/**/*.html")
+        .pipe(gulpif(isDebug, debug(&#123; title: "Compress HTML:" &#125;)))
+        .pipe(plumber())
+        .pipe(htmlclean(cleanOptions))
+        .pipe(htmlmin(minOption))
+        .pipe(gulp.dest("./public"));
+&#125;);
+
+// 压缩 public/medias 目录内图片
+gulp.task("compressImage", function () &#123;
+    var option = &#123;
+        optimizationLevel: 5, //类型：Number 默认：3 取值范围：0-7（优化等级）
+        progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+        interlaced: false, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+        multipass: false //类型：Boolean 默认：false 多次优化svg直到完全优化
+    &#125;;
+    return gulp
+        .src("./public/medias/**/*.*")
+        .pipe(gulpif(!isScriptAll, changed("./public/medias")))
+        .pipe(gulpif(isDebug, debug(&#123; title: "Compress Images:" &#125;)))
+        .pipe(plumber())
+        .pipe(imagemin(option))
+        .pipe(gulp.dest("./public"));
+&#125;);
+// 执行顺序： 清除public目录 -> 产生原始博客内容 -> 执行压缩混淆 -> 部署到服务器
+gulp.task(
+    "build",
+    gulp.series(
+        "clean",
+        "generate",
+        "compressHtml",
+        "compressCss",
+        "compressJs",
+        "compressImage",
+        gulp.parallel("deploy")
+    )
+);
+
+// 默认任务
+gulp.task(
+    "default",
+    gulp.series(
+        "clean",
+        "generate",
+        gulp.parallel("compressHtml", "compressCss", "compressJs","compressImage")
+    )
+);
+//Gulp4最大的一个改变就是gulp.task函数现在只支持两个参数，分别是任务名和运行任务的函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以后的执行方式有两种：</p>
+<ul>
+<li>直接在 Hexo 根目录执行 gulp 或者 gulp default ，这个命令相当于 hexo cl&amp;&amp;hexo g 并且再把代码和图片压缩。</li>
+<li>在 Hexo 根目录执行 gulp build ，这个命令与第 1 种相比是：在最后又加了个 hexo d ，等于说生成、压缩文件后又帮你自动部署了。</li>
+</ul>
+<blockquote>
+<p>值得注意的是：这个加入了图片压缩，如果不想用图片压缩可以把第 154 行的 “compressImage”, 和第 165 行的 ,”compressImage” 去掉即可</p>
+</blockquote>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo官方</a></p>
 </li>
