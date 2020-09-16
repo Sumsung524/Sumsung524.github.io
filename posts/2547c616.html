@@ -101,7 +101,7 @@
             // document.getElementById("body-wrap").style.display="flex";
             setTimeout(function(){
                 loader.style.display="none";
-            },1000); 
+            },0); //多少秒后可点击
         },0);//强制显示loading page 1s  
     };
     loaded();
@@ -163,7 +163,7 @@
       <li>
         <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
           
-          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fas fa-tv" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>计算机</span>
         </a>
@@ -172,7 +172,7 @@
       <li>
         <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/">
           
-          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fas fa-road" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>土木工程</span>
         </a>
@@ -181,7 +181,7 @@
       <li>
         <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/">
           
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fas fa-box" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>方法技能</span>
         </a>
@@ -206,7 +206,7 @@
       <li>
         <a href="/windows">
           
-          <i class="fas fa-address-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fab fa-windows" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>Windows软件</span>
         </a>
@@ -215,7 +215,7 @@
       <li>
         <a href="/mac">
           
-          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fab fa-apple" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>Mac软件</span>
         </a>
@@ -310,7 +310,7 @@
 
                   <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/ " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-tv" style="position: absolute;left:50px" ></i>
 			      
 		          <span>计算机</span>
                   </a>
@@ -320,7 +320,7 @@
 
                   <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/ " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-road" style="position: absolute;left:50px" ></i>
 			      
 		          <span>土木工程</span>
                   </a>
@@ -330,7 +330,7 @@
 
                   <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/ " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-box" style="position: absolute;left:50px" ></i>
 			      
 		          <span>方法技能</span>
                   </a>
@@ -355,7 +355,7 @@
 
                   <a href="/windows " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-address-book" style="position: absolute;left:50px" ></i>
+				   <i class="fa fab fa-windows" style="position: absolute;left:50px" ></i>
 			      
 		          <span>Windows软件</span>
                   </a>
@@ -365,7 +365,7 @@
 
                   <a href="/mac " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+				   <i class="fa fab fa-apple" style="position: absolute;left:50px" ></i>
 			      
 		          <span>Mac软件</span>
                   </a>
@@ -3028,6 +3028,16 @@ $(function () {
     
     
     <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?43156dacad30fbfc08d06f1182d990c5";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 
     <!-- Baidu Push -->
 
