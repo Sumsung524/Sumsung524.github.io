@@ -29,84 +29,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
     
-<style type="text/css" lang="css">
-    #loading-container{
-        position: fixed;
-        top: 0;
-        left: 0;
-        min-height: 100vh;
-        width: 100vw;
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #FFF;
-        text-align: center;
-        /* loader页面消失采用渐隐的方式*/
-        -webkit-transition: opacity 1s ease;
-        -moz-transition: opacity 1s ease;
-        -o-transition: opacity 1s ease;
-        transition: opacity 1s ease;
-    }
-    .ball-clip-rotate > div {
-        background-color: #279fcf;
-        width: 15px;
-        height: 15px;
-        border-radius: 100%;
-        margin: 2px;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        border: 5px solid #279fcf;
-        border-bottom-color: transparent;
-        height: 32px;
-        width: 32px;
-        background: transparent !important;
-        display: inline-block;
-        -webkit-animation: rotate 0.75s 0s linear infinite;
-                animation: rotate 0.75s 0s linear infinite; }
-      
-      @keyframes rotate {
-        0% {
-          -webkit-transform: rotate(0deg) scale(1);
-                  transform: rotate(0deg) scale(1); }
-      
-        50% {
-          -webkit-transform: rotate(180deg) scale(0.6);
-                  transform: rotate(180deg) scale(0.6); }
-      
-        100% {
-          -webkit-transform: rotate(360deg) scale(1);
-                  transform: rotate(360deg) scale(1); } }
-      
-      @keyframes scale {
-        30% {
-          -webkit-transform: scale(0.3);
-                  transform: scale(0.3); }
-      
-        100% {
-          -webkit-transform: scale(1);
-                  transform: scale(1); } }
-    .fadeout {
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
- </style>
- <script>
-(function () {
-    const loaded = function(){
-       setTimeout(function(){
-            const loader = document.getElementById("loading-container");
-            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
-            // document.getElementById("body-wrap").style.display="flex";
-            setTimeout(function(){
-                loader.style.display="none";
-            },0); //多少秒后可点击
-        },0);//强制显示loading page 1s  
-    };
-    loaded();
-})()
- </script><meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -674,7 +597,7 @@ hexo init MyBlog <span class="token comment" spellcheck="true">#初始化文件�
 <p>重新<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code>一次可看到切换主题成功</p>
 <p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200821133442.jpg" alt="切换主题"></p>
 <p>到此，博客本地搭建完成，接下来定制和优化博客</p>
-<h4 id="3-部署到GitHub-pages"><a href="#3-部署到GitHub-pages" class="headerlink" title="3.部署到GitHub pages"></a>3.部署到GitHub pages</h4><p>生成<code>SSH</code>添加到<code>GitHub</code>，连接<code>Github</code>与本地。<br>右键打开<code>git bash</code>，然后输入下面命令：</p>
+<h3 id="3-部署到GitHub-pages"><a href="#3-部署到GitHub-pages" class="headerlink" title="3.部署到GitHub pages"></a>3.部署到GitHub pages</h3><p>生成<code>SSH</code>添加到<code>GitHub</code>，连接<code>Github</code>与本地。<br>右键打开<code>git bash</code>，然后输入下面命令：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"yourname"</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这里的<code>yourname</code>输入你的<code>GitHub</code>用户名，<code>youremail</code>输入你<code>GitHub</code>的邮箱。这样<code>GitHub</code>才能知道你是不是对应它的账户。可以用以下两条，检查一下你有没有输对</p>
@@ -1322,6 +1245,11 @@ icp:
 footer <span class="token number">.</span>copy-right &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#444</span><span class="token punctuation">;</span>
 &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="修改文章卡片中标签颜色"><a href="#修改文章卡片中标签颜色" class="headerlink" title="修改文章卡片中标签颜色"></a>修改文章卡片中标签颜色</h4><p>在主题目录layout/matery.css中加入样式：</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token number">.</span>tag-color &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to left, <span class="token hexcode">#00c9ff</span> <span class="token number">0%</span>, <span class="token hexcode">#66a6ff</span> <span class="token number">100%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>打开layout/index.ejs中使用<kbd>Ctrl</kbd>+<kbd>F</kbd>搜索<code>bg-color</code>，替换为：<code>tag-color</code>，从而实现标签颜色与导航条颜色独立。</p>
 <h4 id="定制回到顶部"><a href="#定制回到顶部" class="headerlink" title="定制回到顶部"></a>定制回到顶部</h4><ul>
 <li>修改回到顶部按钮颜色</li>
 </ul>
@@ -1782,7 +1710,739 @@ type: "navigation"
 <ul>
 <li>在主题目录下<code>layout</code>下新建 <code>navigation.ejs</code>，除拓展名为<code>.ejs</code>外，文件名要求和之前的统一：</li>
 </ul>
-<h4 id="2-建立软件清单页面"><a href="#2-建立软件清单页面" class="headerlink" title="2.建立软件清单页面"></a>2.建立软件清单页面</h4><p>创建新页面<code>hexo new page mac</code>，更改新建<code>index.md</code>文件：</p>
+<h3 id="2-导航的关于页面"><a href="#2-导航的关于页面" class="headerlink" title="2.导航的关于页面"></a>2.导航的关于页面</h3><ul>
+<li>添加关于页面按键（入口），在主题目录下打开<code>layout/nav.ejs</code>，按住<kbd>Ctrl</kbd>+<kbd>F</kbd>搜索<code>&lt;% if (theme.navabout) &#123; %&gt;</code>，下方加入代码：</li>
+</ul>
+<pre class="line-numbers language-ejs"><code class="language-ejs"><li>
+    <a href="<%= url_for(theme.navabout.url3) %>">
+        <i class="<%= theme.navabout.icon3 %>"></i>
+        <span class="tooltip-blue"><%= theme.navabout.name3 %></span>
+    </a>
+</li><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>创建新页面：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo new page aboutnav<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>打开index.md文件编辑：</li>
+</ul>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+title: 关于
+layout: "aboutnav"
+type: "aboutnav"
+<span class="token title important">date: 2020-09-22 21:12:21
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>在主题配置文件<code>_config.yml</code>下，搜索<code>navabout</code>并在子目录下添加：</li>
+</ul>
+<pre class="line-numbers language-yml"><code class="language-yml">  name3: 关于
+  icon3: fas fa-info-circle
+  url3: /aboutnav<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>注意格式缩进对齐</p>
+</blockquote>
+<ul>
+<li>在主题文件夹目录下/layout/新建aboutnav.ejs文件并写入：</li>
+</ul>
+<pre class="line-numbers language-ejs"><code class="language-ejs">---
+layout: false
+---
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>关于|肆零肆</title>
+<style>
+        .container_nav &#123;
+            width: 60%;
+            margin: 10% auto 0;
+            background-color: #ffffff;
+            padding: 0% 0%;
+            border-radius: 10px
+        &#125;
+        .ul_nav &#123;
+            padding-left: 20px;
+            line-height: 2.3
+        &#125;
+</style>
+<body>
+    <div class="container_nav">
+        <h1>肆零肆导航-聚合导航网页使用指南</h1>
+        <h3>网页特征</h3>
+        <ul class="ul_nav">
+            <li>简洁舒适，无广告</li>
+            <li>聚合搜索，多种搜索引擎自由选择</li>
+            <li>夜间模式自由切换，保护你的双眼</li>
+            <li>丰富的网页导航，一触即达</li>
+            <li>黑科技网站聚合，高效生活</li>
+            <li>细腻丝滑设计，沉浸其中</li>
+            <li>设置搜索快捷方式，即刻搜索</li>
+            <li>简洁强大，是初衷</li>
+        </ul >
+        <h3>使用技巧</h3>
+        <ul class="ul_nav">
+        <li>打开网页光标自动至搜索栏；无需点击输入框，即可直接输入搜索内容</li>
+        <li>搜索框内按入↑/↓，快速清除输入框内容</li>
+        <li>滚轮下滑自动清空已输入内容</li>
+        <li>输入搜索内容后回车即可搜索</li>
+        <li>搜索回车/点击搜索后自动全选输入内容，方便快速下次编辑搜索内容</li>
+        <li>回车/Tab键自动定位光标到输入框，无需鼠标点击🖱</li>
+        <li>点击“回到顶部”按钮后，无需点击输入框即可直接搜索</li>
+        </ul>
+        <h3>其他说明</h3>
+        <ul class="ul_nav">
+        <li>建议Ctrl + D收藏网站</li>
+        <li>设置默认启动页（主页）：</li>
+        <li>打开谷歌浏览器-设置-启动时-添加新网页-输入框输入：https://xmq.plus/nav-保存确定</li>
+        <li>为了尽可能保证良好的使用体验，请使用谷歌浏览器</li>
+        <li>谷歌浏览器下载地址:</li>
+        <a target="_blank" rel="noopener" href="https://sumsung.lanzous.com/i87Jufckfif">谷歌浏览器</a>
+        </ul>
+        <a href="/nav">回到首页</a>
+    </div>
+</body>
+</html><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>效果图</li>
+</ul>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923082408087.png" alt="效果图"></p>
+<ul>
+<li>使用Typora创建页面</li>
+</ul>
+<p>上述方法利用纯Html不方便添加其他样式，可以借助Typora软件，使用Markdown写作完成后，直接生成Html：</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923124454409.png" alt="Html export"></p>
+<ul>
+<li>将生成好的Html使用文本编辑器打开，全选代码复制，粘贴到<code>aboutnav.ejs</code>中，并在代码最前面加入(不经过渲染)：</li>
+</ul>
+<pre class="line-numbers language-ejs"><code class="language-ejs">---
+layout: false
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ejs"><code class="language-ejs">---
+layout: false
+---
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>关于|肆零肆聚合导航网页使用指南</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html &#123;overflow-x: initial !important;&#125;:root &#123; --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; &#125;
+html &#123; font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; &#125;
+body &#123; margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; &#125;
+iframe &#123; margin: auto; &#125;
+a.url &#123; word-break: break-all; &#125;
+a:active, a:hover &#123; outline: 0px; &#125;
+.in-text-selection, ::selection &#123; text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); &#125;
+#write &#123; margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; &#125;
+#write.first-line-indent p &#123; text-indent: 2em; &#125;
+#write.first-line-indent li p, #write.first-line-indent p * &#123; text-indent: 0px; &#125;
+#write.first-line-indent li &#123; margin-left: 2em; &#125;
+.for-image #write &#123; padding-left: 8px; padding-right: 8px; &#125;
+body.typora-export &#123; padding-left: 30px; padding-right: 30px; &#125;
+.typora-export .footnote-line, .typora-export li, .typora-export p &#123; white-space: pre-wrap; &#125;
+.typora-export .task-list-item input &#123; pointer-events: none; &#125;
+@media screen and (max-width: 500px) &#123;
+  body.typora-export &#123; padding-left: 0px; padding-right: 0px; &#125;
+  #write &#123; padding-left: 20px; padding-right: 20px; &#125;
+  .CodeMirror-sizer &#123; margin-left: 0px !important; &#125;
+  .CodeMirror-gutters &#123; display: none !important; &#125;
+&#125;
+#write li > figure:last-child &#123; margin-bottom: 0.5rem; &#125;
+#write ol, #write ul &#123; position: relative; &#125;
+img &#123; max-width: 100%; vertical-align: middle; image-orientation: from-image; &#125;
+button, input, select, textarea &#123; color: inherit; font: inherit; &#125;
+input[type="checkbox"], input[type="radio"] &#123; line-height: normal; padding: 0px; &#125;
+*, ::after, ::before &#123; box-sizing: border-box; &#125;
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre &#123; width: inherit; &#125;
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p &#123; position: relative; &#125;
+p &#123; line-height: inherit; &#125;
+h1, h2, h3, h4, h5, h6 &#123; break-after: avoid-page; break-inside: avoid; orphans: 4; &#125;
+p &#123; orphans: 4; &#125;
+h1 &#123; font-size: 2rem; &#125;
+h2 &#123; font-size: 1.8rem; &#125;
+h3 &#123; font-size: 1.6rem; &#125;
+h4 &#123; font-size: 1.4rem; &#125;
+h5 &#123; font-size: 1.2rem; &#125;
+h6 &#123; font-size: 1rem; &#125;
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p &#123; margin-top: 1rem; margin-bottom: 1rem; &#125;
+.hidden &#123; display: none; &#125;
+.md-blockmeta &#123; color: rgb(204, 204, 204); font-weight: 700; font-style: italic; &#125;
+a &#123; cursor: pointer; &#125;
+sup.md-footnote &#123; padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; &#125;
+sup.md-footnote a, sup.md-footnote a:hover &#123; color: inherit; text-transform: inherit; text-decoration: inherit; &#125;
+#write input[type="checkbox"] &#123; cursor: pointer; width: inherit; height: inherit; &#125;
+figure &#123; overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; &#125;
+figure > table &#123; margin: 0px; &#125;
+tr &#123; break-inside: avoid; break-after: auto; &#125;
+thead &#123; display: table-header-group; &#125;
+table &#123; border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; &#125;
+table.md-table td &#123; min-width: 32px; &#125;
+.CodeMirror-gutters &#123; border-right: 0px; background-color: inherit; &#125;
+.CodeMirror-linenumber &#123; user-select: none; &#125;
+.CodeMirror &#123; text-align: left; &#125;
+.CodeMirror-placeholder &#123; opacity: 0.3; &#125;
+.CodeMirror pre &#123; padding: 0px 4px; &#125;
+.CodeMirror-lines &#123; padding: 0px; &#125;
+div.hr:focus &#123; cursor: none; &#125;
+#write pre &#123; white-space: pre-wrap; &#125;
+#write.fences-no-line-wrapping pre &#123; white-space: pre; &#125;
+#write pre.ty-contain-cm &#123; white-space: normal; &#125;
+.CodeMirror-gutters &#123; margin-right: 4px; &#125;
+.md-fences &#123; font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; &#125;
+.md-diagram-panel &#123; width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; &#125;
+#write .md-fences.mock-cm &#123; white-space: pre-wrap; &#125;
+.md-fences.md-fences-with-lineno &#123; padding-left: 0px; &#125;
+#write.fences-no-line-wrapping .md-fences.mock-cm &#123; white-space: pre; overflow-x: auto; &#125;
+.md-fences.mock-cm.md-fences-with-lineno &#123; padding-left: 8px; &#125;
+.CodeMirror-line, twitterwidget &#123; break-inside: avoid; &#125;
+.footnotes &#123; opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; &#125;
+.footnotes + .footnotes &#123; margin-top: 0px; &#125;
+.md-reset &#123; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; &#125;
+li div &#123; padding-top: 0px; &#125;
+blockquote &#123; margin: 1rem 0px; &#125;
+li .mathjax-block, li p &#123; margin: 0.5rem 0px; &#125;
+li &#123; margin: 0px; position: relative; &#125;
+blockquote > :last-child &#123; margin-bottom: 0px; &#125;
+blockquote > :first-child, li > :first-child &#123; margin-top: 0px; &#125;
+.footnotes-area &#123; color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; &#125;
+#write .footnote-line &#123; white-space: pre-wrap; &#125;
+@media print &#123;
+  body, html &#123; border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; &#125;
+  #write &#123; margin-top: 0px; padding-top: 0px; border-color: transparent !important; &#125;
+  .typora-export * &#123; -webkit-print-color-adjust: exact; &#125;
+  html.blink-to-pdf &#123; font-size: 13px; &#125;
+  .typora-export #write &#123; break-after: avoid; &#125;
+  .typora-export #write::after &#123; height: 0px; &#125;
+  .is-mac table &#123; break-inside: avoid; &#125;
+&#125;
+.footnote-line &#123; margin-top: 0.714em; font-size: 0.7em; &#125;
+a img, img a &#123; cursor: pointer; &#125;
+pre.md-meta-block &#123; font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; &#125;
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child &#123; display: block; margin: auto; &#125;
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img &#123; left: -2em; position: relative; &#125;
+p > .md-image:only-child &#123; display: inline-block; width: 100%; &#125;
+#write .MathJax_Display &#123; margin: 0.8em 0px 0px; &#125;
+.md-math-block &#123; width: 100%; &#125;
+.md-math-block:not(:empty)::after &#123; display: none; &#125;
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus &#123; outline: 0px; box-shadow: none; &#125;
+.md-task-list-item &#123; position: relative; list-style-type: none; &#125;
+.task-list-item.md-task-list-item &#123; padding-left: 0px; &#125;
+.md-task-list-item > input &#123; position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; &#125;
+.math &#123; font-size: 1rem; &#125;
+.md-toc &#123; min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; &#125;
+.md-toc-content &#123; position: relative; margin-left: 0px; &#125;
+.md-toc-content::after, .md-toc::after &#123; display: none; &#125;
+.md-toc-item &#123; display: block; color: rgb(65, 131, 196); &#125;
+.md-toc-item a &#123; text-decoration: none; &#125;
+.md-toc-inner:hover &#123; text-decoration: underline; &#125;
+.md-toc-inner &#123; display: inline-block; cursor: pointer; &#125;
+.md-toc-h1 .md-toc-inner &#123; margin-left: 0px; font-weight: 700; &#125;
+.md-toc-h2 .md-toc-inner &#123; margin-left: 2em; &#125;
+.md-toc-h3 .md-toc-inner &#123; margin-left: 4em; &#125;
+.md-toc-h4 .md-toc-inner &#123; margin-left: 6em; &#125;
+.md-toc-h5 .md-toc-inner &#123; margin-left: 8em; &#125;
+.md-toc-h6 .md-toc-inner &#123; margin-left: 10em; &#125;
+@media screen and (max-width: 48em) &#123;
+  .md-toc-h3 .md-toc-inner &#123; margin-left: 3.5em; &#125;
+  .md-toc-h4 .md-toc-inner &#123; margin-left: 5em; &#125;
+  .md-toc-h5 .md-toc-inner &#123; margin-left: 6.5em; &#125;
+  .md-toc-h6 .md-toc-inner &#123; margin-left: 8em; &#125;
+&#125;
+a.md-toc-inner &#123; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; &#125;
+.footnote-line a:not(.reversefootnote) &#123; color: inherit; &#125;
+.md-attr &#123; display: none; &#125;
+.md-fn-count::after &#123; content: "."; &#125;
+code, pre, samp, tt &#123; font-family: var(--monospace); &#125;
+kbd &#123; margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; &#125;
+.md-comment &#123; color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); &#125;
+code &#123; text-align: left; vertical-align: initial; &#125;
+a.md-print-anchor &#123; white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; &#125;
+.md-inline-math .MathJax_SVG .noError &#123; display: none !important; &#125;
+.html-for-mac .inline-math-svg .MathJax_SVG &#123; vertical-align: 0.2px; &#125;
+.md-math-block .MathJax_SVG_Display &#123; text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; &#125;
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display &#123; width: auto; margin: inherit; display: inline-block !important; &#125;
+.MathJax_SVG .MJX-monospace &#123; font-family: var(--monospace); &#125;
+.MathJax_SVG .MJX-sans-serif &#123; font-family: sans-serif; &#125;
+.MathJax_SVG &#123; display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; &#125;
+.MathJax_SVG * &#123; transition: none 0s ease 0s; &#125;
+.MathJax_SVG_Display svg &#123; vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; &#125;
+.os-windows.monocolor-emoji .md-emoji &#123; font-family: "Segoe UI Symbol", sans-serif; &#125;
+.md-diagram-panel > svg &#123; max-width: 100%; &#125;
+[lang="flow"] svg, [lang="mermaid"] svg &#123; max-width: 100%; height: auto; &#125;
+[lang="mermaid"] .node text &#123; font-size: 1rem; &#125;
+table tr th &#123; border-bottom: 0px; &#125;
+video &#123; max-width: 100%; display: block; margin: 0px auto; &#125;
+iframe &#123; max-width: 100%; width: 100%; border: none; &#125;
+.highlight td, .highlight tr &#123; border: 0px; &#125;
+svg[id^="mermaidChart"] &#123; line-height: 1em; &#125;
+mark &#123; background: rgb(255, 255, 0); color: rgb(0, 0, 0); &#125;
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong &#123; color: inherit; &#125;
+mark .md-meta &#123; color: rgb(0, 0, 0); opacity: 0.3 !important; &#125;
+@media print &#123;
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 &#123; break-inside: avoid; &#125;
+  .typora-export h1::after, .typora-export h2::after, .typora-export h3::after, .typora-export h4::after, .typora-export h5::after, .typora-export h6::after &#123; content: ""; display: block; height: 100px; margin-bottom: -100px; &#125;
+&#125;
+
+
+:root &#123;
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+&#125;
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+  html &#123;
+    font-size: 16px;
+&#125;
+
+body &#123;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+&#125;
+
+#write &#123;
+    max-width: 860px;
+      margin: 0 auto;
+      padding: 30px;
+&#125;
+
+@media only screen and (min-width: 1400px) &#123;
+    #write &#123;
+        max-width: 1024px;
+    &#125;
+&#125;
+
+@media only screen and (min-width: 1800px) &#123;
+    #write &#123;
+        max-width: 1200px;
+    &#125;
+&#125;
+
+#write > ul:first-child,
+#write > ol:first-child&#123;
+    margin-top: 30px;
+&#125;
+
+a &#123;
+    color: #4183C4;
+&#125;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 &#123;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+&#125;
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor &#123;
+    text-decoration: none;
+&#125;
+h1 tt,
+h1 code &#123;
+    font-size: inherit;
+&#125;
+h2 tt,
+h2 code &#123;
+    font-size: inherit;
+&#125;
+h3 tt,
+h3 code &#123;
+    font-size: inherit;
+&#125;
+h4 tt,
+h4 code &#123;
+    font-size: inherit;
+&#125;
+h5 tt,
+h5 code &#123;
+    font-size: inherit;
+&#125;
+h6 tt,
+h6 code &#123;
+    font-size: inherit;
+&#125;
+h1 &#123;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+&#125;
+h2 &#123;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+&#125;
+
+@media print &#123;
+    .typora-export h1,
+    .typora-export h2 &#123;
+        border-bottom: none;
+        padding-bottom: initial;
+    &#125;
+
+    .typora-export h1::after,
+    .typora-export h2::after &#123;
+        border-top: 1px solid #eee;
+        margin-top: .3em;
+    &#125;
+&#125;
+
+h3 &#123;
+    font-size: 1.5em;
+    line-height: 1.43;
+&#125;
+h4 &#123;
+    font-size: 1.25em;
+&#125;
+h5 &#123;
+    font-size: 1em;
+&#125;
+h6 &#123;
+   font-size: 1em;
+    color: #777;
+&#125;
+p,
+blockquote,
+ul,
+ol,
+dl,
+table&#123;
+    margin: 0.8em 0;
+&#125;
+li>ol,
+li>ul &#123;
+    margin: 0 0;
+&#125;
+hr &#123;
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+&#125;
+
+li p.first &#123;
+    display: inline-block;
+&#125;
+ul,
+ol &#123;
+    padding-left: 30px;
+&#125;
+ul:first-child,
+ol:first-child &#123;
+    margin-top: 0;
+&#125;
+ul:last-child,
+ol:last-child &#123;
+    margin-bottom: 0;
+&#125;
+blockquote &#123;
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+&#125;
+blockquote blockquote &#123;
+    padding-right: 0;
+&#125;
+table &#123;
+    padding: 0;
+    word-break: initial;
+&#125;
+table tr &#123;
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+&#125;
+table tr:nth-child(2n),
+thead &#123;
+    background-color: #f8f8f8;
+&#125;
+table tr th &#123;
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+&#125;
+table tr td &#123;
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+&#125;
+table tr th:first-child,
+table tr td:first-child &#123;
+    margin-top: 0;
+&#125;
+table tr th:last-child,
+table tr td:last-child &#123;
+    margin-bottom: 0;
+&#125;
+
+.CodeMirror-lines &#123;
+    padding-left: 4px;
+&#125;
+
+.code-tooltip &#123;
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+&#125;
+
+.md-fences,
+code,
+tt &#123;
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+&#125;
+
+code &#123;
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+&#125;
+
+.md-fences &#123;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+&#125;
+
+
+.md-task-list-item > input &#123;
+  margin-left: -1.3em;
+&#125;
+
+@media print &#123;
+    html &#123;
+        font-size: 13px;
+    &#125;
+    table,
+    pre &#123;
+        page-break-inside: avoid;
+    &#125;
+    pre &#123;
+        word-wrap: break-word;
+    &#125;
+&#125;
+
+.md-fences &#123;
+    background-color: #f8f8f8;
+&#125;
+#write pre.md-meta-block &#123;
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+&#125;
+
+.mathjax-block>.code-tooltip &#123;
+    bottom: .375rem;
+&#125;
+
+.md-mathjax-midline &#123;
+    background: #fafafa;
+&#125;
+
+#write>h3.md-focus:before&#123;
+    left: -1.5625rem;
+    top: .375rem;
+&#125;
+#write>h4.md-focus:before&#123;
+    left: -1.5625rem;
+    top: .285714286rem;
+&#125;
+#write>h5.md-focus:before&#123;
+    left: -1.5625rem;
+    top: .285714286rem;
+&#125;
+#write>h6.md-focus:before&#123;
+    left: -1.5625rem;
+    top: .285714286rem;
+&#125;
+.md-image>.md-meta &#123;
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+&#125;
+
+.md-tag &#123;
+    color: #a7a7a7;
+    opacity: 1;
+&#125;
+
+.md-toc &#123; 
+    margin-top:20px;
+    padding-bottom:20px;
+&#125;
+
+.sidebar-tabs &#123;
+    border-bottom: none;
+&#125;
+
+#typora-quick-open &#123;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+&#125;
+
+#typora-quick-open-item &#123;
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+&#125;
+
+/** focus mode */
+.on-focus-mode blockquote &#123;
+    border-left-color: rgba(85, 85, 85, 0.12);
+&#125;
+
+header, .context-menu, .megamenu-content, footer&#123;
+    font-family: "Segoe UI", "Arial", sans-serif;
+&#125;
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state&#123;
+    visibility: visible;
+&#125;
+
+.mac-seamless-mode #typora-sidebar &#123;
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+&#125;
+
+.md-lang &#123;
+    color: #b4654d;
+&#125;
+
+.html-for-mac .context-menu &#123;
+    --item-hover-bg-color: #E6F0FE;
+&#125;
+
+#md-notification .btn &#123;
+    border: 0;
+&#125;
+
+.dropdown-menu .divider &#123;
+    border-color: #e5e5e5;
+&#125;
+
+.ty-preferences .window-content &#123;
+    background-color: #fafafa;
+&#125;
+
+.ty-preferences .nav-group-item.active &#123;
+    color: white;
+    background: #999;
+&#125;
+
+
+</style>
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .ball-clip-rotate > div {
+        background-color: #279fcf;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        border: 5px solid #279fcf;
+        border-bottom-color: transparent;
+        height: 32px;
+        width: 32px;
+        background: transparent !important;
+        display: inline-block;
+        -webkit-animation: rotate 0.75s 0s linear infinite;
+                animation: rotate 0.75s 0s linear infinite; }
+      
+      @keyframes rotate {
+        0% {
+          -webkit-transform: rotate(0deg) scale(1);
+                  transform: rotate(0deg) scale(1); }
+      
+        50% {
+          -webkit-transform: rotate(180deg) scale(0.6);
+                  transform: rotate(180deg) scale(0.6); }
+      
+        100% {
+          -webkit-transform: rotate(360deg) scale(1);
+                  transform: rotate(360deg) scale(1); } }
+      
+      @keyframes scale {
+        30% {
+          -webkit-transform: scale(0.3);
+                  transform: scale(0.3); }
+      
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },0); //多少秒后可点击
+        },0);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><p>&nbsp;</p><p>&nbsp;</p><h2><a name="肆零肆导航-聚合导航网页使用指南" class="md-header-anchor"></a><span>肆零肆导航-聚合导航网页使用指南</span></h2><p>&nbsp;</p><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923095419036.png" alt="主页"  /></p><p>&nbsp;</p><h3><a name="网页特征" class="md-header-anchor"></a><span>网页特征</span></h3><ul><li><span>简洁舒适，无广告</span></li></ul><ul><li><span>聚合搜索，多种搜索引擎自由选择</span></li></ul><ul><li><span>夜间模式自由切换，保护你的双眼</span></li></ul><ul><li><span>丰富的网页导航，一触即达</span></li></ul><ul><li><span>黑科技网站聚合，高效生活</span></li><li><span>细腻丝滑设计，沉浸其中</span></li><li><span>设置搜索快捷方式，即刻搜索</span></li><li><span>简洁强大，是初衷</span></li></ul><p>&nbsp;</p><h3><a name="使用技巧" class="md-header-anchor"></a><span>使用技巧</span></h3><ul><li><span>打开网页光标自动锁定搜索栏；无需点击输入框，即可直接输入搜索内容</span></li></ul><ul><li><kbd><span>Enter</span></kbd><span>/</span><kbd><span>Tab</span></kbd><span>键自动定位光标到输入框，无需鼠标点击</span></li></ul><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/Tab.gif" alt="Tab" style="zoom: 67%;" /></p><ul><li><span>输入搜索内容后</span><kbd><span>Enter</span></kbd><span>即可搜索</span></li></ul><ul><li><kbd><span>Enter</span></kbd><span>/点击🖱搜索后自动全选输入内容，方便快速下次编辑搜索内容</span></li></ul><ul><li><span>搜索框内按入</span><kbd><span>↑</span></kbd><span>/</span><kbd><span>↓</span></kbd><span>，快速清除输入框内容</span></li></ul><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/clear.gif" alt="clear" style="zoom: 67%;" /></p><ul><li><span>滚轮下滑自动清空已输入内容</span></li></ul><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/scroll.gif" alt="scroll" style="zoom:67%;" /></p><ul><li><span>点击</span><code>回到顶部</code><span>按钮，无需点击输入框即可直接搜索</span></li></ul><p>&nbsp;</p><h3><a name="其他说明" class="md-header-anchor"></a><span>其他说明</span></h3><ul><li><p><span>建议</span><kbd><span>Ctrl</span></kbd><span> +</span><kbd><span>D</span></kbd><span>收藏网站</span></p></li><li><p><span>为了尽可能保证良好的使用体验，请使用谷歌浏览器，谷歌浏览器下载地址:</span><a target="_blank" rel="noopener" href='https://sumsung.lanzous.com/i87Jufckfif'><span>谷歌浏览器</span></a></p></li><li><p><span>设置默认启动页（主页）：</span></p><p><span>    </span><span>打开谷歌浏览器-设置-启动时-添加新网页-输入框输入：</span><a href='https://xmq.plus/nav'><span>https://xmq.plus/nav</span></a><span>-保存确定</span></p></li></ul><p>&nbsp;</p><h3><a name="效果展示" class="md-header-anchor"></a><span>效果展示</span></h3><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/search.gif" alt="search" style="zoom:67%;" /></p><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/change.gif" alt="switch"  /></p><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923104326356.png" alt="nav"  /></p><p>&nbsp;</p><p>&nbsp;</p><p><a href='https://xmq.plus/nav'><span>←回到首页</span></a></p><p>&nbsp;</p><p>&nbsp;</p><p><span>copyright © 2020 xmq.plus All rights reserved.  湘ICP备2020018001号</span></p></div>
+</body>
+</html><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Typora生成效果</li>
+</ul>
+<p><a href="/aboutnav">导航-关于页面</a></p>
+<h3 id="4-建立软件清单页面"><a href="#4-建立软件清单页面" class="headerlink" title="4.建立软件清单页面"></a>4.建立软件清单页面</h3><p>创建新页面<code>hexo new page mac</code>，更改新建<code>index.md</code>文件：</p>
 <pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
 title: Mac软件
 date: 2020-08-27 22:31:51
@@ -2036,7 +2696,7 @@ type: "mac"
 <blockquote>
 <p>如需单独设置封面可将顶栏<code>&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;</code>替换为相应ejs中的内容，相应修改即可。</p>
 </blockquote>
-<h3 id="2-文章生成永久链接"><a href="#2-文章生成永久链接" class="headerlink" title="2.文章生成永久链接"></a>2.文章生成永久链接</h3><p>主题默认的文章链接配置是：</p>
+<h3 id="5-文章生成永久链接"><a href="#5-文章生成永久链接" class="headerlink" title="5.文章生成永久链接"></a>5.文章生成永久链接</h3><p>主题默认的文章链接配置是：</p>
 <pre class="line-numbers language-yml"><code class="language-yml">permalink: :year/:month/:day/:title<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这种生成的链接地址很长，文章版权的链接地址会出现一大串字符编码，一点也不好看。因此需要修改文章生成链接的格式。</p>
 <p>首先再根目录下执行下面的命令：</p>
@@ -2060,7 +2720,7 @@ https://post.zz173.com/posts/8ddf18fb.html
 crc32 & dec
 https://post.zz173.com/posts/1690090958.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>生成完后，原 md 文件的 Front-matter 内会增加 abbrlink 字段，值为生成的 ID 。这个字段确保了在我们修改了 Front-matter 内的博客标题 title 或创建日期 date 字段之后而不会改变链接地址。</p>
-<h3 id="3-压缩代码"><a href="#3-压缩代码" class="headerlink" title="3.压缩代码"></a>3.压缩代码</h3><p>因为 hexo 生成的 html、css、js 等都有很多的空格或者换行，而空格和换行也是占用字节的，所以需要将空格换行去掉也就是我要进行的 “压缩”。</p>
+<h3 id="5-压缩代码"><a href="#5-压缩代码" class="headerlink" title="5.压缩代码"></a>5.压缩代码</h3><p>因为 hexo 生成的 html、css、js 等都有很多的空格或者换行，而空格和换行也是占用字节的，所以需要将空格换行去掉也就是我要进行的 “压缩”。</p>
 <p>有人说空格换行能占多少字节？确实占不了多少，但是一个人访问是这么多字节，那么一百人，一万人呢？加起来这量就不少了吧，这都是流量啊！这也是很多 css/js 文件的后缀为.min.js 或.min.css 的原因。虽然我们可能没那么多访问量，但是能减小一点资源文件的大小也是对访问速度有那么一点提升的。</p>
 <p>我们采用 gulp 代码压缩方式。</p>
 <p>使用方法：</p>
@@ -2706,7 +3366,18 @@ gulp.task(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            高等减振道床设计说明及施工工艺流程记录
+                            2020.08.26    星期三
+培训流程：
+培训人员对《高架线减振垫浮置板道床》进行详细解读；
+培训过程中遇到的问题和疑问实时解答。
+
+培训内容：
+《高架线减振垫浮置板道床》设计说明解读；
+
+高等减振道床施工工艺流程。
+
+
+一、高架线高
                         
                     </div>
                     <div class="publish-info">
@@ -2754,7 +3425,19 @@ gulp.task(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WJ-7B一般扣件组成及安装学习记录
+                            2020.08.24    星期一
+培训流程：1.培训人员对本工程或本工程中的一项细节进行详细解说。
+2.培训人员提出存在的疑问，培训人员进行答疑。
+培训内容：1.WJ-7B扣件的组成及安装注意事项
+一、部件组成及说明
+
+
+
+弹条
+
+
+
+一
                         
                     </div>
                     <div class="publish-info">

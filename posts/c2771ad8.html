@@ -1,4 +1,99 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="使用shell脚本做文件备份, 资源分享,网站导航,个人博客，技能分享"><meta name="description" content="资源收集控，分享生活，分享知识"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>使用shell脚本做文件备份 | 肆零肆</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/libs/awesome/css/all.css"><link rel="stylesheet" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" href="/libs/aos/aos.css"><link rel="stylesheet" href="/libs/animate/animate.min.css"><link rel="stylesheet" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="/css/matery.css"><link rel="stylesheet" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><style lang="css">#loading-container{position:fixed;top:0;left:0;min-height:100vh;width:100vw;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;text-align:center;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;transition:opacity 1s ease}.ball-clip-rotate>div{background-color:#279fcf;width:15px;height:15px;border-radius:100%;margin:2px;-webkit-animation-fill-mode:both;animation-fill-mode:both;border:5px solid #279fcf;border-bottom-color:transparent;height:32px;width:32px;background:0 0!important;display:inline-block;-webkit-animation:rotate .75s 0s linear infinite;animation:rotate .75s 0s linear infinite}@keyframes rotate{0%{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}50%{-webkit-transform:rotate(180deg) scale(.6);transform:rotate(180deg) scale(.6)}100%{-webkit-transform:rotate(360deg) scale(1);transform:rotate(360deg) scale(1)}}@keyframes scale{30%{-webkit-transform:scale(.3);transform:scale(.3)}100%{-webkit-transform:scale(1);transform:scale(1)}}.fadeout{opacity:0}</style><script>(function () {
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用shell脚本做文件备份, 资源分享,网站导航,个人博客，技能分享">
+    <meta name="description" content="资源收集控，分享生活，分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>使用shell脚本做文件备份 | 肆零肆</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+    
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .ball-clip-rotate > div {
+        background-color: #279fcf;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        border: 5px solid #279fcf;
+        border-bottom-color: transparent;
+        height: 32px;
+        width: 32px;
+        background: transparent !important;
+        display: inline-block;
+        -webkit-animation: rotate 0.75s 0s linear infinite;
+                animation: rotate 0.75s 0s linear infinite; }
+      
+      @keyframes rotate {
+        0% {
+          -webkit-transform: rotate(0deg) scale(1);
+                  transform: rotate(0deg) scale(1); }
+      
+        50% {
+          -webkit-transform: rotate(180deg) scale(0.6);
+                  transform: rotate(180deg) scale(0.6); }
+      
+        100% {
+          -webkit-transform: rotate(360deg) scale(1);
+                  transform: rotate(360deg) scale(1); } }
+      
+      @keyframes scale {
+        30% {
+          -webkit-transform: scale(0.3);
+                  transform: scale(0.3); }
+      
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+ </style>
+ <script>
+(function () {
     const loaded = function(){
        setTimeout(function(){
             const loader = document.getElementById("loading-container");
@@ -10,7 +105,516 @@
         },0);//强制显示loading page 1s  
     };
     loaded();
-})()</script><meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css"><link rel="stylesheet" href="/css/prism-line-numbers.css"></head><div id="loading-container" class="loaders"><div class="loader"><div class="loader-inner ball-clip-rotate"><div></div></div></div></div><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">肆零肆</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-book" style="zoom:.6"></i> <span>记录</span><i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fas fa-tv" style="margin-top:-20px;zoom:.6"></i> <span>计算机</span></a></li><li><a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/"><i class="fas fa-road" style="margin-top:-20px;zoom:.6"></i> <span>土木工程</span></a></li><li><a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/"><i class="fas fa-box" style="margin-top:-20px;zoom:.6"></i> <span>方法技能</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-list" style="zoom:.6"></i> <span>清单</span><i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/windows"><i class="fab fa-windows" style="margin-top:-20px;zoom:.6"></i> <span>Windows软件</span></a></li><li><a href="/mac"><i class="fab fa-apple" style="margin-top:-20px;zoom:.6"></i> <span>Mac软件</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/nav" class="waves-effect waves-light"><i class="fas fa-location-arrow" style="zoom:.6"></i> <span>导航</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言板</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">肆零肆</div><div class="logo-desc">资源收集控，分享生活，分享知识</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-book"></i> 记录<span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="margin-left:75px"><i class="fa fas fa-tv" style="position:absolute;left:50px"></i> <span>计算机</span></a></li><li><a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" style="margin-left:75px"><i class="fa fas fa-road" style="position:absolute;left:50px"></i> <span>土木工程</span></a></li><li><a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" style="margin-left:75px"><i class="fa fas fa-box" style="position:absolute;left:50px"></i> <span>方法技能</span></a></li></ul></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-list"></i> 清单<span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/windows" style="margin-left:75px"><i class="fa fab fa-windows" style="position:absolute;left:50px"></i> <span>Windows软件</span></a></li><li><a href="/mac" style="margin-left:75px"><i class="fa fab fa-apple" style="position:absolute;left:50px"></i> <span>Mac软件</span></a></li></ul></li><li class="m-nav-item"><a href="/nav" class="waves-effect waves-light"><i class="fa-fw fas fa-location-arrow"></i> 导航</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言板</a></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/3.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">使用shell脚本做文件备份</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Linux/"><span class="chip bg-color">Linux</span></a> <a href="/tags/shell/"><span class="chip bg-color">shell</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">计算机</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-07-12</div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h1 id="使用shell脚本做文件备份"><a href="#使用shell脚本做文件备份" class="headerlink" title="使用shell脚本做文件备份"></a>使用shell脚本做文件备份</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>无论是在搭建自己的个人博客过程中还是平时的工作生活中，都会有文件备份的习惯，有些文件往往比较重要，需要经常性的打包备份一次。就我在搭建Hexo博客而言，每次都要清理<code>public</code>文件夹后将文件进行打包备份，移动到其他文件夹或者网盘存储。每次重复性的，周期性的操作认为比较繁琐，因此想使用一个简单的脚本将重复繁琐的备份任务用一个命令解决。</p><p>开始吧~</p><h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell简单的说就是我们使用的命令解释器，你打开的终端就是shell。你部署hexo博客就是用的Git bash，其中bash属于shell中的一种。</p><h2 id="什么是shell脚本"><a href="#什么是shell脚本" class="headerlink" title="什么是shell脚本"></a>什么是shell脚本</h2><p>我们打开终端(shell)敲下一行行命令，是只能一条一条的发送命令。我所理解的shell脚本就是，可以将bash中一条一条敲下的命令组合到一起，命令之间可以相互联系，最终依次全部执行的文件。而且这类文件是一类带有<code>.sh</code>拓展名的文件。</p><ul><li>shell脚本如何编写？</li></ul><p>使用<code>vi</code>/<code>vim</code>编辑器、<code>VS code</code>、<code>Notepad++</code>等其他编辑器，以<code>shell scripts</code>的格式保存即可编写<code>.sh</code>文件。</p><p>使用<code>bash</code>中执行的命令都可以在<code>shell</code>脚本中执行。</p><p>如需要深入了解<code>shell</code>脚本可参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">shell教程</a>。</p><ul><li>shell脚本如何运行？<ul><li>可双击<code>.sh</code>文件直接运行</li><li>在脚本文件目录下运行<code>sh xx.sh</code></li><li>添加环境变量PATH，使你的脚本变成一个命令。</li></ul></li></ul><h2 id="制作打包备份博客源代码的shell脚本"><a href="#制作打包备份博客源代码的shell脚本" class="headerlink" title="制作打包备份博客源代码的shell脚本"></a>制作打包备份博客源代码的shell脚本</h2><p>开始制作脚本之前，需要了解一下，在打包过程中，需要用到自己安装的压缩软件的打包命令。</p><p>我使用的是<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/">Bandizip软件</a>，官网提供了软件相关的命令行代码，<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/help/parameter/">Bandizip命令行参数</a>。其他软件可自行百度。此教程使用Bandizip示例。</p><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200712234406.png" alt="Bandizip命令行参数"></p><p>使用<code>vi</code>、<code>vim</code>、<code>VS code</code>等编辑器创建新文本，使用简单的命令组合制作脚本：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+})()
+ </script><meta name="generator" content="Hexo 5.0.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+ <div id="loading-container" class="loaders">
+ <div class="loader">
+ <div class="loader-inner ball-clip-rotate">
+   <div></div>
+ </div>
+</div>
+ </div><body>
+    
+    
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">肆零肆</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>记录</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+          
+          <i class="fas fa-tv" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>计算机</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/">
+          
+          <i class="fas fa-road" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>土木工程</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/">
+          
+          <i class="fas fa-box" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>方法技能</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/windows">
+          
+          <i class="fab fa-windows" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Windows软件</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/mac">
+          
+          <i class="fab fa-apple" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Mac软件</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/nav" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">肆零肆</div>
+        <div class="logo-desc">
+            
+            资源收集控，分享生活，分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			记录
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tv" style="position: absolute;left:50px" ></i>
+			      
+		          <span>计算机</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-road" style="position: absolute;left:50px" ></i>
+			      
+		          <span>土木工程</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-box" style="position: absolute;left:50px" ></i>
+			      
+		          <span>方法技能</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/windows " style="margin-left:75px">
+				  
+				   <i class="fa fab fa-windows" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Windows软件</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/mac " style="margin-left:75px">
+				  
+				   <i class="fa fab fa-apple" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Mac软件</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/nav" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用shell脚本做文件备份</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/shell/">
+                                <span class="chip bg-color">shell</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                计算机
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-12
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="使用shell脚本做文件备份"><a href="#使用shell脚本做文件备份" class="headerlink" title="使用shell脚本做文件备份"></a>使用shell脚本做文件备份</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>无论是在搭建自己的个人博客过程中还是平时的工作生活中，都会有文件备份的习惯，有些文件往往比较重要，需要经常性的打包备份一次。就我在搭建Hexo博客而言，每次都要清理<code>public</code>文件夹后将文件进行打包备份，移动到其他文件夹或者网盘存储。每次重复性的，周期性的操作认为比较繁琐，因此想使用一个简单的脚本将重复繁琐的备份任务用一个命令解决。</p>
+<p>开始吧~</p>
+<h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell简单的说就是我们使用的命令解释器，你打开的终端就是shell。你部署hexo博客就是用的Git bash，其中bash属于shell中的一种。</p>
+<h2 id="什么是shell脚本"><a href="#什么是shell脚本" class="headerlink" title="什么是shell脚本"></a>什么是shell脚本</h2><p>我们打开终端(shell)敲下一行行命令，是只能一条一条的发送命令。我所理解的shell脚本就是，可以将bash中一条一条敲下的命令组合到一起，命令之间可以相互联系，最终依次全部执行的文件。而且这类文件是一类带有<code>.sh</code>拓展名的文件。</p>
+<ul>
+<li>shell脚本如何编写？</li>
+</ul>
+<p>使用<code>vi</code>/<code>vim</code>编辑器、<code>VS code</code>、<code>Notepad++</code>等其他编辑器，以<code>shell scripts</code>的格式保存即可编写<code>.sh</code>文件。</p>
+<p>使用<code>bash</code>中执行的命令都可以在<code>shell</code>脚本中执行。</p>
+<p>如需要深入了解<code>shell</code>脚本可参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">shell教程</a>。</p>
+<ul>
+<li>shell脚本如何运行？<ul>
+<li>可双击<code>.sh</code>文件直接运行</li>
+<li>在脚本文件目录下运行<code>sh xx.sh</code></li>
+<li>添加环境变量PATH，使你的脚本变成一个命令。</li>
+</ul>
+</li>
+</ul>
+<h2 id="制作打包备份博客源代码的shell脚本"><a href="#制作打包备份博客源代码的shell脚本" class="headerlink" title="制作打包备份博客源代码的shell脚本"></a>制作打包备份博客源代码的shell脚本</h2><p>开始制作脚本之前，需要了解一下，在打包过程中，需要用到自己安装的压缩软件的打包命令。</p>
+<p>我使用的是<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/">Bandizip软件</a>，官网提供了软件相关的命令行代码，<a target="_blank" rel="noopener" href="https://cn.bandisoft.com/bandizip/help/parameter/">Bandizip命令行参数</a>。其他软件可自行百度。此教程使用Bandizip示例。</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200712234406.png" alt="Bandizip命令行参数"></p>
+<p>使用<code>vi</code>、<code>vim</code>、<code>VS code</code>等编辑器创建新文本，使用简单的命令组合制作脚本：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 <span class="token comment" spellcheck="true"># 用于打包备份blog文件</span>
 <span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io <span class="token comment" spellcheck="true"># 定位到需要清理的位置</span>
 <span class="token keyword">echo</span> <span class="token string">"已定位到目标文件夹"</span>
@@ -27,22 +631,657 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
 <span class="token keyword">echo</span> <span class="token string">"移动成功"</span>
 <span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
 hexo generate <span class="token comment" spellcheck="true"># 回到原来的位置重新解析文件</span>
-<span class="token keyword">echo</span> <span class="token string">"重新解析成功"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>做好之后以<code>.sh</code>拓展名保存到一个位置（你也可以直接不带任何拓展名，同样可以直接运行命令，甚至更加方便）。其中<code>#!/bin/sh</code>代表是一个<code>shell</code>脚本文件（这个没有关系不大），<code>#</code>用于注释，<code>echo</code>表示输出内容，可以不用。<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>表示打包当天的日期。</p><p>如果你认为代码太复杂可以简化为：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<span class="token keyword">echo</span> <span class="token string">"重新解析成功"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>做好之后以<code>.sh</code>拓展名保存到一个位置（你也可以直接不带任何拓展名，同样可以直接运行命令，甚至更加方便）。其中<code>#!/bin/sh</code>代表是一个<code>shell</code>脚本文件（这个没有关系不大），<code>#</code>用于注释，<code>echo</code>表示输出内容，可以不用。<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>表示打包当天的日期。</p>
+<p>如果你认为代码太复杂可以简化为：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 <span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io
 hexo clean
 <span class="token function">cd</span> /c/Users/Sumsung524
 bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip Sumsung524.github.io
 <span class="token function">mv</span> <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span>.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip
 <span class="token function">cd</span> /c/Users/Sumsung524/Sumsung524.github.io 
-hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如果你需要在打包的时候需要对文件加上其他命名，可加入如下代码：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"输入文件名"</span>
+hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果你需要在打包的时候需要对文件加上其他命名，可加入如下代码：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"输入文件名"</span>
 <span class="token function">read</span> file_name
 bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="token string">"today"</span> +<span class="token string">"%Y.%m.%d"</span><span class="token punctuation">)</span><span class="token string">"$&amp;#123;file_name&amp;#125;"</span>.zip Sumsung524.github.io
-<span class="token function">mv</span> *.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>在这里添加了一个叫<code>file_name</code>（名称自取）的变量，访问变量时，需要在变量名称之前添加<code>“$”</code>，如<code>“$ &#123;变量&#125;”</code>，将变量用<code>“&#123;&#125;”</code>括起来。</p><p>将<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>改为<code>*.zip</code>。会将所在目录下的所有<code>zip</code>格式移动到目标目录。</p><p>这样做好之后，运行脚本的时候就需要你设置文件名：</p><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713161443.png" alt="要求输入文件名"></p><p>当然如果不想加文件名的时候可以选择直接回车。效果和之前脚本一样。</p><h2 id="添加PATH"><a href="#添加PATH" class="headerlink" title="添加PATH"></a>添加PATH</h2><p>做好脚本之后，测试一两次没有问题之后，我们将脚本保存到一个文件夹中，以便日后再用。但以后每次使用都要到脚本文件目录下执行脚本，要在前面输入很长一段的路径，很不方便。因此我们要找一个linux命令行在任意目录下启动任意的脚本的方法，就是给他添加一个PATH。</p><blockquote><p>简单说PATH就是一组路径的字符串变量，当你输入的命令不带任何路径时，LINUX会在PATH记录的路径中查找该命令。</p><ul><li>PATH的作用就是每次在Bash里面输入一个命令时, Bash都会去PATH列表里面去找对应的文件,找到了就执行, 脚本其实就是一个可执行的文件(ls, cd, mkdir..)</li><li>可以输入命令echo $PATH查看所有的路径,Bash就会在这些路径中依次查找</li></ul></blockquote><ul><li>临时设置PATH</li></ul><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">pwd</span> <span class="token comment" spellcheck="true">#查看下脚本所在的绝对路径</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"脚本的绝对路径:<span class="token variable">$PATH</span>"</span> <span class="token comment" spellcheck="true"># 这句话就是将脚本所在的目录加到PATH里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>上面的PATH在重启Bash后就会失效。</p><ul><li>永久设置PATH</li></ul><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> ~/.bashrc <span class="token comment" spellcheck="true"># 创建~/.bashrc</span>
+<span class="token function">mv</span> *.zip /C/Users/Sumsung/OneDrive/MyBlog/Backup.zip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这里添加了一个叫<code>file_name</code>（名称自取）的变量，访问变量时，需要在变量名称之前添加<code>“$”</code>，如<code>“$ &#123;变量&#125;”</code>，将变量用<code>“&#123;&#125;”</code>括起来。</p>
+<p>将<code>$(date -d &quot;today&quot; +&quot;%Y.%m.%d&quot;).zip</code>改为<code>*.zip</code>。会将所在目录下的所有<code>zip</code>格式移动到目标目录。</p>
+<p>这样做好之后，运行脚本的时候就需要你设置文件名：</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713161443.png" alt="要求输入文件名"></p>
+<p>当然如果不想加文件名的时候可以选择直接回车。效果和之前脚本一样。</p>
+<h2 id="添加PATH"><a href="#添加PATH" class="headerlink" title="添加PATH"></a>添加PATH</h2><p>做好脚本之后，测试一两次没有问题之后，我们将脚本保存到一个文件夹中，以便日后再用。但以后每次使用都要到脚本文件目录下执行脚本，要在前面输入很长一段的路径，很不方便。因此我们要找一个linux命令行在任意目录下启动任意的脚本的方法，就是给他添加一个PATH。</p>
+<blockquote>
+<p>简单说PATH就是一组路径的字符串变量，当你输入的命令不带任何路径时，LINUX会在PATH记录的路径中查找该命令。</p>
+<ul>
+<li>PATH的作用就是每次在Bash里面输入一个命令时, Bash都会去PATH列表里面去找对应的文件,找到了就执行, 脚本其实就是一个可执行的文件(ls, cd, mkdir..)</li>
+<li>可以输入命令echo $PATH查看所有的路径,Bash就会在这些路径中依次查找</li>
+</ul>
+</blockquote>
+<ul>
+<li>临时设置PATH</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">pwd</span> <span class="token comment" spellcheck="true">#查看下脚本所在的绝对路径</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"脚本的绝对路径:<span class="token variable">$PATH</span>"</span> <span class="token comment" spellcheck="true"># 这句话就是将脚本所在的目录加到PATH里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>上面的PATH在重启Bash后就会失效。</p>
+<ul>
+<li>永久设置PATH</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> ~/.bashrc <span class="token comment" spellcheck="true"># 创建~/.bashrc</span>
 <span class="token function">vi</span> ~/.bashrc <span class="token comment" spellcheck="true"># 编辑~/.bashrc</span>
 在编辑器里写入 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"local的绝对路径:<span class="token variable">$PATH</span>"</span>
 <span class="token function">source</span> ~/.bashrc <span class="token comment" spellcheck="true"># 保存编辑,这句命令一定要写</span>
-<span class="token function">zip</span> <span class="token comment" spellcheck="true"># zip是我的脚本文件名，直接输入你的文件名即可直接运行脚本。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>注意:</strong></p><p>整个备份脚本文件已经做完了，以后可以轻松的使用一个自己自定义的命令（修改脚本文件名）即可完成文件备份了！在使用过程中有几个需要注意的点：</p><ol><li>不要去改动备份目标文件夹路径中文件夹的名称，或者改动之后相应的脚本位置也需要统一改动。</li><li>打包目录下不能存放其他<code>zip</code>格式的文件，否则会全部移动到目标路径文件夹下。</li><li>可以将备份文件的目标路径设置为网盘的备份文件夹（OneDrive、百度网盘、天翼云等），从而实现双备份。</li></ol><blockquote><p>个人使用的是Onedrive网盘同步盘，将目标文件夹下备份打包好的文件，等网盘同步之后，使用释放空间功能，将打包的文件上传到网盘而不保留到本地，既释放了空间，也实现的文件的备份。目标文件夹只相当于一个临时存储区。</p></blockquote><p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713163508.png" alt="Onedrive释放本地空间存储文件至云端"></p><p>另外，如需系统学习shell脚本请下载：<a target="_blank" rel="noopener" href="https://sumsung.lanzous.com/iRRTvekg2na">Linux命令行与shell脚本编程大全.第3版</a>。</p></div><hr><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Linux/"><span class="chip bg-color">Linux</span></a> <a href="/tags/shell/"><span class="chip bg-color">shell</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="/libs/share/css/share.min.css"><div id="article-share"></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments textarea{box-sizing:border-box;background:url(/medias/comment_bg.png) 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#4cbf30;font-weight:500;text-decoration:none}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}</style><div class="card valine-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;padding-left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="vcomments" class="card-content" style="display:grid"></div></div><script src="/libs/valine/av-min.js"></script><script src="/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"t5UjNtXjngiTgF91ilHO0gs6-gzGzoHsz",appKey:"pHGSnj8IvaduWRagoUHhsJOj",notify:!1,verify:!1,visitor:!0,avatar:"mm",pageSize:"10",lang:"zh-cn",placeholder:"just go go"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/posts/17f27652.html"><div class="card-image"><img src="/medias/featureimages/20.jpg" class="responsive-img" alt="为你的Hexo博客添加新页面"> <span class="card-title">为你的Hexo博客添加新页面</span></div></a><div class="card-content article-content"><div class="summary block-with-text">为你的Hexo博客添加新页面前言 由于自己收藏了很多各式各样的网站，很多都很有价值，一直都在存在浏览器书签中，由于书签网站比较多，东西比较杂乱。需要整理，正好想将自己的网站整理出来放到自己的Blog上。于是想做一个书签网站分享页。 今天来</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-07-13</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">计算机</a></span></div></div><div class="card-action article-tags"><a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a> <a href="/tags/Hexo-themes-matery/"><span class="chip bg-color">Hexo-themes-matery</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/efa3dd55.html"><div class="card-image"><img src="/medias/featureimages/4.jpg" class="responsive-img" alt="新建文章自动打开本地Markdown编辑器"> <span class="card-title">新建文章自动打开本地Markdown编辑器</span></div></a><div class="card-content article-content"><div class="summary block-with-text">新建文章自动打开本地Markdown编辑器使用Hexo写新文章时，需要控制台执行 hexo new &quot;文章名字&quot;，这样就会在_posts 下生成一篇新文章，但需要手动打开，挺麻烦的。 只需要在站点根目录下新建 scrip</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-07-12</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">计算机</a></span></div></div><div class="card-action article-tags"><a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a> <a href="/tags/Markdown/"><span class="chip bg-color">Markdown</span></a></div></div></div></div></article></div><script src="/libs/codeBlock/codeBlockFuction.js"></script><script src="/libs/codeBlock/codeLang.js"></script><script src="/libs/codeBlock/codeCopy.js"></script><script src="/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+<span class="token function">zip</span> <span class="token comment" spellcheck="true"># zip是我的脚本文件名，直接输入你的文件名即可直接运行脚本。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意:</strong></p>
+<p>整个备份脚本文件已经做完了，以后可以轻松的使用一个自己自定义的命令（修改脚本文件名）即可完成文件备份了！在使用过程中有几个需要注意的点：</p>
+<ol>
+<li>不要去改动备份目标文件夹路径中文件夹的名称，或者改动之后相应的脚本位置也需要统一改动。</li>
+<li>打包目录下不能存放其他<code>zip</code>格式的文件，否则会全部移动到目标路径文件夹下。</li>
+<li>可以将备份文件的目标路径设置为网盘的备份文件夹（OneDrive、百度网盘、天翼云等），从而实现双备份。</li>
+</ol>
+<blockquote>
+<p>个人使用的是Onedrive网盘同步盘，将目标文件夹下备份打包好的文件，等网盘同步之后，使用释放空间功能，将打包的文件上传到网盘而不保留到本地，既释放了空间，也实现的文件的备份。目标文件夹只相当于一个临时存储区。</p>
+</blockquote>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200713163508.png" alt="Onedrive释放本地空间存储文件至云端"></p>
+<p>另外，如需系统学习shell脚本请下载：<a target="_blank" rel="noopener" href="https://sumsung.lanzous.com/iRRTvekg2na">Linux命令行与shell脚本编程大全.第3版</a>。</p>
+
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/shell/">
+                                    <span class="chip bg-color">shell</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 't5UjNtXjngiTgF91ilHO0gs6-gzGzoHsz',
+        appKey: 'pHGSnj8IvaduWRagoUHhsJOj',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/17f27652.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="为你的Hexo博客添加新页面">
+                        
+                        <span class="card-title">为你的Hexo博客添加新页面</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            为你的Hexo博客添加新页面前言
+由于自己收藏了很多各式各样的网站，很多都很有价值，一直都在存在浏览器书签中，由于书签网站比较多，东西比较杂乱。需要整理，正好想将自己的网站整理出来放到自己的Blog上。于是想做一个书签网站分享页。
+
+今天来
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo-themes-matery/">
+                        <span class="chip bg-color">Hexo-themes-matery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/efa3dd55.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="新建文章自动打开本地Markdown编辑器">
+                        
+                        <span class="card-title">新建文章自动打开本地Markdown编辑器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            新建文章自动打开本地Markdown编辑器使用Hexo写新文章时，需要控制台执行 hexo new &quot;文章名字&quot;，这样就会在_posts 下生成一篇新文章，但需要手动打开，挺麻烦的。
+只需要在站点根目录下新建 scrip
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -113,4 +1352,168 @@ bandizip.exe c -y <span class="token punctuation">$(</span>date -d <span class="
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{display:none;font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{display:none;font-size:15px;color:#42b983}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="503838841" fixed="true" autoplay theme="#42b983" loop order="random" preload="auto" volume="0.7" list-folded="true"></meting-js></div></div><script src="/libs/aplayer/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l12 copy-right" style="font-size:5px">Copyright&nbsp;&copy; <span id="year">2020</span> <a href="/about" target="_blank">Sumsung</a> |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/Sumsung524" target="_blank">Matery</a><br><span id="icp"><img src="/medias/icp.png" style="vertical-align:text-bottom"> <a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2020018001号</a></span></div></div><br></footer><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script>$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="/js/click_show_text.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?43156dacad30fbfc08d06f1182d990c5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="/libs/others/clicklove.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l12 copy-right"style="font-size: 5px;">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Sumsung</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/Sumsung524" target="_blank">Matery</a>
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2020018001号</a>
+            </span>
+            
+        </div>
+    </div>
+    <br>
+</footer>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/click_show_text.js"></script>
+    
+    
+    
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?43156dacad30fbfc08d06f1182d990c5";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https'){
+           bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          }
+          else{
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+
+    
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
