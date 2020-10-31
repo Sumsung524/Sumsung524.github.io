@@ -26,87 +26,11 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" href="/js/prism/prism.css"> 
     <script src="/libs/jquery/jquery.min.js"></script>
     
     
-<style type="text/css" lang="css">
-    #loading-container{
-        position: fixed;
-        top: 0;
-        left: 0;
-        min-height: 100vh;
-        width: 100vw;
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #FFF;
-        text-align: center;
-        /* loader页面消失采用渐隐的方式*/
-        -webkit-transition: opacity 1s ease;
-        -moz-transition: opacity 1s ease;
-        -o-transition: opacity 1s ease;
-        transition: opacity 1s ease;
-    }
-    .ball-clip-rotate > div {
-        background-color: #279fcf;
-        width: 15px;
-        height: 15px;
-        border-radius: 100%;
-        margin: 2px;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        border: 5px solid #279fcf;
-        border-bottom-color: transparent;
-        height: 32px;
-        width: 32px;
-        background: transparent !important;
-        display: inline-block;
-        -webkit-animation: rotate 0.75s 0s linear infinite;
-                animation: rotate 0.75s 0s linear infinite; }
-      
-      @keyframes rotate {
-        0% {
-          -webkit-transform: rotate(0deg) scale(1);
-                  transform: rotate(0deg) scale(1); }
-      
-        50% {
-          -webkit-transform: rotate(180deg) scale(0.6);
-                  transform: rotate(180deg) scale(0.6); }
-      
-        100% {
-          -webkit-transform: rotate(360deg) scale(1);
-                  transform: rotate(360deg) scale(1); } }
-      
-      @keyframes scale {
-        30% {
-          -webkit-transform: scale(0.3);
-                  transform: scale(0.3); }
-      
-        100% {
-          -webkit-transform: scale(1);
-                  transform: scale(1); } }
-    .fadeout {
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
- </style>
- <script>
-(function () {
-    const loaded = function(){
-       setTimeout(function(){
-            const loader = document.getElementById("loading-container");
-            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
-            // document.getElementById("body-wrap").style.display="flex";
-            setTimeout(function(){
-                loader.style.display="none";
-            },0); //多少秒后可点击
-        },0);//强制显示loading page 1s  
-    };
-    loaded();
-})()
- </script><meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 
@@ -498,7 +422,7 @@
     }
 
     #toc-content .toc-link:hover {
-        color: #42b983;
+        color: #66a6ff;
         font-weight: 700;
         text-decoration: underline;
     }
@@ -513,7 +437,7 @@
     }
 
     #toc-content .is-active-link {
-        color: #42b983;
+        color: #66a6ff;
     }
 
     #floating-toc-btn {
@@ -526,14 +450,16 @@
     }
 
     #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+    width: 32px;
+    height: 32px;
+}
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -647,14 +573,14 @@
 <li>安装<code>hexo</code></li>
 </ul>
 <p>首先选择一个位置作为你博客文件的存放位置，然后新建一个文件夹，比如名为<code>MyBolg</code>的文件夹，创建完后，先不要点进去，在此处点击鼠标右键，选择<code>Git Bash Here</code>，然后依次输入如下命令：</p>
-<pre><code>npm install -g hexo-cli # 安装hexo框架
+<pre><code class="line-numbers language-bash">npm install -g hexo-cli # 安装hexo框架
 hexo -v # 有版本信息输出代表安装成功
 hexo init MyBlog #初始化文件夹
 cd MyBlog
 npm install  # 安装博客所需要的依赖文件</code></pre>
 <p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200821130956.png" alt="hexo init"></p>
 <p>等待运行完成，此时文件夹中多了许多文件。 注意：后续的命令均需要在站点目录下（即文件夹内）使用 Git Bash 运行。 此时 Hexo 框架的本地搭建已经完成了。我们来运行一下看看:</p>
-<pre><code>hexo s</code></pre>
+<pre><code class="line-numbers language-bash">hexo s</code></pre>
 <p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200821131206.png" alt="hexo s"></p>
 <p>浏览器中打开 <a target="_blank" rel="noopener" href="http://locakhost:4000/">http://locakhost:4000</a> 或者 127.0.0.1:4000，可以看到一个网页，说明 Hexo 博客已经成功在本地运行。</p>
 <h3 id="2-切换主题"><a href="#2-切换主题" class="headerlink" title="2.切换主题"></a>2.切换主题</h3><ul>
@@ -674,24 +600,26 @@ npm install  # 安装博客所需要的依赖文件</code></pre>
 <p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/20200821133442.jpg" alt="切换主题"></p>
 <p>到此，博客本地搭建完成，接下来定制和优化博客</p>
 <h3 id="3-部署到GitHub-pages"><a href="#3-部署到GitHub-pages" class="headerlink" title="3.部署到GitHub pages"></a>3.部署到GitHub pages</h3><p>生成<code>SSH</code>添加到<code>GitHub</code>，连接<code>Github</code>与本地。<br>右键打开<code>git bash</code>，然后输入下面命令：</p>
-<pre><code>git config --global user.name &quot;yourname&quot;
+<pre><code class="line-numbers language-git">git config --global user.name &quot;yourname&quot;
 git config --global user.email &quot;youremail&quot;</code></pre>
 <p>这里的<code>yourname</code>输入你的<code>GitHub</code>用户名，<code>youremail</code>输入你<code>GitHub</code>的邮箱。这样<code>GitHub</code>才能知道你是不是对应它的账户。可以用以下两条，检查一下你有没有输对</p>
-<pre><code>git config user.name
+<pre><code class="line-numbers language-git">git config user.name
 git config user.email</code></pre>
 <p>然后创建<code>SSH</code>,一路回车</p>
-<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></pre>
+<pre><code class="line-numbers language-git">ssh-keygen -t rsa -C &quot;youremail&quot;</code></pre>
 <p>这个时候它会告诉你已经生成了<code>.ssh</code>的文件夹。在你的电脑中找到这个文件夹。或者<code>git bash</code>中输入</p>
-<pre><code>cat ~/.ssh/id_rsa.pub</code></pre>
+<pre><code class="line-numbers language-shell">cat ~/.ssh/id_rsa.pub</code></pre>
 <p>将输出的内容复制到框中，点击确定保存。</p>
 <p>打开<a target="_blank" rel="noopener" href="http://github.com/">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个<code>SSH</code>，名字随便取一个都可以，把你的<code>id_rsa.pub</code>里面的信息复制进去。如图：</p>
-<p><img src="https://raw.githubusercontent.com/shw2018/cdn/master/blog_files/img/Hexo-Blog-Tutorial/6.png" alt="img"></p>
+<img src="https://raw.githubusercontent.com/shw2018/cdn/master/blog_files/img/Hexo-Blog-Tutorial/6.png" alt="img" style="zoom:67%;" />
+
+
 <p>在<code>git bash</code>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p>
 <p><img src="https://raw.githubusercontent.com/shw2018/cdn/master/blog_files/img/Hexo-Blog-Tutorial/7.png" alt="img"></p>
 <p>安装hexo部署到github pages工具</p>
-<pre><code>npm install hexo-deployer-git --save</code></pre>
+<pre><code class="line-numbers language-bash">npm install hexo-deployer-git --save</code></pre>
 <p>然后</p>
-<pre><code>hexo clean
+<pre><code class="line-numbers language-bash">hexo clean
 hexo generate
 hexo deploy</code></pre>
 <p>其中 <code>hexo clean</code>清除了你之前生成的东西，也可以不加。 <code>hexo generate</code>顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写 ，<code>hexo deploy</code>部署文章，可以用<code>hexo d</code>缩写</p>
@@ -704,7 +632,7 @@ hexo deploy</code></pre>
 <li>新建分类 categories 页</li>
 </ul>
 <p><code>categories</code> 页是用来展示所有分类的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page &quot;categories&quot;</code></pre>
+<pre><code class="line-numbers language-bash">hexo new page &quot;categories&quot;</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: categories
@@ -716,7 +644,7 @@ layout: &quot;categories&quot;
 <li>新建标签 tags 页</li>
 </ul>
 <p><code>tags</code> 页是用来展示所有标签的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page &quot;tags&quot;</code></pre>
+<pre><code class="line-numbers language-bash">hexo new page &quot;tags&quot;</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: tags
@@ -728,7 +656,7 @@ layout: &quot;tags&quot;
 <li>新建关于我 about 页</li>
 </ul>
 <p><code>about</code> 页是用来展示<strong>关于我和我的博客</strong>信息的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>about/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page &quot;about&quot;</code></pre>
+<pre><code class="line-numbers language-bash">hexo new page &quot;about&quot;</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: about
@@ -740,7 +668,7 @@ layout: &quot;about&quot;
 <li>新建留言板 contact 页（可选的）</li>
 </ul>
 <p><code>contact</code> 页是用来展示<strong>留言板</strong>信息的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>contact/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page &quot;contact&quot;</code></pre>
+<pre><code class="line-numbers language-bash">hexo new page &quot;contact&quot;</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/contact/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: contact
@@ -755,7 +683,7 @@ layout: &quot;contact&quot;
 <li>新建友情链接 friends 页（可选的）</li>
 </ul>
 <p><code>friends</code> 页是用来展示<strong>友情链接</strong>信息的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page &quot;friends&quot;</code></pre>
+<pre><code class="line-numbers language-bash">hexo new page &quot;friends&quot;</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>，至少需要以下内容：</p>
 <pre><code>---
 title: friends
@@ -764,7 +692,7 @@ type: &quot;friends&quot;
 layout: &quot;friends&quot;
 ---</code></pre>
 <p>同时，在你的博客 <code>source</code> 目录下新建 <code>_data</code> 目录，在 <code>_data</code> 目录中新建 <code>friends.json</code> 文件，文件内容如下所示：</p>
-<pre><code class="js">[&#123;
+<pre><code class="line-numbers language-js">[&#123;
     &quot;avatar&quot;: &quot;http://image.luokangyuan.com/1_qq_27922023.jpg&quot;,
     &quot;name&quot;: &quot;码酱&quot;,
     &quot;introduction&quot;: &quot;我不是大佬，只是在追寻大佬的脚步&quot;,
@@ -785,7 +713,7 @@ layout: &quot;friends&quot;
 &#125;]</code></pre>
 <p>初始页面全部搞定，现在主题的页面都能正常打开了。</p>
 <h3 id="2-代码简化与基本配置"><a href="#2-代码简化与基本配置" class="headerlink" title="2.代码简化与基本配置"></a>2.代码简化与基本配置</h3><p>好处：简化代码，剔除不适用不必要的功能，提高可读性，方便后期调整和他人学习。</p>
-<h4 id="Hexo全局配置优化"><a href="#Hexo全局配置优化" class="headerlink" title="Hexo全局配置优化"></a><code>Hexo</code>全局配置优化</h4><pre><code># 站点
+<h4 id="Hexo全局配置优化"><a href="#Hexo全局配置优化" class="headerlink" title="Hexo全局配置优化"></a><code>Hexo</code>全局配置优化</h4><pre><code class="line-numbers language-yml"># 站点
 title: 肆零肆 #网站标题
 subtitle: &#39;肆零肆  | 学习记录&#39; #网站副标题
 description: &#39;&#39; #网站描述
@@ -889,7 +817,7 @@ deploy:
 <li>菜单导航配置</li>
 </ul>
 <p>菜单导航名称可以是中文也可以是英文(如：<code>Index</code>或<code>主页</code>) </p>
-<pre><code># 二级菜单写法如下
+<pre><code class="line-numbers language-yml"># 二级菜单写法如下
   Medias:
     icon: fas fa-list
     children:
@@ -923,9 +851,9 @@ deploy:
 <li>/layout/_partial/minivaline.ejs</li>
 </ul>
 <h3 id="4-插件安装及配置"><a href="#4-插件安装及配置" class="headerlink" title="4.插件安装及配置"></a>4.插件安装及配置</h3><h4 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h4><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 <a target="_blank" rel="noopener" href="https://github.com/ele828/hexo-prism-plugin">hexo-prism-plugin</a> 的 Hexo 插件来做代码高亮，安装命令如下：</p>
-<pre><code>npm i -S hexo-prism-plugin</code></pre>
+<pre><code class="line-numbers language-bash">npm i -S hexo-prism-plugin</code></pre>
 <p>然后，修改 Hexo 根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并新增 <code>prism</code> 插件相关的配置，主要配置如下：</p>
-<pre><code>highlight:
+<pre><code class="line-numbers language-yml">highlight:
   enable: false
 
 prism_plugin:
@@ -934,7 +862,7 @@ prism_plugin:
   line_number: false    # default false
   custom_css:</code></pre>
 <h3 id="修复代码块行号不显示bug"><a href="#修复代码块行号不显示bug" class="headerlink" title="修复代码块行号不显示bug"></a>修复代码块行号不显示bug</h3><p>修改<code>themes/matery/source/css/matery.css</code>第95行左右的<code>pre</code>和<code>code</code>两段改为如下代码：</p>
-<pre><code class="css">pre &#123;
+<pre><code class="line-numbers language-css">pre &#123;
     /* padding: 1.5rem !important; */
     padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
     margin: 1rem 0 !important;
@@ -955,16 +883,16 @@ code &#123;
 <p>Css</p>
 <p>然后在根目录的<code>_config.yml</code>中设置<code>prism_plugin.line_number</code>为<code>true</code></p>
 <h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>本主题中还使用到了 <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a> 的 Hexo 插件来做内容搜索，安装命令如下：</p>
-<pre><code>npm install hexo-generator-search --save</code></pre>
+<pre><code class="line-numbers language-bash">npm install hexo-generator-search --save</code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre><code>search:
+<pre><code class="line-numbers language-yml">search:
   path: search.xml
   field: post</code></pre>
 <h4 id="文章字数统计插件"><a href="#文章字数统计插件" class="headerlink" title="文章字数统计插件"></a>文章字数统计插件</h4><p>如果你想要在文章中显示文章字数、阅读时长信息，可以安装 <a target="_blank" rel="noopener" href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件。</p>
 <p>安装命令如下：</p>
-<pre><code>npm i --save hexo-wordcount</code></pre>
+<pre><code class="line-numbers language-bash">npm i --save hexo-wordcount</code></pre>
 <p>然后只需在本主题下的 <code>_config.yml</code> 文件中，将各个文章字数相关的配置激活即可：</p>
-<pre><code>postInfo:
+<pre><code class="line-numbers language-yml">postInfo:
   date: true
   update: false
   wordCount: false # 设置文章字数统计为 true.
@@ -975,9 +903,9 @@ code &#123;
 <li>添加emoji表情支持（可选的）</li>
 </ul>
 <p>本主题新增了对<code>emoji</code>表情的支持，使用到了 <a target="_blank" rel="noopener" href="https://npm.taobao.org/package/hexo-filter-github-emojis">hexo-filter-github-emojis</a> 的 Hexo 插件来支持 <code>emoji</code>表情的生成，把对应的<code>markdown emoji</code>语法（<code>::</code>,例如：<code>:smile:</code>）转变成会跳跃的<code>emoji</code>表情，安装命令如下：</p>
-<pre><code>npm install hexo-filter-github-emojis --save</code></pre>
+<pre><code class="line-numbers language-yml">npm install hexo-filter-github-emojis --save</code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre><code>githubEmojis:
+<pre><code class="line-numbers language-yml">githubEmojis:
   enable: true
   className: github-emoji
   inject: true
@@ -987,9 +915,9 @@ code &#123;
 <li>添加 RSS 订阅支持（可选的）</li>
 </ul>
 <p>本主题中还使用到了 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> 的 Hexo 插件来做 <code>RSS</code>，安装命令如下：</p>
-<pre><code>npm install hexo-generator-feed --save</code></pre>
+<pre><code class="line-numbers language-bash">npm install hexo-generator-feed --save</code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre><code>feed:
+<pre><code class="line-numbers language-yml">feed:
   type: atom
   path: atom.xml
   limit: 20
@@ -1004,9 +932,9 @@ code &#123;
 </ul>
 <p>如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用 <a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin">hexo-permalink-pinyin</a> Hexo 插件使在生成文章时生成中文拼音的永久链接。</p>
 <p>安装命令如下：</p>
-<pre><code>npm i hexo-permalink-pinyin --save</code></pre>
+<pre><code class="line-numbers language-bash">npm i hexo-permalink-pinyin --save</code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre><code>permalink_pinyin:
+<pre><code class="line-numbers language-yml">permalink_pinyin:
   enable: true
   separator: &#39;-&#39; # default: &#39;-&#39;</code></pre>
 <blockquote>
@@ -1021,11 +949,11 @@ code &#123;
 </ul>
 <p>前往 <a target="_blank" rel="noopener" href="https://www.tidio.com/">Tidio</a> 官网注册并且获取 <code>Public Key</code>，并将 <code>Public Key</code> 填入主题的 <code>_config.yml</code> 文件中。</p>
 <h2 id="五、深入定制博客"><a href="#五、深入定制博客" class="headerlink" title="五、深入定制博客"></a>五、深入定制博客</h2><h4 id="修改首页开始阅读字样"><a href="#修改首页开始阅读字样" class="headerlink" title="修改首页开始阅读字样"></a>修改首页开始阅读字样</h4><p>打开<code>index-cover.ejs</code>修改字段为<code>&lt;%= theme.indexbtn.index %&gt;</code>：</p>
-<pre><code>&lt;a href=&quot;#indexCard&quot; class=&quot;waves-effect waves-light btn&quot;&gt;
+<pre><code class="line-numbers language-js">&lt;a href=&quot;#indexCard&quot; class=&quot;waves-effect waves-light btn&quot;&gt;
     &lt;i class=&quot;fa fa-angle-double-down&quot;&gt;&lt;/i&gt;&lt;%= theme.indexbtn.index %&gt;
 &lt;/a&gt;</code></pre>
 <p>并在主题配置文件中加入indexbtn选项下添加index选项：</p>
-<pre><code>indexbtn:
+<pre><code class="line-numbers language-yml">indexbtn:
   enable: true
   index: 学习记录
   name: 导航网站
@@ -1049,7 +977,7 @@ code &#123;
 </li>
 </ul>
 <h4 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h4><p>在主题文件的 <code>/source/css/matery.css</code> 文件中，搜索 <code>.bg-color</code> 来修改背景颜色：</p>
-<pre><code class="css">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色.将渐变改成单色 */
+<pre><code class="line-numbers language-css">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色.将渐变改成单色 */
 .bg-color &#123;
     background-image: linear-gradient(to right, #000000 0%, #000000 100%);
 &#125;
@@ -1148,9 +1076,9 @@ code &#123;
     &#125;
 &#125;*/</code></pre>
 <h4 id="设置隐藏的背景颜色"><a href="#设置隐藏的背景颜色" class="headerlink" title="设置隐藏的背景颜色"></a>设置隐藏的背景颜色</h4><p>文件位于：MyBlog\themes\matery\source\libs\materialize/materialize.min.css查找<code>.red&#123;background-color:#F44336 !important&#125;</code>将{}中的background-color删除或修改颜色</p>
-<pre><code class="css">.red&#123;background-color:#335a91 !important&#125;</code></pre>
+<pre><code class="line-numbers language-css">.red&#123;background-color:#335a91 !important&#125;</code></pre>
 <h4 id="关闭封面图轮播"><a href="#关闭封面图轮播" class="headerlink" title="关闭封面图轮播"></a>关闭封面图轮播</h4><p>主题文件<code>_config.yml</code>中设置：</p>
-<pre><code># 首页封面轮播图的相关配置.
+<pre><code class="line-numbers language-yml"># 首页封面轮播图的相关配置.
 cover:
   showPrevNext: false # 是否显示左右切换按钮.
   showIndicators: false # 是否显示指示器.
@@ -1159,20 +1087,20 @@ cover:
   intervalTime: 5000 # 自动切换下一张的间隔时间.
   useConfig: false # 是否使用配置文件, 在 _data/covers.json 下配置推荐文章, false则使用主题在文章中的配置 cover coverImg
   # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/covers.json 移动到 my-blog/source/_data/下修改配置即可</code></pre>
-<h4 id="关闭每日切换banner"><a href="#关闭每日切换banner" class="headerlink" title="关闭每日切换banner"></a>关闭每日切换banner</h4><pre><code># banner 是否每日切换.
+<h4 id="关闭每日切换banner"><a href="#关闭每日切换banner" class="headerlink" title="关闭每日切换banner"></a>关闭每日切换banner</h4><pre><code class="line-numbers language-yml"># banner 是否每日切换.
 banner:
   enable: false # 若为 false, 则 banner 默认为 /medias/banner/0.jpg</code></pre>
 <h4 id="修改-banner-图和文章特色图"><a href="#修改-banner-图和文章特色图" class="headerlink" title="修改 banner 图和文章特色图"></a>修改 banner 图和文章特色图</h4><p> <code>banner</code> 中的图片主题代码中是每天动态切换一张，只需 <code>7</code> 张即可。如果你会 <code>JavaScript</code> 代码，可以修改成你自己喜欢切换逻辑，如：随机切换等，<code>banner</code> 切换的代码位置在 <code>/layout/_partial/bg-cover-content.ejs</code> 文件的 <code>&lt;script&gt;&lt;/script&gt;</code> 代码中：</p>
-<pre><code class="js">$(&#39;.bg-cover&#39;).css(&#39;background-image&#39;, &#39;url(/medias/banner/&#39; + new Date().getDay() + &#39;.jpg)&#39;);</code></pre>
+<pre><code class="line-numbers language-js">$(&#39;.bg-cover&#39;).css(&#39;background-image&#39;, &#39;url(/medias/banner/&#39; + new Date().getDay() + &#39;.jpg)&#39;);</code></pre>
 <p>在 <code>/source/medias/featureimages</code> 文件夹中默认有 24 张特色图片，你可以再增加或者减少，并需要在 <code>_config.yml</code> 做同步修改。</p>
 <h4 id="修改社交链接"><a href="#修改社交链接" class="headerlink" title="修改社交链接"></a>修改社交链接</h4><p>在主题的 <code>_config.yml</code> 文件中，默认支持 <code>QQ</code>、<code>GitHub</code> 和邮箱等的配置，你可以在主题文件的 <code>/layout/_partial/social-link.ejs</code> 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：</p>
-<pre><code class="html">&lt;% if (theme.socialLink.github) &#123; %&gt;
+<pre><code class="line-numbers language-html">&lt;% if (theme.socialLink.github) &#123; %&gt;
     &lt;a href=&quot;&lt;%= theme.socialLink.github %&gt;&quot; class=&quot;tooltipped&quot; target=&quot;_blank&quot; data-tooltip=&quot;访问我的GitHub&quot; data-position=&quot;top&quot; data-delay=&quot;50&quot;&gt;
         &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
     &lt;/a&gt;
 &lt;% &#125; %&gt;</code></pre>
 <p>现仅对内容进行删减，主题全局配置文件下设置仅仅留下QQ、Github、邮箱，同时关闭FORK ME：</p>
-<pre><code>socialLink:
+<pre><code class="line-numbers language-yml">socialLink:
   github:  https://github.com/Sumsung524
   email: me@xiongmengqi.top
   facebook: # https://www.facebook.com/xxx
@@ -1190,7 +1118,7 @@ githubLink:
 <p>githubLink的设置在<code>/layout/_partial/github-link.ejs</code>中，关闭之后，可以直接移除github-link.ejs，如果以后需要设置其他形式的按键，可重新移入并在主题全局配置文件中设置</p>
 </blockquote>
 <p><code>/layout/_partial/social-link.ejs</code> 文件设置邮箱显示内容为自己邮箱：</p>
-<pre><code>&lt;% if (theme.socialLink.github) &#123; %&gt;
+<pre><code class="line-numbers language-js">&lt;% if (theme.socialLink.github) &#123; %&gt;
     &lt;a href=&quot;&lt;%= theme.socialLink.github %&gt;&quot; class=&quot;tooltipped&quot; target=&quot;_blank&quot; data-tooltip=&quot;访问我的GitHub&quot; data-position=&quot;top&quot; data-delay=&quot;50&quot;&gt;
         &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
     &lt;/a&gt;
@@ -1209,7 +1137,7 @@ githubLink:
 <ul>
 <li>在<code>_config.yml</code>打开站点运行时间记录功能:</li>
 </ul>
-<pre><code>time:
+<pre><code class="line-numbers language-yml">time:
   enable: true
   year: 2020 # 年份
   month: 08 # 月份
@@ -1227,7 +1155,7 @@ githubLink:
 <li>删除<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/">不蒜子</a> 网站统计代码：</li>
 </ul>
 <p>主题配置文件中删除：</p>
-<pre><code># busuanzi(http://busuanzi.ibruce.info/) website statistics
+<pre><code class="line-numbers language-yml"># busuanzi(http://busuanzi.ibruce.info/) website statistics
 # 不蒜子(http://busuanzi.ibruce.info/) 网站统计
 busuanziStatistics:
   enable: true
@@ -1236,15 +1164,15 @@ busuanziStatistics:
 
   busuanzi: /libs/others/busuanzi.pure.mini.js</code></pre>
 <p>在主题文件中删除不蒜子相关代码，删除<code>/layout/_partial/footer.ejs</code>中相关函数：</p>
-<pre><code>            &lt;% if (theme.postInfo.totalCount) &#123; %&gt;
-            &amp;nbsp;&lt;i class=&quot;fas fa-chart-area&quot;&gt;&lt;/i&gt;&amp;nbsp;站点总字数:&amp;nbsp;&lt;span
-                class=&quot;white-color&quot;&gt;&lt;%= totalcount(site) %&gt;&lt;/span&gt;&amp;nbsp;字
-            &lt;% &#125; %&gt;
-            &lt;% let socialClass = &#39;&#39; %&gt;
-            &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.enable) &#123; %&gt;
-            &lt;% socialClass = &#39;social-statis&#39; %&gt;
-            &lt;% &#125; %&gt;
-            &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.totalTraffic) &#123; %&gt;
+<pre><code class="line-numbers language-js">&lt;% if (theme.postInfo.totalCount) &#123; %&gt;
+&amp;nbsp;&lt;i class=&quot;fas fa-chart-area&quot;&gt;&lt;/i&gt;&amp;nbsp;站点总字数:&amp;nbsp;&lt;span
+    class=&quot;white-color&quot;&gt;&lt;%= totalcount(site) %&gt;&lt;/span&gt;&amp;nbsp;字
+&lt;% &#125; %&gt;
+&lt;% let socialClass = &#39;&#39; %&gt;
+&lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.enable) &#123; %&gt;
+&lt;% socialClass = &#39;social-statis&#39; %&gt;
+&lt;% &#125; %&gt;
+&lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.totalTraffic) &#123; %&gt;
             &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;
                 |&amp;nbsp;&lt;i class=&quot;far fa-eye&quot;&gt;&lt;/i&gt;&amp;nbsp;总访问量:&amp;nbsp;&lt;span id=&quot;busuanzi_value_site_pv&quot;
                     class=&quot;white-color&quot;&gt;&lt;/span&gt;&amp;nbsp;次
@@ -1253,74 +1181,74 @@ busuanziStatistics:
             &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.totalNumberOfvisitors) &#123; %&gt;
             &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;
                 |&amp;nbsp;&lt;i class=&quot;fas fa-users&quot;&gt;&lt;/i&gt;&amp;nbsp;总访问人数:&amp;nbsp;&lt;span id=&quot;busuanzi_value_site_uv&quot;
-                    class=&quot;white-color&quot;&gt;&lt;/span&gt;&amp;nbsp;人
-            &lt;/span&gt;
-            &lt;% &#125; %&gt;
-            &lt;br&gt;
-            &lt;% if (theme.time.enable) &#123; %&gt;
-            &lt;span id=&quot;sitetime&quot;&gt;载入运行时间...&lt;/span&gt;
-            &lt;script&gt;
-                function siteTime() &#123;
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = &quot;&lt;%- theme.time.year %&gt;&quot;;
-                    var startMonth = &quot;&lt;%- theme.time.month %&gt;&quot;;
-                    var startDate = &quot;&lt;%- theme.time.date %&gt;&quot;;
-                    var startHour = &quot;&lt;%- theme.time.hour %&gt;&quot;;
-                    var startMinute = &quot;&lt;%- theme.time.minute %&gt;&quot;;
-                    var startSecond = &quot;&lt;%- theme.time.second %&gt;&quot;;
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+        class=&quot;white-color&quot;&gt;&lt;/span&gt;&amp;nbsp;人
+&lt;/span&gt;
+&lt;% &#125; %&gt;
+&lt;br&gt;
+&lt;% if (theme.time.enable) &#123; %&gt;
+&lt;span id=&quot;sitetime&quot;&gt;载入运行时间...&lt;/span&gt;
+&lt;script&gt;
+function siteTime() &#123;
+   var seconds = 1000;
+   var minutes = seconds * 60;
+   var hours = minutes * 60;
+   var days = hours * 24;
+   var years = days * 365;
+   var today = new Date();
+   var startYear = &quot;&lt;%- theme.time.year %&gt;&quot;;
+   var startMonth = &quot;&lt;%- theme.time.month %&gt;&quot;;
+   var startDate = &quot;&lt;%- theme.time.date %&gt;&quot;;
+   var startHour = &quot;&lt;%- theme.time.hour %&gt;&quot;;
+   var startMinute = &quot;&lt;%- theme.time.minute %&gt;&quot;;
+   var startSecond = &quot;&lt;%- theme.time.second %&gt;&quot;;
+   var todayYear = today.getFullYear();
+   var todayMonth = today.getMonth() + 1;
+   var todayDate = today.getDate();
+   var todayHour = today.getHours();
+   var todayMinute = today.getMinutes();
+   var todaySecond = today.getSeconds();
+   var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
                     var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+var diff = t2 - t1;
+var diffYears = Math.floor(diff / years);
+var diffDays = Math.floor((diff / days) - diffYears * 365);
+var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
                         minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) &#123;
-                        document.getElementById(&quot;year&quot;).innerHTML = todayYear;
-                        document.getElementById(&quot;sitetime&quot;).innerHTML = &quot;本站已运行 &quot; + diffDays + &quot; 天 &quot;;
-                    &#125; else &#123;
-                        document.getElementById(&quot;year&quot;).innerHTML = startYear + &quot; - &quot; + todayYear;
-                        document.getElementById(&quot;sitetime&quot;).innerHTML = &quot;本站已运行 &quot; + diffYears + &quot; 年 &quot; + diffDays +
-                            &quot; 天 &quot;;
-                    &#125;
-                &#125;
-                setInterval(siteTime, 1000);
-            &lt;/script&gt;
-            &lt;% &#125; %&gt;
-            &lt;br&gt;</code></pre>
+var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+    diffMinutes * minutes) / seconds);
+if (startYear == todayYear) &#123;
+    document.getElementById(&quot;year&quot;).innerHTML = todayYear;
+    document.getElementById(&quot;sitetime&quot;).innerHTML = &quot;本站已运行 &quot; + diffDays + &quot; 天 &quot;;
+&#125; else &#123;
+document.getElementById(&quot;year&quot;).innerHTML = startYear + &quot; - &quot; + todayYear;
+document.getElementById(&quot;sitetime&quot;).innerHTML = &quot;本站已运行 &quot; + diffYears + &quot; 年 &quot; + diffDays +
+&quot; 天 &quot;;
+&#125;
+    &#125;
+    setInterval(siteTime, 1000);
+&lt;/script&gt;
+&lt;% &#125; %&gt;
+&lt;br&gt;</code></pre>
 <p><strong>注意：</strong></p>
 <p>删除此段代码会出现部署问题，由于layout.ejs中设置过此函数，此函数删除而找不到会发生无法部署的错误。</p>
 <p>因此，需要删除<code>matery/layout/layout.ejs</code>中字段：</p>
-<pre><code>    &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.enable) &#123; %&gt;
+<pre><code class="line-numbers language-js">    &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.enable) &#123; %&gt;
     &lt;script async src=&quot;&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for(theme.libs.js.busuanzi) %&gt;&quot;&gt;&lt;/script&gt;
     &lt;% &#125; %&gt;</code></pre>
 <p>按照代码提示<code>footer.ejs</code>中<code>socialClass is not defined</code>可以直接将<code>&lt;%- socialClass %&gt;</code>字段删除或者使用其他CSS样式，删除后再加上<code>&lt;br&gt;</code>：</p>
-<pre><code class="html">&lt;div class=&quot;col s12 m4 l4 social-link &lt;%- socialClass %&gt;&quot;&gt;&lt;%- partial(&#39;_partial/social-link&#39;) %&gt;&lt;/div&gt;</code></pre>
+<pre><code class="line-numbers language-html">&lt;div class=&quot;col s12 m4 l4 social-link &lt;%- socialClass %&gt;&quot;&gt;&lt;%- partial(&#39;_partial/social-link&#39;) %&gt;&lt;/div&gt;</code></pre>
 <blockquote>
 <p>layout.ejs用于设置布局，告诉网站解析时引用什么样的文件、脚本、函数等等，属于一个大体的框架文件，表达了整个网站的大致结构。</p>
 </blockquote>
 <p>如备案信息不需要填写，可直接删除字段：</p>
-<pre><code>            &lt;% if (theme.icp.enable) &#123; %&gt;
-            &lt;span id=&quot;icp&quot;&gt;&lt;img src=&quot;&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for(&#39;/medias/icp.png&#39;) %&gt;&quot; style=&quot;vertical-align: text-bottom;&quot; /&gt;
-                &lt;a href=&quot;&lt;%- url_for(theme.icp.url) %&gt;&quot; target=&quot;_blank&quot;&gt;&lt;%= theme.icp.text %&gt;&lt;/a&gt;
-            &lt;/span&gt;
-            &lt;% &#125; %&gt;</code></pre>
+<pre><code class="line-numbers language-js">&lt;% if (theme.icp.enable) &#123; %&gt;
+    &lt;span id=&quot;icp&quot;&gt;&lt;img src=&quot;&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for(&#39;/medias/icp.png&#39;) %&gt;&quot; style=&quot;vertical-align: text-bottom;&quot; /&gt;
+        &lt;a href=&quot;&lt;%- url_for(theme.icp.url) %&gt;&quot; target=&quot;_blank&quot;&gt;&lt;%= theme.icp.text %&gt;&lt;/a&gt;
+                          &lt;/span&gt;
+                          &lt;% &#125; %&gt;</code></pre>
 <p>删除主题配置文件中：</p>
-<pre><code>#ICP备案信息尾部显示
+<pre><code class="line-numbers language-yml">#ICP备案信息尾部显示
 icp:
   enable: false
   url: # 备案链接
@@ -1335,14 +1263,14 @@ icp:
 <li>修改页脚字体颜色</li>
 </ul>
 <p>source/css/matery.css中搜索<code>footer .copy-right &#123;</code>、<code>footer a &#123;color: #999;&#125;</code>将颜色修改:</p>
-<pre><code class="css">footer a &#123;
+<pre><code class="line-numbers language-css">footer a &#123;
     color: #999;
 &#125;
 footer .copy-right &#123;
     color: #444;
 &#125;</code></pre>
 <h4 id="修改文章卡片中标签颜色"><a href="#修改文章卡片中标签颜色" class="headerlink" title="修改文章卡片中标签颜色"></a>修改文章卡片中标签颜色</h4><p>在主题目录layout/matery.css中加入样式：</p>
-<pre><code class="css">.tag-color &#123;
+<pre><code class="line-numbers language-css">.tag-color &#123;
     background-image: linear-gradient(to left, #00c9ff 0%, #66a6ff 100%);
 &#125;</code></pre>
 <p>打开layout/index.ejs中使用<kbd>Ctrl</kbd>+<kbd>F</kbd>搜索<code>bg-color</code>，替换为：<code>tag-color</code>，从而实现标签颜色与导航条颜色独立。</p>
@@ -1350,16 +1278,56 @@ footer .copy-right &#123;
 <li>修改回到顶部按钮颜色</li>
 </ul>
 <p>source/css/matery.css中搜索<code>.top-scroll .btn-floating &#123;</code>:</p>
-<pre><code class="CSS">.top-scroll .btn-floating &#123;
+<pre><code class="line-numbers language-CSS">.top-scroll .btn-floating &#123;
     background: linear-gradient(to bottom right, #00c8fe 0%, #66a6ff 100%);
     width: 48px;
     height: 48px;
 &#125;</code></pre>
+<h4 id="博客文章菜单按钮调小"><a href="#博客文章菜单按钮调小" class="headerlink" title="博客文章菜单按钮调小"></a>博客文章菜单按钮调小</h4><p>通过谷歌浏览器开发者模式定位到按钮样式，打开<code>/layout/_partial/post-details-toc.ejs</code>,<kbd>Ctrl</kbd>+<kbd>F</kbd>输入<code>#floating-toc-btn .btn-floating </code>，修改样式：</p>
+<pre><code class="line-numbers language-css">#floating-toc-btn .btn-floating &#123;
+    width: 32px;
+    height: 32px;
+&#125;
+#floating-toc-btn .btn-floating i &#123;
+    line-height: 48px;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+&#125;</code></pre>
+<blockquote>
+<p>position：absolute表示设置绝对定位，一般配bai合“top”和“left”属性同时使用进行定位</p>
+</blockquote>
+<h4 id="修改博客文章目录颜色"><a href="#修改博客文章目录颜色" class="headerlink" title="修改博客文章目录颜色"></a>修改博客文章目录颜色</h4><p>通过谷歌浏览器开发者模式定位到按钮样式，打开<code>/layout/_partial/post-details-toc.ejs</code>,<kbd>Ctrl</kbd>+<kbd>F</kbd>输入<code>#toc-content .is-active-link </code>，修改样式：</p>
+<pre><code class="line-numbers language-css">#toc-content .is-active-link &#123;
+    color: #66a6ff;
+&#125;</code></pre>
+<p>通过谷歌浏览器开发者模式定位到按钮样式，打开<code>/layout/_partial/post-details-toc.ejs</code>,Ctrl+F输入<code>#toc-content .toc-link:hover</code>，修改样式：</p>
+<pre><code class="line-numbers language-css">#toc-content .toc-link:hover &#123;
+    color: #66a6ff;
+    font-weight: 700;
+    text-decoration: underline;
+&#125;</code></pre>
+<h4 id="修改文章链接颜色"><a href="#修改文章链接颜色" class="headerlink" title="修改文章链接颜色"></a>修改文章链接颜色</h4><p>/source/css/matery.css:</p>
+<pre><code class="line-numbers language-css">#articleContent a &#123;
+    padding: 0 2px;
+    color: #66a6ff;
+    font-weight: 500;
+    text-decoration: underline;
+    word-wrap: break-word;
+&#125;</code></pre>
+<pre><code class="line-numbers language-css">blockquote &#123;
+    border-left: 5px solid #66a6ff;
+    padding: 1rem 0.8rem 0.2rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, .1);
+&#125;
+// 修改引用左侧竖线颜色</code></pre>
 <h4 id="定制进度条"><a href="#定制进度条" class="headerlink" title="定制进度条"></a>定制进度条</h4><ul>
 <li>更改底栏进度条色彩</li>
 </ul>
 <p>source/css/matery.css中搜索<code>.progress-bar &#123;</code>并设置:</p>
-<pre><code class="css">.progress-bar &#123;
+<pre><code class="line-numbers language-css">.progress-bar &#123;
    height: 4px;
    position: fixed;
    bottom: 0px;
@@ -1372,7 +1340,7 @@ footer .copy-right &#123;
 </ul>
 <p>source/css/matery.css中最后添加：</p>
 <p>考虑到进度条重复，故将width设置为0.1px隐藏导航条，方便以后需要时调用：</p>
-<pre><code class="css">  /* 定义滚动条样式 */
+<pre><code class="line-numbers language-css">  /* 定义滚动条样式 */
 
   ::-webkit-scrollbar &#123;
 
@@ -1415,7 +1383,7 @@ footer .copy-right &#123;
 <li>添加“社会主义核心价值观”文字点击效果</li>
 </ul>
 <p>在 /themes/matery/source/js 新建文件<code>click_show_text.js</code>，并添加如下代码:</p>
-<pre><code class="js">&quot;use strict&quot;;
+<pre><code class="line-numbers language-js">&quot;use strict&quot;;
    var a_idx=0;
    function delay()&#123;
    $(&quot;.buryit&quot;).removeAttr(&quot;onclick&quot;)
@@ -1430,11 +1398,11 @@ footer .copy-right &#123;
        &quot;z-index&quot;:5,top:i-20,left:a,position:&quot;absolute&quot;,&quot;font-weight&quot;:&quot;bold&quot;,color:&quot;#ea4335&quot;&#125;),
            n(&quot;body&quot;).append(o),o.animate(&#123;top:i-180,opacity:0&#125;,3e3,function()&#123;o.remove()&#125;)&#125;),setTimeout(&quot;delay()&quot;,2e3)&#125;);</code></pre>
 <p>在主题配置文件<code>_config.yml</code>下添加：</p>
-<pre><code># 社会主义核心价值观文字点击效果
+<pre><code class="line-numbers language-yml"># 社会主义核心价值观文字点击效果
 click_show_text:
   enable: true</code></pre>
 <p>在<code>themes/source/layout/</code>引用文件：</p>
-<pre><code>&lt;script src=&quot;&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for(&#39;/js/click_show_text.js&#39;) %&gt;&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="line-numbers language-js">&lt;script src=&quot;&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for(&#39;/js/click_show_text.js&#39;) %&gt;&quot;&gt;&lt;/script&gt;</code></pre>
 <h4 id="激活评论系统"><a href="#激活评论系统" class="headerlink" title="激活评论系统"></a>激活评论系统</h4><p>主题中配置多种评论系统，个人认为最好用的时<code>Valine</code>:</p>
 <ul>
 <li>注册</li>
@@ -1442,7 +1410,7 @@ click_show_text:
 <li>APPID 和 APPKey 复制</li>
 <li>将对应的内容输入到主题配置文件中：</li>
 </ul>
-<pre><code># Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+<pre><code class="line-numbers language-yml"># Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
   enable: true
   appId: #粘贴APPID
@@ -1463,148 +1431,151 @@ valine:
 <ul>
 <li><p>删除Gitalk评论模块</p>
 <ul>
-<li><p>主题配置文件删除：</p>
-<pre><code># Gitalk 评论模块的配置，默认为不激活
-gitalk:
-  enable: false
-  owner:
-  repo:
-  oauth:
-    clientId:
-    clientSecret:
-  admin:
-# Gitment 评论模块的配置，默认为不激活
-gitment:
-  enable: false
-  owner:
-  repo:
-  oauth:
-    clientId:
-    clientSecret:
-
-# Disqus评论模块的配置，默认为不激活
-disqus:
-  enable: false
-  shortname:
-
-# Livere 来必力评论模块的配置，默认为不激活
-livere:
-  enable: false
-  uid:
-
-# MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
-# See: https://github.com/MiniValine/MiniValine
-minivaline:
-  enable: false
-  appId: zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz # Your leancloud application appid
-  appKey: itmzT1JbXfAjVwMqDhGPzU45 # Your leancloud application appkey
-  mode: DesertsP # DesertsP or xCss
-  placeholder: Write a Comment # Comment box placeholder
-  math: true # Support MathJax.
-  md: true # Support Markdown.
-  enableQQ: false # Enable QQ avatar API.
-  NoRecordIP: false # Do not record commenter IP.
-  visitor: true # Article reading statistics.
-  maxNest: 6 # Sub-comment maximum nesting depth.
-  pageSize: 6 # Pagination size.
-  adminEmailMd5: de8a7aa53d07e6b6bceb45c64027763d # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
-  tagMeta: # The String Array of Words to show Flag.[Just Only xCss Style mode]
-    - 管理员
-    - 小伙伴
-    - 访客
-  master: # The MD5 String Array of master Email to show master Flag.[Just Only xCss Style mode]
-    - de8a7aa53d07e6b6bceb45c64027763d
-  friends: # The MD5 String Array of friends Email to show friends Flag.[Just Only xCss Style mode]
-    - b5bd5d836c7a0091aa8473e79ed4c25e
-    - adb7d1cd192658a55c0ad22a3309cecf
-    - 3ce1e6c77b4910f1871106cb30dc62b0
-    - cfce8dc43725cc14ffcd9fb4892d5bfc
-  # MiniValine&#39;s display language depends on user&#39;s browser or system environment
-  # If you want everyone visiting your site to see a uniform language, you can set a force language value
-  # Available values: en  | zh-CN | (and many more)
-  # More i18n info: https://github.com/MiniValine/minivaline-i18n
-  lang:
-  # Expression Url.
-  # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
-  emoticonUrl:
-    - https://cdn.jsdelivr.net/npm/alus@latest
-    - https://cdn.jsdelivr.net/gh/MiniValine/qq@latest
-    - https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest
-    - https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest
-    - https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest
-    - https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest
-
-    gitalk: /libs/gitalk/gitalk.min.js
-    minivaline:https://cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js</code></pre>
-</li>
-<li><p>contact.ejs删除：</p>
-<pre><code>            &lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.gitment.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.disqus.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/livere&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.minivaline &amp;&amp; theme.minivaline.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/minivaline&#39;) %&gt;
-            &lt;% &#125; %&gt;</code></pre>
-</li>
-<li><p>friends.ejs删除：</p>
-<pre><code>            &lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.gitment.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.disqus.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
-            &lt;% &#125; %&gt;
-
-            &lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
-            &lt;%- partial(&#39;_partial/livere&#39;) %&gt;
-            &lt;% &#125; %&gt;</code></pre>
-</li>
-<li><p>删除post-detail.ejs：</p>
-<pre><code>    &lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
-        &lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
-    &lt;% &#125; %&gt;
-
-    &lt;% if (theme.gitment.enable) &#123; %&gt;
-        &lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
-    &lt;% &#125; %&gt;
-
-    &lt;% if (theme.disqus.enable) &#123; %&gt;
-        &lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
-    &lt;% &#125; %&gt;
-
-    &lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
-    &lt;%- partial(&#39;_partial/livere&#39;) %&gt;
-    &lt;% &#125; %&gt;
-    &lt;% if (theme.minivaline &amp;&amp; theme.minivaline.enable) &#123; %&gt;
-        &lt;%- partial(&#39;_partial/minivaline&#39;) %&gt;
-    &lt;% &#125; %&gt;</code></pre>
-</li>
+<li>主题配置文件删除：</li>
 </ul>
 </li>
 </ul>
+<pre><code class="line-numbers language-yml">    # Gitalk 评论模块的配置，默认为不激活
+    gitalk:
+      enable: false
+      owner:
+      repo:
+      oauth:
+        clientId:
+        clientSecret:
+      admin:
+    # Gitment 评论模块的配置，默认为不激活
+    gitment:
+      enable: false
+      owner:
+      repo:
+      oauth:
+        clientId:
+        clientSecret:
+
+    # Disqus评论模块的配置，默认为不激活
+    disqus:
+      enable: false
+      shortname:
+
+    # Livere 来必力评论模块的配置，默认为不激活
+    livere:
+      enable: false
+      uid:
+
+    # MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+    # See: https://github.com/MiniValine/MiniValine
+    minivaline:
+      enable: false
+      appId: zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz # Your leancloud application appid
+      appKey: itmzT1JbXfAjVwMqDhGPzU45 # Your leancloud application appkey
+      mode: DesertsP # DesertsP or xCss
+      placeholder: Write a Comment # Comment box placeholder
+      math: true # Support MathJax.
+      md: true # Support Markdown.
+      enableQQ: false # Enable QQ avatar API.
+      NoRecordIP: false # Do not record commenter IP.
+      visitor: true # Article reading statistics.
+      maxNest: 6 # Sub-comment maximum nesting depth.
+      pageSize: 6 # Pagination size.
+      adminEmailMd5: de8a7aa53d07e6b6bceb45c64027763d # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
+      tagMeta: # The String Array of Words to show Flag.[Just Only xCss Style mode]
+        - 管理员
+        - 小伙伴
+        - 访客
+      master: # The MD5 String Array of master Email to show master Flag.[Just Only xCss Style mode]
+        - de8a7aa53d07e6b6bceb45c64027763d
+      friends: # The MD5 String Array of friends Email to show friends Flag.[Just Only xCss Style mode]
+        - b5bd5d836c7a0091aa8473e79ed4c25e
+        - adb7d1cd192658a55c0ad22a3309cecf
+        - 3ce1e6c77b4910f1871106cb30dc62b0
+        - cfce8dc43725cc14ffcd9fb4892d5bfc
+      # MiniValine&#39;s display language depends on user&#39;s browser or system environment
+      # If you want everyone visiting your site to see a uniform language, you can set a force language value
+      # Available values: en  | zh-CN | (and many more)
+      # More i18n info: https://github.com/MiniValine/minivaline-i18n
+      lang:
+      # Expression Url.
+      # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
+      emoticonUrl:
+        - https://cdn.jsdelivr.net/npm/alus@latest
+        - https://cdn.jsdelivr.net/gh/MiniValine/qq@latest
+        - https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest
+        - https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest
+        - https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest
+        - https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest
+
+        gitalk: /libs/gitalk/gitalk.min.js
+        minivaline:https://cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js</code></pre>
+<ul>
+<li>contact.ejs删除：</li>
+</ul>
+<pre><code class="line-numbers language-js"> &lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
+ &lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
+ &lt;% &#125; %&gt;
+
+ &lt;% if (theme.gitment.enable) &#123; %&gt;
+ &lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
+ &lt;% &#125; %&gt;
+
+ &lt;% if (theme.disqus.enable) &#123; %&gt;
+ &lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
+ &lt;% &#125; %&gt;
+
+ &lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
+ &lt;%- partial(&#39;_partial/livere&#39;) %&gt;
+ &lt;% &#125; %&gt;
+
+ &lt;% if (theme.minivaline &amp;&amp; theme.minivaline.enable) &#123; %&gt;
+ &lt;%- partial(&#39;_partial/minivaline&#39;) %&gt;
+ &lt;% &#125; %&gt;</code></pre>
+<ul>
+<li>friends.ejs删除：</li>
+</ul>
+<pre><code class="line-numbers language-js">&lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.gitment.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.disqus.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/livere&#39;) %&gt;
+&lt;% &#125; %&gt;</code></pre>
+<ul>
+<li>删除post-detail.ejs：</li>
+</ul>
+<pre><code class="line-numbers language-js">&lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;
+    &lt;%- partial(&#39;_partial/gitalk&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.gitment.enable) &#123; %&gt;
+    &lt;%- partial(&#39;_partial/gitment&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.disqus.enable) &#123; %&gt;
+    &lt;%- partial(&#39;_partial/disqus&#39;) %&gt;
+&lt;% &#125; %&gt;
+
+&lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/livere&#39;) %&gt;
+&lt;% &#125; %&gt;
+&lt;% if (theme.minivaline &amp;&amp; theme.minivaline.enable) &#123; %&gt;
+&lt;%- partial(&#39;_partial/minivaline&#39;) %&gt;
+&lt;% &#125; %&gt;</code></pre>
+<p>​    </p>
 <ul>
 <li>删除gitalk.ejs、gitment.ejs、gitment.ejs、disqus.ejs、livere.ejs、minivaline.ejs</li>
 </ul>
 <h4 id="在线聊天功能去除"><a href="#在线聊天功能去除" class="headerlink" title="在线聊天功能去除"></a>在线聊天功能去除</h4><ul>
 <li>删除主题全局配置文件代码：</li>
 </ul>
-<pre><code># DaoVoice online contact
+<pre><code class="line-numbers language-yml"># DaoVoice online contact
 daovoice:
   enable: false
   app_id:
@@ -1616,7 +1587,7 @@ tidio:
 <ul>
 <li>删除layout.ejs代码：</li>
 </ul>
-<pre><code>    &lt;% if (theme.tidio.enable) &#123; %&gt;
+<pre><code class="line-numbers language-js">    &lt;% if (theme.tidio.enable) &#123; %&gt;
         &lt;script src=&quot;//code.tidio.co/&lt;%- theme.tidio.public_key %&gt;.js&quot;&gt;&lt;/script&gt;
         &lt;script&gt;
             $(document).ready(function () &#123;
@@ -1667,7 +1638,7 @@ tidio:
     &lt;/script&gt;
     &lt;% &#125; %&gt;</code></pre>
 <h4 id="关闭转载功能"><a href="#关闭转载功能" class="headerlink" title="关闭转载功能"></a>关闭转载功能</h4><p>由于以后可能需要用到，故仅在主题配置文件中关闭：</p>
-<pre><code># default 配置文章的默认转载规则
+<pre><code class="line-numbers language-yml"># default 配置文章的默认转载规则
 # 您可以使用在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则
 # 可用的转载规则有：
 # 这些转载规则的意义请参考：https://creativecommons.org/choose/?lang=zh
@@ -1676,13 +1647,13 @@ reprint:
   enable: false # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by</code></pre>
 <h4 id="合并标签和文章分类页"><a href="#合并标签和文章分类页" class="headerlink" title="合并标签和文章分类页"></a>合并标签和文章分类页</h4><p>打开<code>layout/tags.ejs</code>,复制：</p>
-<pre><code>    &lt;%- partial(&#39;_widget/tag-cloud&#39;) %&gt;
+<pre><code class="line-numbers language-yml">    &lt;%- partial(&#39;_widget/tag-cloud&#39;) %&gt;
 
     &lt;% if (site.tags &amp;&amp; site.tags.length &gt; 0) &#123; %&gt;
     &lt;%- partial(&#39;_widget/tag-wordcloud&#39;) %&gt;
     &lt;% &#125; %&gt;</code></pre>
 <p>由于属于直接粘贴会导致重叠，需要将文章标签的位置单独调整，故需要找到<code>_widget/tags-cloud.ejs</code>文件复制上，粘贴至<code>layout/categories.ejs</code>中，然后再<code>class=&quot;container chip-container&quot;</code>后加上<code>style=&quot;margin-top:25px;&quot;</code></p>
-<pre><code>&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;
+<pre><code class="line-numbers language-yml">&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;
 
 &lt;main class=&quot;content&quot;&gt;
 
@@ -1746,7 +1717,7 @@ reprint:
 <li><code>hexo new page navigation</code>新建页面</li>
 <li>打开新建文件并编辑：</li>
 </ul>
-<pre><code>---
+<pre><code class="line-numbers language-yml">---
 title: navigation
 date: 2020-08-22 15:13:51
 type: &quot;navigation&quot;
@@ -1755,7 +1726,7 @@ layout: &quot;navigation&quot;
 <ul>
 <li>在主题配置中加入新页面：</li>
 </ul>
-<pre><code>menu:
+<pre><code class="line-numbers language-yml">menu:
   Index:
     url: /
     icon: fas fa-home
@@ -1809,7 +1780,7 @@ layout: &quot;navigation&quot;
 <h3 id="2-导航的关于页面"><a href="#2-导航的关于页面" class="headerlink" title="2.导航的关于页面"></a>2.导航的关于页面</h3><ul>
 <li>添加关于页面按键（入口），在主题目录下打开<code>layout/nav.ejs</code>，按住<kbd>Ctrl</kbd>+<kbd>F</kbd>搜索<code>&lt;% if (theme.navabout) &#123; %&gt;</code>，下方加入代码：</li>
 </ul>
-<pre><code>&lt;li&gt;
+<pre><code class="line-numbers language-js">&lt;li&gt;
     &lt;a href=&quot;&lt;%= url_for(theme.navabout.url3) %&gt;&quot;&gt;
         &lt;i class=&quot;&lt;%= theme.navabout.icon3 %&gt;&quot;&gt;&lt;/i&gt;
         &lt;span class=&quot;tooltip-blue&quot;&gt;&lt;%= theme.navabout.name3 %&gt;&lt;/span&gt;
@@ -1831,7 +1802,7 @@ date: 2020-09-22 21:12:21
 <ul>
 <li>在主题配置文件<code>_config.yml</code>下，搜索<code>navabout</code>并在子目录下添加：</li>
 </ul>
-<pre><code>  name3: 关于
+<pre><code class="line-numbers language-yml">  name3: 关于
   icon3: fas fa-info-circle
   url3: /aboutnav</code></pre>
 <blockquote>
@@ -1840,7 +1811,7 @@ date: 2020-09-22 21:12:21
 <ul>
 <li>在主题文件夹目录下/layout/新建aboutnav.ejs文件并写入：</li>
 </ul>
-<pre><code>---
+<pre><code class="line-numbers language-html">---
 layout: false
 ---
 &lt;!doctype html&gt;
@@ -1906,14 +1877,15 @@ layout: false
 <li>使用Typora创建页面</li>
 </ul>
 <p>上述方法利用纯Html不方便添加其他样式，可以借助Typora软件，使用Markdown写作完成后，直接生成Html：</p>
-<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923124454409.png" alt="Html export"></p>
+<img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200923124454409.png" alt="Html export" style="zoom:50%;" />
+
 <ul>
 <li>将生成好的Html使用文本编辑器打开，全选代码复制，粘贴到<code>aboutnav.ejs</code>中，并在代码最前面加入(不经过渲染)：</li>
 </ul>
 <pre><code>---
 layout: false
 ---</code></pre>
-<pre><code>---
+<pre><code class="line-numbers language-html">---
 layout: false
 ---
 &lt;!doctype html&gt;
@@ -2469,7 +2441,7 @@ type: &quot;mac&quot;
 layout: &quot;mac&quot;
 ---</code></pre>
 <p>在<code>themes/layout/</code>下新建文件<code>mac.ejs</code>:</p>
-<pre><code>&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;
+<pre><code class="line-numbers language-js">&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;
 &lt;style&gt;
     .friends-container &#123;
         margin-top: -100px;
@@ -2716,19 +2688,19 @@ layout: &quot;mac&quot;
 <p>如需单独设置封面可将顶栏<code>&lt;%- partial(&#39;_partial/bg-cover&#39;) %&gt;</code>替换为相应ejs中的内容，相应修改即可。</p>
 </blockquote>
 <h3 id="5-文章生成永久链接"><a href="#5-文章生成永久链接" class="headerlink" title="5.文章生成永久链接"></a>5.文章生成永久链接</h3><p>主题默认的文章链接配置是：</p>
-<pre><code>permalink: :year/:month/:day/:title</code></pre>
+<pre><code class="line-numbers language-yml">permalink: :year/:month/:day/:title</code></pre>
 <p>这种生成的链接地址很长，文章版权的链接地址会出现一大串字符编码，一点也不好看。因此需要修改文章生成链接的格式。</p>
 <p>首先再根目录下执行下面的命令：</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlinkGitHub 地址</a></p>
-<pre><code>npm install hexo-abbrlink --save</code></pre>
+<pre><code class="line-numbers language-yml">npm install hexo-abbrlink --save</code></pre>
 <p>然后站点配置文件下添加如下配置：</p>
-<pre><code>abbrlink:
+<pre><code class="line-numbers language-yml">abbrlink:
     alg: crc16   #算法： crc16(default) and crc32
     rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制</code></pre>
 <p>再将站点配置文件的 permalink 的值修改为：</p>
-<pre><code>permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 /:abbrlink</code></pre>
+<pre><code class="line-numbers language-yml">permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 /:abbrlink</code></pre>
 <p>生成文章的链接格式就会是如下样例（官方样例）:</p>
-<pre><code>crc16 &amp; hex
+<pre><code class="line-numbers language-yml">crc16 &amp; hex
 https://post.zz173.com/posts/66c8.html
 
 crc16 &amp; dec
@@ -2744,14 +2716,14 @@ https://post.zz173.com/posts/1690090958.html</code></pre>
 <p>我们采用 gulp 代码压缩方式。</p>
 <p>使用方法：</p>
 <p>进入站点根目录下依次执行下面的命令：</p>
-<pre><code># 全局安装gulp模块
+<pre><code class="line-numbers language-bash"># 全局安装gulp模块
 npm install gulp -g
 # 安装各种小功能模块  执行这步的时候，可能会提示权限的问题，最好以管理员模式执行
 npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify gulp-imagemin --save
 # 额外的功能模块
 npm install gulp-debug gulp-clean-css gulp-changed gulp-if gulp-plumber gulp-babel babel-preset-es2015 del @babel/core --save</code></pre>
 <p>在 Hexo 根目录新建文件 gulpfile.js，并复制以下内容到文件中，有中文注释，可以根据自己需求修改。（注意：文件名不能错，一定为 gulpfile.js，否则会出错！）</p>
-<pre><code class="JS">var gulp = require(&quot;gulp&quot;);
+<pre><code class="line-numbers language-JS">var gulp = require(&quot;gulp&quot;);
 var debug = require(&quot;gulp-debug&quot;);
 var cleancss = require(&quot;gulp-clean-css&quot;); //css压缩组件
 var uglify = require(&quot;gulp-uglify&quot;); //js压缩组件
@@ -2931,14 +2903,14 @@ gulp.task(
 <img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200925163012097.png" alt="代码显示异常" style="zoom: 67%;" />
 
 <p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200925163102717.png" alt="代码显示异常"></p>
-<p><strong>解决办法：</strong>卸载现有新版本，更换<a href="mailto:&#104;&#x65;&#x78;&#x6f;&#64;&#52;&#x2e;&#x32;&#46;&#49;">&#104;&#x65;&#x78;&#x6f;&#64;&#52;&#x2e;&#x32;&#46;&#49;</a>版本</p>
+<p><strong>解决办法：</strong>卸载现有新版本，更换<a href="mailto:&#x68;&#x65;&#120;&#x6f;&#64;&#x34;&#x2e;&#50;&#x2e;&#49;">&#x68;&#x65;&#120;&#x6f;&#64;&#x34;&#x2e;&#50;&#x2e;&#49;</a>版本</p>
 <p><strong>具体步骤：</strong></p>
 <ul>
 <li><p>将版本降为低版本</p>
 <p>先卸载现有版本 npm uninstall hexo-cli -g</p>
 </li>
 <li><p>然后重新安装<code>npm hexo@4.2.1</code></p>
-<pre><code>npm install hexo@4.2.1
+<pre><code class="line-numbers language-bash">npm install hexo@4.2.1
 
 npm install hexo-cli -g</code></pre>
 </li>
@@ -2955,6 +2927,116 @@ npm install hexo-cli -g</code></pre>
 <li><p>卸载插件命令：<code>npm un -S hexo-prism-plugin</code></p>
 </li>
 </ul>
+<h3 id="2-卸载代码高亮插件后代码无法高亮"><a href="#2-卸载代码高亮插件后代码无法高亮" class="headerlink" title="2.卸载代码高亮插件后代码无法高亮"></a>2.卸载代码高亮插件后代码无法高亮</h3><p><strong>问题描述：</strong>卸载代码高亮插件Prism_plugin后代码无法高亮</p>
+<p><strong>解决办法：</strong>Prism_plugin插件在metary主题中无法正常使用，就换一种方式。</p>
+<p><strong>具体办法：</strong></p>
+<ul>
+<li><p>1.进入prismjs官网：<a target="_blank" rel="noopener" href="https://prismjs.com/download.html">https://prismjs.com/download.html</a></p>
+</li>
+<li><p>2.选择主题、语言、其他插件</p>
+</li>
+</ul>
+<p>选择 theme 主题、language 支持的语言（不要选太多，够用就好）、plugin 插件（可以选Line Numbers、Copy to Clipboard Button，其他的看自己需求）；然后点击下载按钮就行了；</p>
+<p><img src="https://gitee.com/Sumsung/Blogimage/raw/master/img/image-20200926155658145.png" alt="下载"></p>
+<ul>
+<li>3.文件放置位置</li>
+</ul>
+<p>step1. 在themes\matery\source\js下新建prism文件夹，用来存放js与css代码。</p>
+<p>step2. 找到此文件hexo-theme-matery\layout_partial\head.ejs打开，在标签之前黏贴以下代码：</p>
+<pre><code class="line-numbers language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/js/prism/prism.css&quot;&gt; </code></pre>
+<blockquote>
+<p>如果不存在可以直接放在layout.ejs文件<head><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .ball-clip-rotate > div {
+        background-color: #279fcf;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        border: 5px solid #279fcf;
+        border-bottom-color: transparent;
+        height: 32px;
+        width: 32px;
+        background: transparent !important;
+        display: inline-block;
+        -webkit-animation: rotate 0.75s 0s linear infinite;
+                animation: rotate 0.75s 0s linear infinite; }
+      
+      @keyframes rotate {
+        0% {
+          -webkit-transform: rotate(0deg) scale(1);
+                  transform: rotate(0deg) scale(1); }
+      
+        50% {
+          -webkit-transform: rotate(180deg) scale(0.6);
+                  transform: rotate(180deg) scale(0.6); }
+      
+        100% {
+          -webkit-transform: rotate(360deg) scale(1);
+                  transform: rotate(360deg) scale(1); } }
+      
+      @keyframes scale {
+        30% {
+          -webkit-transform: scale(0.3);
+                  transform: scale(0.3); }
+      
+        100% {
+          -webkit-transform: scale(1);
+                  transform: scale(1); } }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },0); //多少秒后可点击
+        },0);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>中</p>
+</blockquote>
+<p>step3. 找到此文件hexo-theme-matery\layout_partial\footer.ejs打开，在最后部分黏贴以下代码：</p>
+<pre><code class="line-numbers language-js">&lt;script src=&quot;/js/prism/prism.js&quot; async&gt;&lt;/script&gt;</code></pre>
+<p>step4. 记得在hexo的根目录_config.yml下设置enable: false</p>
+<p><code>highlight:  enable: false </code></p>
+<p>step5. 重新生成博客文件，重启本地服务。</p>
+<p><code>$ hexo clean  hexo generate $ hexo server</code></p>
+<h3 id="3-代码压缩插件压缩后无法显示博客文章"><a href="#3-代码压缩插件压缩后无法显示博客文章" class="headerlink" title="3.代码压缩插件压缩后无法显示博客文章"></a>3.代码压缩插件压缩后无法显示博客文章</h3><p><strong>问题描述</strong>：代码压缩脚本gulp生成的文章博客无法显示</p>
+<p><strong>解决办法：</strong>查看网页文章链接是否带有<code>.html</code>后缀，在配置文件中加上即可</p>
+<p><strong>具体步骤：</strong></p>
+<p>根目录下修改配置文件_config.yml：</p>
+<pre><code class="line-numbers language-yml">pretty_urls:
+    trailing_index: true # 是否在永久链接中保留尾部的 index.html，设置为 false 时去除
+    trailing_html: true # 是否在永久链接中保留尾部的.html, 设置为false时去除(对尾部的index.html无效)</code></pre>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo官方</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">hexo-theme-matery</a></li>
@@ -3717,7 +3799,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
     <br>
 </footer>
-
+<script src="/js/prism/prism.js" async></script>
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
