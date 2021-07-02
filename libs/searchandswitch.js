@@ -20,11 +20,11 @@ var searchData = {
         positionlogo: "0px -92px",
         url: "https://www.google.com/search?q="
     }, {
-        name: "多吉",
+        name: "必应",
         img: "url('/images/search_icon.png')  -80px -100px",
         position: "0px -160px",
         positionlogo: "0px -184px",
-        url: "https://www.dogedoge.com/results?q="
+        url: "https://cn.bing.com/search?q="
     }, {
         name: "知乎",
         img: "url('/images/search_icon.png') -105px -100px",
@@ -38,11 +38,11 @@ var searchData = {
         positionlogo: "0px -368px",
         url: "https://github.com/search?utf8=✓&q="
     }, {
-        name: "网盘搜索",
+        name: "英译中",
         img: "url('/images/search_icon.png') -105px -25px",
         position: "-40px -40px",
         positionlogo: "0px -460px",
-        url: "https://www.fastsoso.cn/search?k="
+        url: "https://translate.google.cn/?sl=en&tl=zh-CN&text="
     }, {
         name: "B站",
         img: "url('/images/search_icon.png') -105px -125px",
@@ -77,7 +77,7 @@ var searchData = {
         name: "京东",
         img: "url('/images/search_icon.png') -80px -75px",
         position: "0px -120px",
-        positionlogo: "0px -1012px",
+        positionlogo: "0px -1003px",
         url: "http://search.jd.com/Search?keyword="
     }]
 };
