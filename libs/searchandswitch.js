@@ -81,6 +81,11 @@ var searchData = {
         url: "http://search.jd.com/Search?keyword="
     }]
 };
+//本地缓存搜索热词开启记录
+var localSearchData = localStorage.getItem("searchData");
+if (localSearchData) {
+    searchData = JSON.parse(localSearchData)
+}
 function filterChildren(element) {
     var thisText = $(element).contents().filter(function (index, content) {
         return content.nodeType === 3
