@@ -297,7 +297,7 @@ $(document).ready(function () {
         scrollTop: $($(this).attr("href")).offset().top - 30
       }, {
         duration: 100, //设置缓冲时间长度
-        easing: "swing"
+        easing: "swing" //swing缓动linear匀速
       });
     });
     return false;
