@@ -225,6 +225,7 @@ $(".search-engine-list li").click(function () {
     localStorage.searchData = JSON.stringify(searchData)
 });
 $(".search-icon").css("background-position", searchData.thisSearchIcon);
+$(".search-LOGO").css("background-position", searchData.thisLOGO);
 $("#search-btn").click(function () {
     var textValue = $("#txt").val();
     if (textValue) {
