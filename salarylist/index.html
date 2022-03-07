@@ -91,6 +91,15 @@ series: [
   },
   {
     name: '总数',
+    markLine:{
+    data: [
+      {name: '平均线',
+      type: 'average',
+        lineStyle:{
+          normal:{
+            color:"orange",
+            width:2}}}]
+},
     type: 'bar',
     barGap: '-100%',// -100%，柱子之间重合。
     label: {
@@ -106,8 +115,6 @@ series: [
     data: data6
   }
 ],
-
-  //加入dataZoom组件，使数据区域缩放进行互动。
 dataZoom: [
 {
   type: 'slider',//增加下边缩放栏进行缩放
@@ -164,13 +171,21 @@ option && myChart.setOption(option);</script><script>var dom = document.getEleme
   name: 'RMB',
   nameGap: '40',
   nameLocation: 'center',
-  type: 'value',
   splitLine: {lineStyle:{color: '#D1D9EB',type:'dashed'}}
   }
   ],
   series: [
   {
   name: '月支出',
+  markLine:{
+    data: [
+      {name: '平均线',
+      type: 'average',
+        lineStyle:{
+          normal:{
+            color:"orange",
+            width:2}}}]
+},
   type: 'bar',
   barWidth: '60%',
   data: data8,
