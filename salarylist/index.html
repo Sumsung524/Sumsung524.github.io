@@ -95,10 +95,9 @@ series: [
     data: [
       {name: '平均线',
       type: 'average',
-        lineStyle:{
+      lineStyle:{
           normal:{
-            color:"orange",
-            width:2}}}]
+            color:"red"}}}]
 },
     type: 'bar',
     barGap: '-100%',// -100%，柱子之间重合。
@@ -180,11 +179,7 @@ option && myChart.setOption(option);</script><script>var dom = document.getEleme
   markLine:{
     data: [
       {name: '平均线',
-      type: 'average',
-        lineStyle:{
-          normal:{
-            color:"orange",
-            width:2}}}]
+      type: 'average'}]
 },
   type: 'bar',
   barWidth: '60%',
