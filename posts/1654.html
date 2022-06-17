@@ -1,0 +1,393 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="Docsify文档搭建记录, 资源分享,网站导航,个人博客，技能分享"><meta name="description" content="资源收集控，分享生活，分享知识"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Docsify文档搭建记录 | 肆零肆</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/libs/awesome/css/all.css"><link rel="stylesheet" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" href="/libs/aos/aos.css"><link rel="stylesheet" href="/libs/animate/animate.min.css"><link rel="stylesheet" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="/css/matery.css"><link rel="stylesheet" href="/css/my.css"><link rel="stylesheet" href="/js/prism/prism.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 5.2.0"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">肆零肆</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-book" style="zoom:.6"></i> <span>记录</span><i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fas fa-tv" style="margin-top:-20px;zoom:.6"></i> <span>计算机</span></a></li><li><a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/"><i class="fas fa-road" style="margin-top:-20px;zoom:.6"></i> <span>土木工程</span></a></li><li><a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/"><i class="fas fa-box" style="margin-top:-20px;zoom:.6"></i> <span>方法技能</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-list" style="zoom:.6"></i> <span>清单</span><i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/windows"><i class="fab fa-windows" style="margin-top:-20px;zoom:.6"></i> <span>Windows软件</span></a></li><li><a href="/salarylist"><i class="fas fa-folder" style="margin-top:-20px;zoom:.6"></i> <span>工资清单</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/nav" class="waves-effect waves-light"><i class="fas fa-location-arrow" style="zoom:.6"></i> <span>导航</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/zen" class="waves-effect waves-light"><i class="fas fa-solid fa-keyboard" style="zoom:.6"></i> <span>Zen</span></a></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>其他</span><i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/artitalk"><i class="fas fa-pen-alt" style="margin-top:-20px;zoom:.6"></i> <span>零碎记录</span></a></li><li><a href="/contact"><i class="fas fa-comments" style="margin-top:-20px;zoom:.6"></i> <span>留言板</span></a></li><li><a href="/about"><i class="fas fa-user-circle" style="margin-top:-20px;zoom:.6"></i> <span>关于</span></a></li></ul></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">肆零肆</div><div class="logo-desc">资源收集控，分享生活，分享知识</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-book"></i> 记录<span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="margin-left:75px"><i class="fa fas fa-tv" style="position:absolute;left:50px"></i> <span>计算机</span></a></li><li><a href="/categories/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B/" style="margin-left:75px"><i class="fa fas fa-road" style="position:absolute;left:50px"></i> <span>土木工程</span></a></li><li><a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" style="margin-left:75px"><i class="fa fas fa-box" style="position:absolute;left:50px"></i> <span>方法技能</span></a></li></ul></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-list"></i> 清单<span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/windows" style="margin-left:75px"><i class="fa fab fa-windows" style="position:absolute;left:50px"></i> <span>Windows软件</span></a></li><li><a href="/salarylist" style="margin-left:75px"><i class="fa fas fa-folder" style="position:absolute;left:50px"></i> <span>工资清单</span></a></li></ul></li><li class="m-nav-item"><a href="/nav" class="waves-effect waves-light"><i class="fa-fw fas fa-location-arrow"></i> 导航</a></li><li class="m-nav-item"><a href="/zen" class="waves-effect waves-light"><i class="fa-fw fas fa-solid fa-keyboard"></i> Zen</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-comments"></i> 其他<span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/artitalk" style="margin-left:75px"><i class="fa fas fa-pen-alt" style="position:absolute;left:50px"></i> <span>零碎记录</span></a></li><li><a href="/contact" style="margin-left:75px"><i class="fa fas fa-comments" style="position:absolute;left:50px"></i> <span>留言板</span></a></li><li><a href="/about" style="margin-left:75px"><i class="fa fas fa-user-circle" style="position:absolute;left:50px"></i> <span>关于</span></a></li></ul></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(https://pic.imgdb.cn/item/62ac37d30947543129189ad7.png)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">Docsify文档搭建记录</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#66a6ff;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#66a6ff}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:32px;height:32px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.2rem;position:absolute;bottom:-8px;left:0}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Docsify/"><span class="chip bg-color">Docsify</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" class="post-category">方法技能</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2022-06-17</div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p>使用docsify部署自己的学习笔记库</p><p>docsify中文手册：<a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">https://docsify.js.org/#/zh-cn/</a></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装docsify：</p><pre><code class="line-numbers language-bash">npm i docsify-cli -g</code></pre><p>初始化：</p><p>如果想在项目的 <code>./docs</code> 目录里写文档，直接通过 <code>init</code> 初始化项目。</p><pre><code class="line-numbers language-bash">docsify init ./docs</code></pre><p>初始化成功后，可以看到 <code>./docs</code> 目录下创建的几个文件</p><ul><li><code>index.html</code> 入口文件，可以对页面总体布局进行设置。</li><li><code>README.md</code> 为主页内容渲染，直接编辑 <code>docs/README.md</code> 就能更新文档内容。</li><li><code>.nojekyll</code> 用于阻止 GitHub Pages 忽略掉下划线开头的文件</li></ul><p>本地预览：</p><p>通过运行 <code>docsify serve</code> 启动一个本地服务器，可以方便地实时预览效果。默认访问地址 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000/</a> 。</p><pre><code class="line-numbers language-bash">docsify serve docs</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="多页文档"><a href="#多页文档" class="headerlink" title="多页文档"></a>多页文档</h3><p>如果需要创建多个页面，或者需要多级路由的网站，在 docsify 里也能很容易的实现。例如创建一个 <code>guide.md</code> 文件，那么对应的路由就是 <code>/#/guide</code>。</p><p>假设你的目录结构如下：</p><pre><code class="line-numbers language-text">.
+└── docs
+    ├── README.md
+    ├── guide.md
+    └── web
+        ├── README.md
+        ├── HTML.md
+        └── CSS.md</code></pre><p>那么对应的访问页面将是</p><pre><code class="line-numbers language-txt">docs/README.md        =&gt; http://domain.com
+docs/guide.md         =&gt; http://domain.com/guide
+docs/web/README.md      =&gt; http://domain.com/web/
+docs/web/HTML.md      =&gt; http://domain.com/web/HTML.md
+docs/web/CSS.md       =&gt; http://domain.com/web/CSS.md</code></pre><h3 id="定制侧边栏"><a href="#定制侧边栏" class="headerlink" title="定制侧边栏"></a>定制侧边栏</h3><p>为了获得侧边栏，您需要创建自己的<code>_sidebar.md</code>，你也可以自定义加载的文件名。默认情况下侧边栏会通过 Markdown 文件自动生成，效果如Typora的文档的侧边栏。</p><pre><code class="line-numbers language-html">&lt;!-- index.html --&gt;
+
+&lt;script&gt;
+  window.$docsify = &#123;
+    loadSidebar: true
+  &#125;
+&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>如果需要定义，则在所在目录下创建 <code>_sidebar.md</code> 文件，内容如下</p><pre><code class="line-numbers language-markdown">&lt;!-- docs/_sidebar.md --&gt;
+
+* [首页](zh-cn/)
+* [指南](zh-cn/guide)</code></pre><p>需要在 <code>./docs</code> 目录创建 <code>.nojekyll</code> 命名的空文件，阻止 GitHub Pages 忽略命名是下划线开头的文件。</p><h3 id="显示目录层级"><a href="#显示目录层级" class="headerlink" title="显示目录层级"></a>显示目录层级</h3><p>自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  subMaxLevel: 2,
+&#125;;</code></pre><h2 id="定制化"><a href="#定制化" class="headerlink" title="定制化"></a>定制化</h2><h3 id="网页Logo"><a href="#网页Logo" class="headerlink" title="网页Logo"></a>网页Logo</h3><p>在index.html顶部加入</p><pre><code class="line-numbers language-html">&lt;link rel=&quot;icon&quot; href=&quot;_media/favicon.ico&quot; /&gt;</code></pre><h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><p>如果你需要定制导航栏，可以用 HTML 创建一个导航栏。</p><p>注意：文档的链接都要以 <code>#/</code> 开头。</p><pre><code class="line-numbers language-html">&lt;!-- index.html --&gt;
+
+&lt;body&gt;
+  &lt;nav&gt;
+    &lt;a href=&quot;#/&quot;&gt;EN&lt;/a&gt;
+    &lt;a href=&quot;#/zh-cn/&quot;&gt;中文&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>那我们可以通过 Markdown 文件来配置导航。首先配置 <code>loadNavbar</code>，默认加载的文件为 <code>_navbar.md</code>。</p><pre><code class="line-numbers language-html">&lt;!-- index.html --&gt;
+
+&lt;script&gt;
+  window.$docsify = &#123;
+    loadNavbar: true
+  &#125;
+&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js&quot;&gt;&lt;/script&gt;</code></pre><pre><code class="line-numbers language-markdown">&lt;!-- _navbar.md --&gt;
+
+* [En](/)
+* [简体中文](/zh-cn/)</code></pre><p>你需要在 <code>./docs</code> 目录下创建一个 <code>.nojekyll</code> 文件，以防止 GitHub Pages 忽略下划线开头的文件。</p><p><code>_navbar.md</code> 加载逻辑和 <code>sidebar</code> 文件一致，从每层目录下获取。例如当前路由为 <code>/zh-cn/custom-navbar</code> 那么是从 <code>/zh-cn/_navbar.md</code> 获取导航栏。</p><p>如果导航内容过多，可以写成嵌套的列表，会被渲染成下拉列表的形式。</p><pre><code class="line-numbers language-markdown">&lt;!-- _navbar.md --&gt;
+
+* 入门
+
+  * [快速开始](zh-cn/quickstart.md)
+  * [多页文档](zh-cn/more-pages.md)
+  * [定制导航栏](zh-cn/custom-navbar.md)
+  * [封面](zh-cn/cover.md)
+
+
+* 配置
+  * [配置项](zh-cn/configuration.md)
+  * [主题](zh-cn/themes.md)
+  * [使用插件](zh-cn/plugins.md)
+  * [Markdown 配置](zh-cn/markdown.md)
+  * [代码高亮](zh-cn/language-highlight.md)</code></pre><p>小屏设备下合并导航栏到侧边栏。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  mergeNavbar: true,
+&#125;;</code></pre><h3 id="侧边栏标题"><a href="#侧边栏标题" class="headerlink" title="侧边栏标题"></a>侧边栏标题</h3><p>文档标题，会显示在侧边栏顶部。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  name: &#39;docsify&#39;,
+&#125;;</code></pre><p>name 项也可以包含自定义 HTML 代码来方便地定制。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  name: &#39;&lt;span&gt;docsify&lt;/span&gt;&#39;,
+&#125;;</code></pre><h3 id="添加页面标题"><a href="#添加页面标题" class="headerlink" title="添加页面标题"></a>添加页面标题</h3><p>同时设置 <code>loadSidebar</code> 和 <code>autoHeader</code> 后，可以根据 <code>_sidebar.md</code> 的内容自动为每个页面增加标题。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  loadSidebar: true,
+  autoHeader: true,
+&#125;;</code></pre><h3 id="替换主题色"><a href="#替换主题色" class="headerlink" title="替换主题色"></a>替换主题色</h3><p>替换主题色。利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS3 支持变量</a>的特性，对于老的浏览器有 polyfill 处理。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  themeColor: &#39;#3F51B5&#39;
+&#125;;</code></pre><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>目前提供三套主题可供选择，模仿 <a target="_blank" rel="noopener" href="https://vuejs.org/">Vue</a> 和 <a target="_blank" rel="noopener" href="https://buble.surge.sh/">buble</a> 官网订制的主题样式。还有 <a target="_blank" rel="noopener" href="https://github.com/liril-net">@liril-net</a> 贡献的黑色风格的主题。</p><pre><code class="line-numbers language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/vue.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/buble.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/dark.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/pure.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css&quot;&gt;</code></pre><h3 id="修改页面加载信息"><a href="#修改页面加载信息" class="headerlink" title="修改页面加载信息"></a>修改页面加载信息</h3><p>初始化时会显示 <code>Loading...</code> 内容，可以自定义提示信息。</p><pre><code class="line-numbers language-html">  &lt;!-- index.html --&gt;
+
+  &lt;div id=&quot;app&quot;&gt;加载中&lt;/div&gt;</code></pre><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="全文搜索插件"><a href="#全文搜索插件" class="headerlink" title="全文搜索插件"></a>全文搜索插件</h3><p>按照官网给的代码需要改动，否则会有点问题。</p><p><code>search[]</code>路径内容可以删除。</p><p><code>&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js&quot;&gt;&lt;/script&gt;</code>这行脚本也删除，否则无法翻动页面。</p><p><code>search.paths</code>内需要填写auto，否则无法搜索。</p><pre><code class="line-numbers language-js">&lt;script&gt;
+  window.$docsify = &#123;
+    search: &#39;auto&#39;, // 默认值
+    search : [
+      &#39;/&#39;,            // =&gt; /README.md
+      &#39;/guide&#39;,       // =&gt; /guide.md
+      &#39;/get-started&#39;, // =&gt; /get-started.md
+      &#39;/zh-cn/&#39;,      // =&gt; /zh-cn/README.md
+    ],
+    // 完整配置参数
+    search: &#123;
+      maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      paths: [auto], // or &#39;auto&#39;
+      placeholder: &#39;Type to search&#39;,
+      // 支持本地化
+      placeholder: &#123;
+        &#39;/zh-cn/&#39;: &#39;搜索&#39;,
+        &#39;/&#39;: &#39;Type to search&#39;
+      &#125;,
+      noData: &#39;No Results!&#39;,
+
+      // 支持本地化
+      noData: &#123;
+        &#39;/zh-cn/&#39;: &#39;找不到结果&#39;,
+        &#39;/&#39;: &#39;No Results&#39;
+      &#125;,
+
+      // 搜索标题的最大层级, 1 - 6
+      depth: 2,
+
+      hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+      // 避免搜索索引冲突
+      // 同一域下的多个网站之间
+      namespace: &#39;website-1&#39;,
+
+      // 使用不同的索引作为路径前缀（namespaces）
+      // 注意：仅适用于 paths: &#39;auto&#39; 模式
+      //
+      // 初始化索引时，我们从侧边栏查找第一个路径
+      // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+      pathNamespaces: [&#39;/zh-cn&#39;, &#39;/ru-ru&#39;, &#39;/ru-ru/v1&#39;],
+
+      // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+      // 匹配到的字符串将被用来识别索引
+      pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+    &#125;
+  &#125;
+&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="分页导航"><a href="#分页导航" class="headerlink" title="分页导航"></a>分页导航</h3><p>docsify的分页导航插件，由<a target="_blank" rel="noopener" href="https://github.com/imyelo">@imyelo</a>提供。</p><pre><code class="line-numbers language-html">&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>从<a target="_blank" rel="noopener" href="https://github.com/imyelo/docsify-pagination#readme">这里</a>获取更多信息。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  // ...
+  pagination: &#123;
+    previousText: &#39;上一章节&#39;,
+    nextText: &#39;下一章节&#39;,
+    crossChapter: true,
+    crossChapterText: true,
+  &#125;,
+&#125;</code></pre><p>字体个人认为偏大，在index.html的<code>&lt;head&gt;&lt;/head&gt;标签</code>设置字体大小：</p><pre><code class="line-numbers language-css">&lt;style&gt;
+  .pagination-item-title &#123;
+    font-size: 1em !important;
+  &#125;
+&lt;/style&gt;</code></pre><h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>这是一款为docsify提供文字统计的插件. <a target="_blank" rel="noopener" href="https://github.com/827652549">@827652549</a>提供</p><p>它提供了统计中文汉字和英文单词的功能，并且排除了一些markdown语法的特殊字符例如*、-等</p><p><strong>Add JS</strong></p><pre><code class="line-numbers language-html">&lt;script src=&quot;//unpkg.com/docsify-count/dist/countable.js&quot;&gt;&lt;/script&gt;</code></pre><p><strong>Add settings</strong></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  count:&#123;
+    countable:true,
+    fontsize:&#39;0.9em&#39;,
+    color:&#39;rgb(90,90,90)&#39;,
+    language:&#39;chinese&#39;
+  &#125;
+&#125;</code></pre><p>check <a target="_blank" rel="noopener" href="https://github.com/827652549/docsify-count">document</a></p><h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p><strong>docsify</strong>内置的代码高亮工具是 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">Prism</a>。Prism 默认支持的语言如下：</p><ul><li>Markup - <code>markup</code>, <code>html</code>, <code>xml</code>, <code>svg</code>, <code>mathml</code>, <code>ssml</code>, <code>atom</code>, <code>rss</code></li><li>CSS - <code>css</code></li><li>C-like - <code>clike</code></li><li>JavaScript - <code>javascript</code>, <code>js</code></li></ul><p><a target="_blank" rel="noopener" href="https://prismjs.com/#supported-languages">添加额外的语法支持</a>需要通过CDN添加相应的<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/prismjs@1/components/">语法文件</a> :</p><pre><code class="line-numbers language-html">&lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>文档记录的目前是HTML、CSS和JavaScript，目前够用，只需要添加一个bash即可。</p><h3 id="自定义插件"><a href="#自定义插件" class="headerlink" title="自定义插件"></a>自定义插件</h3><ul><li>自定义页脚信息</li></ul><p>给每个页面的末尾加上 <code>footer</code></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  plugins: [
+    function(hook) &#123;
+      var footer = [
+        &#39;&lt;hr/&gt;&#39;,
+        &#39;&lt;footer&gt;&#39;,
+        &#39;&lt;span&gt;&lt;a href=&quot;https://github.com/QingWei-Li&quot;&gt;cinwell&lt;/a&gt; &amp;copy;2017.&lt;/span&gt;&#39;,
+        &#39;&lt;span&gt;Proudly published with &lt;a href=&quot;https://github.com/docsifyjs/docsify&quot; target=&quot;_blank&quot;&gt;docsify&lt;/a&gt;.&lt;/span&gt;&#39;,
+        &#39;&lt;/footer&gt;&#39;
+      ].join(&#39;&#39;);
+
+      hook.afterEach(function(html) &#123;
+        return html + footer;
+      &#125;);
+    &#125;
+  ]
+&#125;;</code></pre><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">jsDelivr</a>，能及时获取到最新版。你也可以在<a target="_blank" rel="noopener" href="https://docsify.js.org/#/cdn.jsdelivr.net/npm/docsify/">cdn.jsdelivr.net/npm/docsify/</a>中浏览npm包的源代码。</p><h3 id="获取最新版"><a href="#获取最新版" class="headerlink" title="获取最新版"></a>获取最新版</h3><p>不指定特定版本号时将引入最新版。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/vue.css&quot;&gt;
+
+&lt;!-- 引入 script --&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/docsify.js&quot;&gt;&lt;/script&gt;</code></pre><p>也可以使用 <a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/cdn?id=compressed-file">压缩版文件</a>.</p><h3 id="获取指定版"><a href="#获取指定版" class="headerlink" title="获取指定版"></a>获取指定版</h3><p>如果担心频繁地版本更新又可能引入未知 Bug，我们也可以使用具体的版本。规则是 <code>//cdn.jsdelivr.net/npm/docsify@VERSION/</code></p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify@4.10.2/themes/vue.css&quot;&gt;
+
+&lt;!-- 引入 script --&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify@4.10.2/lib/docsify.js&quot;&gt;&lt;/script&gt;</code></pre><p>指定 <em>VERSION</em> 为 <code>latest</code> 可以强制每次都请求最新版本。</p><h3 id="压缩版"><a href="#压缩版" class="headerlink" title="压缩版"></a>压缩版</h3><p>CSS 的压缩文件位于 <code>/lib/themes/</code> 目录下，JS 的压缩文件是原有文件路径的基础上加 <code>.min</code> 后缀。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css&quot;&gt;
+
+&lt;!-- 引入 script --&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 引入 css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify@4.10.2/lib/themes/vue.css&quot;&gt;
+
+&lt;!-- 引入 script --&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify@4.10.2/lib/docsify.min.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="其他CDN"><a href="#其他CDN" class="headerlink" title="其他CDN"></a>其他CDN</h3><ul><li><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/docsify/">https://www.bootcdn.cn/docsify/</a> (支持国内)</li><li><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/docsify/">https://cdn.jsdelivr.net/npm/docsify/</a> (国内外都支持)</li><li><a target="_blank" rel="noopener" href="https://cdnjs.com/libraries/docsify">https://cdnjs.com/libraries/docsify</a></li><li><a target="_blank" rel="noopener" href="https://unpkg.com/browse/docsify/">https://unpkg.com/browse/docsify/</a></li></ul><h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><p>为了记录对初始化后的docsify改动内容，下面经过上述记录形成的index.html。</p><pre><code class="line-numbers language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Docs&lt;/title&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Description&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0&quot;&gt;
+  &lt;!-- 最新版主题样式： --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css&quot;&gt;
+  &lt;!-- 黑色主题样式： --&gt;
+  &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/buble.css&quot;&gt; --&gt;
+&lt;/head&gt;
+&lt;!-- 调整分页导航插件中字体显示偏大效果 --&gt;
+&lt;style&gt;
+  .pagination-item-title &#123;
+    font-size: 1em !important;
+  &#125;
+&lt;/style&gt;
+
+&lt;body&gt;
+  &lt;!-- 设置导航栏 --&gt;
+  &lt;nav&gt;
+    &lt;a href=&quot;#/&quot;&gt;文档首页&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;!-- 设置加载时显示内容 --&gt;
+  &lt;div id=&quot;app&quot;&gt;加载中&lt;/div&gt;
+  &lt;script&gt;
+    window.$docsify = &#123;
+      loadSidebar: true,// 定制侧边栏，默认定制内容在当前目录的_sidebar.md内
+      name: &#39;&#39;,
+      repo: &#39;&#39;,
+      subMaxLevel: 3,// 设置生成目录的最大层级开启这个功能。
+      loadNavbar: true,// 设置导航栏，默认定制内容在当前目录的_navbar.md内
+      // coverpage: true, 设置封面，默认定制内容在当前目录的_coverpage.md内
+      name: &#39;Docs&#39;,//设置侧边栏标题
+      nameLink: &#39;/&#39;,//点击文档标题后跳转的链接地址。
+      //logo: &#39;36x.png&#39;,设置侧边栏图片logo
+      themeColor: &#39;#3F51B5&#39;,//替换主题色
+      // 添加页面标题
+      loadSidebar: true,
+      autoHeader: true,
+      // 字数统计插件配置项
+      count: &#123;
+        countable: true,
+        fontsize: &#39;0.9em&#39;,
+        color: &#39;rgb(90,90,90)&#39;,
+        language: &#39;chinese&#39;
+      &#125;,
+      // 复制代码插件配置项
+      copyCode: &#123;
+        buttonText: &#39;Copy&#39;,
+        errorText: &#39;X&#39;,
+        successText: &#39;√&#39;
+      &#125;,
+      // 分页导航插件配置项
+      pagination: &#123;
+        previousText: &#39;上一章节&#39;,
+        nextText: &#39;下一章节&#39;,
+        crossChapter: true,
+        crossChapterText: true,
+      &#125;,
+      //开发插件，自制页脚版权
+      plugins: [
+        function (hook) &#123;
+          var footer = [
+            // &#39;&lt;hr/&gt;&#39;,
+            &#39;&lt;footer&gt;&#39;,
+            &#39;&lt;br/&gt;&lt;span&gt;Copyright &amp;copy;2022.&amp;nbsp;&amp;nbsp;Published by &lt;a href=&quot;https://xmq.plus/&quot; target=&quot;_blank&quot;&gt;xmq.plus&lt;/a&gt;.&lt;br/&gt;&lt;/span&gt;&#39;,
+            &#39;&lt;span&gt;湘ICP备2020018001号&lt;/span&gt;&#39;,
+            &#39;&lt;/footer&gt;&#39;
+          ].join(&#39;&#39;);
+
+          hook.afterEach(function (html) &#123;
+            return html + footer;
+          &#125;);
+        &#125;
+      ]
+    &#125;
+  &lt;/script&gt;
+  &lt;!-- Docsify v4 --&gt;
+  &lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify@4&quot;&gt;&lt;/script&gt;
+  &lt;!-- 字数统计插件 --&gt;
+  &lt;script src=&quot;//unpkg.com/docsify-count/dist/countable.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- 复制代码插件 --&gt;
+  &lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- 复制代码插件最新版本--&gt;
+  &lt;!-- &lt;script src=&quot;https://unpkg.com/docsify-copy-code&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;!-- 分页导航插件 --&gt;
+  &lt;script src=&quot;//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- bash代码高亮 --&gt;
+  &lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js&quot;&gt;&lt;/script&gt;
+  &lt;!-- 全文搜索插件： --&gt;
+  &lt;script&gt;
+    window.$docsify = &#123;
+      search: &#39;auto&#39;, // 默认值
+      search: [
+      ],
+
+      // 完整配置参数
+      search: &#123;
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: [auto], // or &#39;auto&#39;
+        placeholder: &#39;Type to search&#39;,
+
+        // 支持本地化
+        placeholder: &#123;
+          &#39;/zh-cn/&#39;: &#39;搜索&#39;,
+          &#39;/&#39;: &#39;Type to search&#39;
+        &#125;,
+
+        noData: &#39;No Results!&#39;,
+
+        // 支持本地化
+        noData: &#123;
+          &#39;/zh-cn/&#39;: &#39;找不到结果&#39;,
+          &#39;/&#39;: &#39;No Results&#39;
+        &#125;,
+
+        // 搜索标题的最大层级, 1 - 6
+        depth: 2,
+
+        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+        // 避免搜索索引冲突
+        // 同一域下的多个网站之间
+        namespace: &#39;website-1&#39;,
+
+        // 使用不同的索引作为路径前缀（namespaces）
+        // 注意：仅适用于 paths: &#39;auto&#39; 模式
+        //
+        // 初始化索引时，我们从侧边栏查找第一个路径
+        // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+        pathNamespaces: [&#39;/zh-cn&#39;, &#39;/ru-ru&#39;, &#39;/ru-ru/v1&#39;],
+
+        // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+        // 匹配到的字符串将被用来识别索引
+        pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+      &#125;
+    &#125;
+  &lt;/script&gt;
+  &lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li>docsify中文手册：<a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">https://docsify.js.org/#/zh-cn/</a></li><li>docsify-cli命令行文档：<a target="_blank" rel="noopener" href="https://github.com/docsifyjs/docsify-cli">https://github.com/docsifyjs/docsify-cli</a></li></ul></div><hr><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Docsify/"><span class="chip bg-color">Docsify</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="/libs/share/css/share.min.css"><div id="article-share"></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments textarea{box-sizing:border-box;background:url(/medias/comment_bg.png) 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#4cbf30;font-weight:500;text-decoration:none}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}</style><div class="card valine-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;padding-left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="vcomments" class="card-content" style="display:grid"></div></div><script src="/libs/valine/av-min.js"></script><script src="/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"t5UjNtXjngiTgF91ilHO0gs6-gzGzoHsz",appKey:"pHGSnj8IvaduWRagoUHhsJOj",notify:!1,verify:!1,visitor:!0,avatar:"mm",pageSize:"10",lang:"zh-cn",placeholder:"just go go"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="far fa-dot-circle"></i> &nbsp;本篇</div><div class="card"><a href="/posts/1654.html"><div class="card-image"><img src="https://pic.imgdb.cn/item/62ac37d30947543129189ad7.png" class="responsive-img" alt="Docsify文档搭建记录"> <span class="card-title">Docsify文档搭建记录</span></div></a><div class="card-content article-content"><div class="summary block-with-text">使用docsify部署自己的学习笔记库 docsify中文手册：https://docsify.js.org/#/zh-cn/ 安装安装docsify： npm i docsify-cli -g 初始化： 如果想在项目的 ./docs 目录</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-06-17</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" class="post-category">方法技能</a></span></div></div><div class="card-action article-tags"><a href="/tags/Docsify/"><span class="chip bg-color">Docsify</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/4a03.html"><div class="card-image"><img src="https://pic.imgdb.cn/item/62aa9ec809475431296c61c0.png" class="responsive-img" alt="Gitbook文档系统搭建记录"> <span class="card-title">Gitbook文档系统搭建记录</span></div></a><div class="card-content article-content"><div class="summary block-with-text">想搭建一个文档系统来记录学习笔记。 通过搭建Gitbook将markdown渲染成wiki文档并上传至服务器 。 安装Node.js使用Gitbook需要配置Node.js环境。同时，由于Gitbook兼容性问题，高版本node.js不可用</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-06-16</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E6%96%B9%E6%B3%95%E6%8A%80%E8%83%BD/" class="post-category">方法技能</a></span></div></div><div class="card-action article-tags"><a href="/tags/Gitbook/"><span class="chip bg-color">Gitbook</span></a></div></div></div></div></article></div><script src="/libs/codeBlock/codeBlockFuction.js"></script><script src="/libs/codeBlock/codeLang.js"></script><script src="/libs/codeBlock/codeCopy.js"></script><script src="/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l12 copy-right" style="margin-top:10px;font-size:5px">Copyright&nbsp;&copy; <span id="year">2020-2022</span> <a href="/about" target="_blank">Sumsung</a> |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/Sumsung524" target="_blank">Matery</a><br><span id="icp"><img src="/medias/icp.png" style="vertical-align:text-bottom"> <a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2020018001号</a></span></div></div><br></footer><script src="/js/prism/prism.js" async></script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script>$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="/js/click_show_text.js"></script><script src="/libs/others/clicklove.js" async></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?43156dacad30fbfc08d06f1182d990c5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="/libs/instantpage/instantpage.js" type="module"></script></body></html>
