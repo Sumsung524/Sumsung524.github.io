@@ -63,7 +63,9 @@ docs/web/CSS.md       =&gt; http://domain.com/web/CSS.md</code></pre><h3 id="定
 &#125;;</code></pre><h3 id="添加页面标题"><a href="#添加页面标题" class="headerlink" title="添加页面标题"></a>添加页面标题</h3><p>同时设置 <code>loadSidebar</code> 和 <code>autoHeader</code> 后，可以根据 <code>_sidebar.md</code> 的内容自动为每个页面增加标题。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
   loadSidebar: true,
   autoHeader: true,
-&#125;;</code></pre><h3 id="替换主题色"><a href="#替换主题色" class="headerlink" title="替换主题色"></a>替换主题色</h3><p>替换主题色。利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS3 支持变量</a>的特性，对于老的浏览器有 polyfill 处理。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+&#125;;</code></pre><h3 id="添加文件更新时间"><a href="#添加文件更新时间" class="headerlink" title="添加文件更新时间"></a>添加文件更新时间</h3><p>我们可以通过 <strong>{docsify-updated}</strong> 变量显示文档更新日期. 并且通过 <code>formatUpdated</code>配置日期格式。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  formatUpdated: &#39;&#123;YYYY&#125;-&#123;MM&#125;-&#123;DD&#125;&#39;,
+&#125;;</code></pre><p>然后在markdown文档需要添加更新时间的代码：<code>&#123;docsify-updated&#125;</code>。</p><h3 id="替换主题色"><a href="#替换主题色" class="headerlink" title="替换主题色"></a>替换主题色</h3><p>替换主题色。利用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS3 支持变量</a>的特性，对于老的浏览器有 polyfill 处理。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
   themeColor: &#39;#2096ff&#39;
 &#125;;</code></pre><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>目前提供三套主题可供选择，模仿 <a target="_blank" rel="noopener" href="https://vuejs.org/">Vue</a> 和 <a target="_blank" rel="noopener" href="https://buble.surge.sh/">buble</a> 官网订制的主题样式。还有 <a target="_blank" rel="noopener" href="https://github.com/liril-net">@liril-net</a> 贡献的黑色风格的主题。</p><pre><code class="line-numbers language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/vue.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/buble.css&quot;&gt;
@@ -92,7 +94,9 @@ docs/web/CSS.md       =&gt; http://domain.com/web/CSS.md</code></pre><h3 id="定
   .pagination-item-title &#123;
     font-size: 1em !important;
   &#125;
-&lt;/style&gt;</code></pre><h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>这是一款为docsify提供文字统计的插件. <a target="_blank" rel="noopener" href="https://github.com/827652549">@827652549</a>提供</p><p>它提供了统计中文汉字和英文单词的功能，并且排除了一些markdown语法的特殊字符例如*、-等</p><p><strong>Add JS</strong></p><pre><code class="line-numbers language-html">&lt;script src=&quot;//unpkg.com/docsify-count/dist/countable.js&quot;&gt;&lt;/script&gt;</code></pre><p><strong>Add settings</strong></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+&lt;/style&gt;</code></pre><p>Tips</p><p>这个点击下一页后不能自动回到顶部，可以添加auto2top配置</p><p>切换页面后自动跳转到页面顶部。</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+  auto2top: true,
+&#125;;</code></pre><h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>这是一款为docsify提供文字统计的插件. <a target="_blank" rel="noopener" href="https://github.com/827652549">@827652549</a>提供</p><p>它提供了统计中文汉字和英文单词的功能，并且排除了一些markdown语法的特殊字符例如*、-等</p><p><strong>Add JS</strong></p><pre><code class="line-numbers language-html">&lt;script src=&quot;//unpkg.com/docsify-count/dist/countable.js&quot;&gt;&lt;/script&gt;</code></pre><p><strong>Add settings</strong></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
   count:&#123;
     countable:true,
     fontsize:&#39;0.9em&#39;,
@@ -100,7 +104,7 @@ docs/web/CSS.md       =&gt; http://domain.com/web/CSS.md</code></pre><h3 id="定
     language:&#39;chinese&#39;
   &#125;
 &#125;</code></pre><p>check <a target="_blank" rel="noopener" href="https://github.com/827652549/docsify-count">document</a></p><h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p><strong>docsify</strong>内置的代码高亮工具是 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">Prism</a>。Prism 默认支持的语言如下：</p><ul><li>Markup - <code>markup</code>, <code>html</code>, <code>xml</code>, <code>svg</code>, <code>mathml</code>, <code>ssml</code>, <code>atom</code>, <code>rss</code></li><li>CSS - <code>css</code></li><li>C-like - <code>clike</code></li><li>JavaScript - <code>javascript</code>, <code>js</code></li></ul><p><a target="_blank" rel="noopener" href="https://prismjs.com/#supported-languages">添加额外的语法支持</a>需要通过CDN添加相应的<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/prismjs@1/components/">语法文件</a> :</p><pre><code class="line-numbers language-html">&lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>文档记录的目前是HTML、CSS和JavaScript，目前够用，只需要添加一个bash即可。</p><h3 id="自定义插件"><a href="#自定义插件" class="headerlink" title="自定义插件"></a>自定义插件</h3><ul><li>自定义页脚信息</li></ul><p>给每个页面的末尾加上 <code>footer</code></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+&lt;script src=&quot;//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>文档记录的目前是HTML、CSS和JavaScript，目前够用，只需要添加一个bash即可。</p><h3 id="缩放图片"><a href="#缩放图片" class="headerlink" title="缩放图片"></a>缩放图片</h3><p>引入js文件，</p><pre><code class="line-numbers language-html">  &lt;script src=&quot;//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>对需要缩放的图片进行如下设置</p><pre><code class="line-numbers language-html">&lt;img src=&quot;url&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;</code></pre><h3 id="自定义插件"><a href="#自定义插件" class="headerlink" title="自定义插件"></a>自定义插件</h3><ul><li>自定义页脚信息</li></ul><p>给每个页面的末尾加上 <code>footer</code></p><pre><code class="line-numbers language-js">window.$docsify = &#123;
   plugins: [
     function(hook) &#123;
       var footer = [
@@ -196,6 +200,8 @@ docs/web/CSS.md       =&gt; http://domain.com/web/CSS.md</code></pre><h3 id="定
         crossChapter: true,
         crossChapterText: true,
       &#125;,  
+      // 切换页面自动回到顶部
+      auto2top: true,
       search: &#123;
         paths: &#39;auto&#39;,
         placeholder: &#39;🔍 Search&#39;,
