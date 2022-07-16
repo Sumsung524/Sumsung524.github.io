@@ -164,7 +164,24 @@ docs/web/CSS.md           =&gt; http://domain.com/web/CSS.md</code></pre><h3 id=
     &#125;;
     if (isDarkMode) conf.theme = &#39;dark&#39;;
     mermaid.initialize(conf);
-&lt;/script&gt;</code></pre><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">jsDelivr</a>，能及时获取到最新版。你也可以在<a target="_blank" rel="noopener" href="https://docsify.js.org/#/cdn.jsdelivr.net/npm/docsify/">cdn.jsdelivr.net/npm/docsify/</a>中浏览npm包的源代码。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>Gitee创建一个docs仓库，将本地的docs上传，打开gitee pages服务，部署目录填入<code>/</code>即可。</p><h3 id="获取最新版"><a href="#获取最新版" class="headerlink" title="获取最新版"></a>获取最新版</h3><p>不指定特定版本号时将引入最新版。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
+&lt;/script&gt;</code></pre><h3 id="自动标题编号"><a href="#自动标题编号" class="headerlink" title="自动标题编号"></a>自动标题编号</h3><p>给markdown文档标题自动添加编号标题。</p><p>参考来源：</p><p>docsify-autoHeaders：<a target="_blank" rel="noopener" href="https://github.com/markbattistella/docsify-autoHeaders">https://github.com/markbattistella/docsify-autoHeaders</a></p><p><code>index.html</code>文件下引入资源，可选unpkg，jsdeliver、本地三种引入方式：</p><pre><code class="line-numbers language-html">&lt;!-- unpkg.com --&gt;
+&lt;script src=&quot;https://unpkg.com/@markbattistella/docsify-autoheaders@latest&quot;&gt;&lt;/script&gt;
+
+&lt;!-- jsDelivr --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@markbattistella/docsify-autoheaders@latest&quot;&gt;&lt;/script&gt;
+
+&lt;!-- locally --&gt;
+&lt;script src=&quot;docsify-autoheaders.min.js&quot;&gt;&lt;/script&gt;</code></pre><p>配置项设置示例，具体配置说明查看插件文档：</p><pre><code class="line-numbers language-js">window.$docsify = &#123;
+      autoHeaders: &#123;
+        separator: &#39;decimal&#39;,
+        levels: &#123;
+          start: &#39;1&#39;,
+          finish: &#39;3&#39;
+        &#125;,
+        scope: &#39;#main&#39;,
+        debug: false
+      &#125;,
+&#125;;</code></pre><p>给需要设置自动编号的md文件在顶部添加：<code>@autoHeader:#</code>配置，例如，<code>@autoHeader:1.1.1</code>，给1-3级标题从1开始自动标号。</p><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">jsDelivr</a>，能及时获取到最新版。你也可以在<a target="_blank" rel="noopener" href="https://docsify.js.org/#/cdn.jsdelivr.net/npm/docsify/">cdn.jsdelivr.net/npm/docsify/</a>中浏览npm包的源代码。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>Gitee创建一个docs仓库，将本地的docs上传，打开gitee pages服务，部署目录填入<code>/</code>即可。</p><h3 id="获取最新版"><a href="#获取最新版" class="headerlink" title="获取最新版"></a>获取最新版</h3><p>不指定特定版本号时将引入最新版。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/vue.css&quot;&gt;
 
 &lt;!-- 引入 script --&gt;
