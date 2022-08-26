@@ -181,7 +181,50 @@ docs/web/CSS.md           =&gt; http://domain.com/web/CSS.md</code></pre><h3 id=
         scope: &#39;#main&#39;,
         debug: false
       &#125;,
-&#125;;</code></pre><p>给需要设置自动编号的md文件在顶部添加：<code>@autoHeader:#</code>配置，例如，<code>@autoHeader:1.1.1</code>，给1-3级标题从1开始自动标号。</p><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">jsDelivr</a>，能及时获取到最新版。你也可以在<a target="_blank" rel="noopener" href="https://docsify.js.org/#/cdn.jsdelivr.net/npm/docsify/">cdn.jsdelivr.net/npm/docsify/</a>中浏览npm包的源代码。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>Gitee创建一个docs仓库，将本地的docs上传，打开gitee pages服务，部署目录填入<code>/</code>即可。</p><h3 id="获取最新版"><a href="#获取最新版" class="headerlink" title="获取最新版"></a>获取最新版</h3><p>不指定特定版本号时将引入最新版。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
+&#125;;</code></pre><p>给需要设置自动编号的md文件在顶部添加：<code>@autoHeader:#</code>配置，例如，<code>@autoHeader:1.1.1</code>，给1-3级标题从1开始自动标号。</p><h3 id="回到顶部按钮"><a href="#回到顶部按钮" class="headerlink" title="回到顶部按钮"></a>回到顶部按钮</h3><p><code>index.html</code>中<code>&lt;script&gt;</code>标签上一行添加回到顶部按钮：</p><pre><code class="line-numbers language-html">&lt;div class=&quot;backTop&quot;&gt;🔝&lt;/div&gt;</code></pre><p><code>&lt;style&gt;</code>标签内添加回到顶部CSS样式：</p><pre><code class="line-numbers language-css">/* 回到顶部CSS */
+.backTop &#123;
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 20px;
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, #00c8fe 0%, #66a6ff 100%);
+    cursor: pointer;
+&#125;</code></pre><p>引入js脚本：</p><pre><code class="line-numbers language-html">&lt;!-- 回到顶部插件 --&gt;
+&lt;script&gt;
+    // 显示与隐藏
+    var backTop = document.querySelector(&#39;.backTop&#39;);
+    window.addEventListener(&#39;scroll&#39;, function () &#123;
+        if (window.pageYOffset &gt; 0) &#123;
+            backTop.style.display = &#39;block&#39;;
+        &#125;
+        if (window.pageYOffset == 0) &#123;
+            backTop.style.display = &#39;none&#39;;
+        &#125;
+    &#125;)
+    // 点击返回顶部
+    backTop.addEventListener(&#39;click&#39;, function () &#123;
+        animate(window, 0);
+    &#125;)
+    // 缓动函数
+    function animate(obj, target, callback) &#123;
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () &#123;
+            var step = (target - obj.pageYOffset) / 10;
+            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+            if (obj.pageYOffset == target) &#123;
+                clearInterval(obj.timer);
+                callback &amp;&amp; callback();
+            &#125;
+            window.scroll(0, obj.pageYOffset + step);
+        &#125;, 15);
+    &#125;
+&lt;/script&gt;</code></pre><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>推荐使用 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">jsDelivr</a>，能及时获取到最新版。你也可以在<a target="_blank" rel="noopener" href="https://docsify.js.org/#/cdn.jsdelivr.net/npm/docsify/">cdn.jsdelivr.net/npm/docsify/</a>中浏览npm包的源代码。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>Gitee创建一个docs仓库，将本地的docs上传，打开gitee pages服务，部署目录填入<code>/</code>即可。</p><h3 id="获取最新版"><a href="#获取最新版" class="headerlink" title="获取最新版"></a>获取最新版</h3><p>不指定特定版本号时将引入最新版。</p><pre><code class="line-numbers language-html">&lt;!-- 引入 css --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/docsify/themes/vue.css&quot;&gt;
 
 &lt;!-- 引入 script --&gt;
