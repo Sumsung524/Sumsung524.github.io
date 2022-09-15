@@ -121,7 +121,7 @@ docs/web/CSS.md           =&gt; http://domain.com/web/CSS.md</code></pre><h3 id=
     &#125;
   ]
 &#125;;</code></pre><h3 id="Mermaid图表"><a href="#Mermaid图表" class="headerlink" title="Mermaid图表"></a>Mermaid图表</h3><p>借助Mermaid实现markdown中绘制图表，需要增加如下脚本。</p><p>参考来源：</p><p>mermaid官网文档首页：<a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/">https://mermaid-js.github.io/mermaid/#/</a></p><p><code>&lt;head&gt;</code>标签添加脚本（脚本放 尾部标签不生效）：</p><pre><code class="line-numbers language-html">  &lt;!-- mermaid插件 --&gt;
-  &lt;script src=&quot;//cdn.jsdelivr.net/npm/mermaid@9.1.2/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;//cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
   &lt;style&gt;
     .markdown-section &#123;
       max-width: 1200px;
@@ -156,11 +156,13 @@ docs/web/CSS.md           =&gt; http://domain.com/web/CSS.md</code></pre><h3 id=
     // mermaid配置
     var num = 0;
     const isDarkMode = window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches;
-
     const conf = &#123;
       logLevel: 4,
       startOnLoad: false,
-      themeCSS: &#39;.label &#123; font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif; &#125;&#39;,
+      themeCSS: &#39;.label &#123; font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif; &#125;.node rect &#123; fill: #fff;stroke: #333;stroke-width: 1px;color: #333; &#125;&#39;,
+      flowchart: &#123;
+        curve: &#39;linear&#39;,  // &#39;basis&#39;, &#39;linear&#39;, &#39;cardinal&#39;
+      &#125;
     &#125;;
     if (isDarkMode) conf.theme = &#39;dark&#39;;
     mermaid.initialize(conf);
